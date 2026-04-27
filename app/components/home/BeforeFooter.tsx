@@ -9,7 +9,7 @@ export const BeforeFooter = () => {
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-      }} className="w-full py-12 mt-28">
+      }} className="w-full py-12 mt-28 ">
             <div className="container flex items-center justify-between gap-12 ">
                 <div className=" flex-1">
                     <Typography variant="hDisplay" className="relative inline-block after:content-[''] after:absolute after:-bottom-1 after:right-0 after:w-16 after:h-[2px] after:bg-primary ">
