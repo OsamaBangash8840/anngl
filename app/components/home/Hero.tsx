@@ -1,0 +1,92 @@
+import { MdArrowOutward } from "react-icons/md";
+import { Button, Typography, Tabs, TextField, SelectField, DateField } from "../common";
+import { FaBox, FaBuilding, FaHome } from "react-icons/fa";
+import { CiLocationOn } from "react-icons/ci";
+import { FaRegArrowAltCircleRight } from "react-icons/fa";
+import Image from "next/image";
+
+
+export const Hero = () => {
+  return (
+    <section
+      className=" h-[800px]"
+      style={{
+        backgroundImage: "url(/images/hero-bg.jpg)",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="container pt-40 pb-10 flex justify-center items-center gap-20">
+        <div>
+            <Typography variant="bodyMedium">
+                Saudi Arabia's #1 Moving Platform
+            </Typography>
+            <Typography variant="hDisplay">
+                Effortless moving services at your <span className="text-primary font-homemade-apple">fingertips</span>
+            </Typography>
+            <Button
+              title="Compare Prices"
+              variant="white"
+              className="mt-16"
+            />
+        </div>
+        <div className="bg-primary/20 rounded-[6px] px-8 py-10  mt-16 border border-primary">
+         <Typography variant="bodyMedium">
+                Compare guaranteed moving quotes from the best moving companies.
+            </Typography>
+             <div className="mt-8">
+              <Tabs 
+                items={[
+                  { title: "Furniture", icon: <Image src={'/images/furniture.svg'} alt="location icon" width={31} height={26} /> ,
+                  content: <div className="flex flex-col gap-3">
+                             <TextField label="Moving From*" placeholder="Address, City or Zip" icon={<CiLocationOn />} />
+                             <TextField label="Moving To*" placeholder="Address, City or Zip" icon={<CiLocationOn />} />
+                             <div className="flex justify-center items-center gap-2">
+                              <SelectField label="Property Type" placeholder="Choose One" />
+                              <SelectField label="Room Type" placeholder="Choose One" /> 
+                             </div>
+                             <DateField label="Moving Date" className="!text-teal !text-sm" placeholder="Choose Date" />
+                             <Button title="Get a Free Quote" className="mt-2" variant="default" icon={<FaRegArrowAltCircleRight />} />
+                         </div> 
+                  },
+                  { title: "Goods", icon: <Image src={'/images/goods.svg'} alt="location icon" width={31} height={26} />, content:<div className="flex flex-col gap-3">
+                             <TextField label="Moving From*" placeholder="Address, City or Zip" icon={<CiLocationOn />} />
+                             <TextField label="Moving To*" placeholder="Address, City or Zip" icon={<CiLocationOn />} />
+                             <div className="flex justify-center items-center gap-2">
+                              <SelectField label="Property Type" placeholder="Choose One" />
+                              <SelectField label="Room Type" placeholder="Choose One" /> 
+                             </div>
+                             <DateField label="Moving Date" className="!text-teal !text-sm" placeholder="Choose Date" />
+                             <Button title="Get a Free Quote" className="mt-2" variant="default" icon={<FaRegArrowAltCircleRight />} />
+                         </div> },
+                  { title: "Refrigerator", icon: <Image src={'/images/refrigerator.svg'} alt="location icon" width={31} height={26} />, content: <div className="flex flex-col gap-3">
+                             <TextField label="Moving From*" placeholder="Address, City or Zip" icon={<CiLocationOn />} />
+                             <TextField label="Moving To*" placeholder="Address, City or Zip" icon={<CiLocationOn />} />
+                             <div className="flex justify-center items-center gap-2">
+                              <SelectField label="Property Type" placeholder="Choose One" />
+                              <SelectField label="Room Type" placeholder="Choose One" /> 
+                             </div>
+                             <DateField label="Moving Date" className="!text-teal !text-sm" placeholder="Choose Date" />
+                             <Button title="Get a Free Quote" className="mt-2" variant="default" icon={<FaRegArrowAltCircleRight />} />
+                         </div>  },
+                  { title: "Large Items", icon: <Image src={'/images/largeItems.svg'} alt="location icon" width={31} height={26} />, content: <div className="flex flex-col gap-3">
+                             <TextField label="Moving From*" placeholder="Address, City or Zip" icon={<CiLocationOn />} />
+                             <TextField label="Moving To*" placeholder="Address, City or Zip" icon={<CiLocationOn />} />
+                             <div className="flex justify-center items-center gap-2">
+                              <SelectField label="Property Type" placeholder="Choose One" />
+                              <SelectField label="Room Type" placeholder="Choose One" /> 
+                             </div>
+                             <DateField label="Moving Date" className="!text-teal !text-sm" placeholder="Choose Date" />
+                             <Button title="Get a Free Quote" className="mt-2" variant="default" icon={<FaRegArrowAltCircleRight />} />
+                         </div>  }
+                ]}
+                className="w-full"
+              />
+
+            </div>
+        </div>
+      </div>
+    </section>
+  );
+};

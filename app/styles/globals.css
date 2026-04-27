@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  /* ANGGLE Colors */
+  --color-primary: #DA6635;
+  /* Primary Light Varients */
+  --color-primary-light-100: #F9E9DB;
+  --color-primary-light-200: #F3CFB5;
+  --color-primary-light-300: #EAAF87;
+  --color-primary-light-400: #E18556;
+
+  /* Navy */
+  --color-navy: #112A35;
+
+  /* Steel */
+  --color-steel: #63818D;
+  --color-steel-light-50: #F4F7F7;
+  --color-steel-light-100: #E2E9EB;
+  --color-steel-light-200: #C8D5D9;
+  --color-steel-light-300: #A2B6BE;
+  --color-steel-light-400: #75919B;
+
+  /* Neutral/Gray */
+  --color-white: #FFFFFF;
+  --color-white-50: #F7F7F7;
+  --color-gray: #ADAEB1;
+  --color-gray-100: #ECECED;
+  --color-dull-black:#001100;
+  --color-black:#000000;
+
+
+  /* Button Colors */
+  --color-button-default: #63818D;
+  --color-button-hover: #DA6635;
+  --color-button-pressed: #112A35;
+  --color-button-unstabble: #ADAEB1;
+  --color-success:#62818D;
+  --color-error:#E1835D;
+  --color-warning:#93543B;
+
+
+  /* Form Colors */
+  --color-form-input-default:#F9E9DB;
+  --color-form-input-focused:#DA6635;
+  --color-form-input-error:#E1835D;
+
+  /* Alert Colors */
+  --color-alert-success:#62818D;
+  --color-alert-error:#E1835D;
+  --color-alert-warning:#93543B;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  /* ANGGLE Colors */
+  --color-primary: #DA6635;
+  --color-primary-light-100: #F9E9DB;
+  --color-primary-light-200: #F3CFB5;
+  --color-primary-light-300: #EAAF87;
+  --color-primary-light-400: #E18556;
+  --color-navy: #112A35;
+  --color-teal: #63818D;
+  --color-teal-light-50: #F4F7F7;
+  --color-teal-light-100: #E2E9EB;
+  --color-teal-light-200: #C8D5D9;
+  --color-teal-light-300: #A2B6BE;
+  --color-teal-light-400: #75919B;
+  --color-white: #FFFFFF;
+  --color-white-50: #F7F7F7;
+  --color-gray: #ADAEB1;
+  --color-gray-100: #ECECED;
+  --color-dull-black: #001100;
+  --color-black: #000000;
+
+  /* Fonts */
+  --font-sans: var(--font-sf-pro), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: var(--font-geist-mono);
+  --font-homemade-apple: var(--font-homemade-apple);
+  --font-sf-pro: var(--font-sf-pro), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sf-pro), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none !important;
+  -webkit-appearance: none;
+}
