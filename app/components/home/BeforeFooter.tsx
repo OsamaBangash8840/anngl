@@ -5,7 +5,7 @@ import { IoIosArrowForward } from "react-icons/io";
 export const BeforeFooter = () => {
     return (
     <section style={{
-        backgroundImage: "url(/images/beforeFooterbg.svg)",
+        backgroundImage: "url(/images/beforeFooterBg.svg)",
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
