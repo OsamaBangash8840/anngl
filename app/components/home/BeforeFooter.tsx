@@ -16,12 +16,7 @@ export const BeforeFooter = () => {
                         Ready To Make Your Move?
                     </Typography>
                     <Typography variant="h2" className="mt-6" >Reinforce the ease & benefits of using the platform</Typography>
-                     <Button
-                                  title="Get Price & Compare Movers"
-                                  variant="white"
-                                  className="mt-16 !px-14"
-                                  icon={<IoIosArrowForward  color="black"/>}
-                                />
+                     <Button title="Get Price & Compare Movers" variant="white" className="mt-16 !px-14" icon={<IoIosArrowForward  color="navy"/>}/>
                 </div>
                 <div className="flex-1 -mt-68 z-10">
                 <Image

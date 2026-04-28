@@ -44,20 +44,20 @@ export const SelectField = ({
         classNames={{
           control: ({ isFocused, isDisabled }) =>
             `!min-h-[44px] !bg-white dark:!bg-gray-700 !border !rounded-[6px] !px-2 ${
-              isFocused ? "!border-primary !shadow-none" : "!border-primary-light-100 dark:!border-gray-600"
+              isFocused ? "!border-primary !shadow-none" : "!border-primary-light-100 "
             } ${isDisabled ? "!opacity-50" : ""}`,
-          placeholder: () => "!text-teal dark:!text-gray-500 !text-sm",
-          singleValue: () => "!text-teal dark:!text-gray-100 !text-sm",
-          menu: () => "!bg-white dark:!bg-gray-800 !border !border-black/10 dark:!border-gray-700 !shadow-lg",
+          placeholder: () => "!text-gray-900  !text-sm",
+          singleValue: () => "!text-gray-900  !text-sm",
+          menu: () => "!bg-white  !border !border-black/10 !shadow-lg",
           option: ({ isFocused, isSelected }) =>
             `!text-sm ${
               isSelected
                 ? "!bg-primary !text-white"
                 : isFocused
-                ? "!bg-primary-light-100 dark:!bg-gray-700 !text-gray-900 dark:!text-gray-100"
-                : "!text-gray-900 dark:!text-gray-100"
+                ? "!bg-primary-light-100 dark:!bg-gray-700 !text-gray-900"
+                : "!text-gray-900 "
             }`,
-          input: () => "!text-gray-900 dark:!text-gray-100 !text-sm",
+          input: () => "!text-gray-900 !text-sm",
           dropdownIndicator: () => "!text-teal",
           indicatorSeparator: () => "!hidden",
         }}

@@ -2,12 +2,18 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { Fragment, useState } from "react";
 import { MdArrowOutward, MdMenu, MdClose } from "react-icons/md";
-// import { ThemeToggle } from "@/app/components/layouts/customer/ThemeToggle";
 import { usePathname } from "next/navigation";
 import { routes } from "@/app/base/utils/constants";
 import { Button, Typography } from "../common";
+import {
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuItems,
+  Transition,
+} from '@headlessui/react';
 
 const navItems = [
   {
@@ -23,31 +29,15 @@ const navItems = [
     path: routes.services,
   },
   {
-    name: "Blogs",
-    path: routes.blogs,
-  },
-  {
     name: "Contact",
     path: routes.contactUs,
   },
-  { name: "MT5 Platform", path: routes.metaTrader5Platform },
-
 ];
 
 export const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
-
-  // Prevent background scroll when menu is open
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-  }, [isMenuOpen]);
-
-  const isActive = (menuPath: string): boolean => menuPath == pathname;
+  const [isLoggedIn, setIsLoggedIn] = useState(false) 
+  const isActive = (menuPath: string): boolean => menuPath === pathname;
 
   return (
     <nav className="bg-navy py-4 z-50 relative">
@@ -63,89 +53,96 @@ export const Navbar = () => {
           />
         </Link>
 
-        {/* Hamburger */}
-        <div className=" flex items-center gap-10">
-          <Button
-            title="Login"
-            variant="default"
-          />
-          <button
-            className="text-3xl text-primary"
-            onClick={() => setIsMenuOpen((prev) => !prev)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <MdClose /> : <MdMenu />}
-          </button>
-        </div>
-      </div>
+        {/* Desktop & Mobile Toggle */}
+        <div className="flex items-center gap-5 md:gap-10">
+          {!isLoggedIn ? (
+            <div className="hidden sm:block" onClick={() => setIsLoggedIn(true)}>
+              <Button title="Login" variant="default" />
+            </div>
+          ) : (
+            <div className="flex items-center gap-x-4">
+              <Image 
+                src="/images/Avatar.svg" 
+                alt="User Avatar" 
+                width={40} 
+                height={40} 
+                className="w-[24px] h-[24px] rounded-full" 
+              />
+              <Typography className="text-white">User</Typography>
+            </div>
+          )}
 
-      {/* Mobile Menu Sidebar */}
-      <div 
-        className={`fixed inset-0 bg-black/60 z-[60] transition-opacity duration-300 ${
-          isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
-        onClick={() => setIsMenuOpen(false)}
-      />
-      
-      <div 
-        className={`fixed top-0 right-0 h-full w-[280px] bg-white dark:bg-gray-900 z-[70] shadow-2xl transform transition-transform duration-300 ease-in-out ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="flex flex-col h-full">
-          {/* Sidebar Header */}
-          <div className="flex items-center justify-between p-6 border-b border-gray-100 dark:border-gray-800">
-            <Typography variant="bodyMediumBold">Menu</Typography>
-            <button
-              onClick={() => setIsMenuOpen(false)}
-              className="p-2 -mr-2 text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white transition-colors"
-            >
-              <MdClose size={28} />
-            </button>
-          </div>
-
-          {/* Nav Items */}
-          <div className="flex-1 overflow-y-auto py-6 px-6 space-y-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.path}
-                onClick={() => setIsMenuOpen(false)}
-                className="block"
-              >
-                <Typography
-                  variant="bodyMediumBold"
-                  className={`${
-                    isActive(item.path)
-                      ? "text-primary"
-                      : "text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
-                  }`}
+          {/* Headless UI Menu for Hamburger */}
+          <Menu as="div" className="relative inline-block text-left">
+            {({ open }) => (
+              <>
+                <MenuButton
+                  className="text-3xl text-primary flex items-center justify-center p-1 focus:outline-none"
+                  aria-label="Toggle menu"
                 >
-                  {item.name}
-                </Typography>
-              </Link>
-            ))}
-          </div>
+                  {open ? <MdClose /> : <MdMenu />}
+                </MenuButton>
 
-          {/* Sidebar Footer (Buttons) */}
-          <div className="p-6 border-t border-gray-100 dark:border-gray-800 space-y-3">
-            <Link href={routes.login} onClick={() => setIsMenuOpen(false)} className="block">
-              <Button
-                title="Login"
-                variant="outline"
-                icon={<MdArrowOutward />}
-                className="w-full"
-              />
-            </Link>
-            <Link href={routes.signup} onClick={() => setIsMenuOpen(false)} className="block">
-              <Button
-                title="Signup"
-                variant="black"
-                icon={<MdArrowOutward />}
-                className="w-full"
-              />
-            </Link>
-          </div>
+                <Transition
+                  as={Fragment}
+                  enter="transition ease-out duration-100"
+                  enterFrom="transform opacity-0 scale-95"
+                  enterTo="transform opacity-100 scale-100"
+                  leave="transition ease-in duration-75"
+                  leaveFrom="transform opacity-100 scale-100"
+                  leaveTo="transform opacity-0 scale-95"
+                >
+                  <MenuItems className="absolute right-0 mt-4 w-48 origin-top-right bg-navy focus:outline-none py-4 z-[70] rounded-[6px] ">
+                    <div className="px-4 space-y-2">
+                      {navItems.map((item) => (
+                        <MenuItem key={item.name}>
+                          {({ active }) => (
+                            <Link
+                              href={item.path}
+                              className={`
+                                group w-full items-center py-2 px-3 flex justify-between gap-x-2  border-b border-[#63818D]
+                                ${active ? '' : ''} 
+                                transition-colors 
+                              `}
+                            >
+                              <Typography
+                                className={ `${isActive(item.path) ? 'text-primary' : 'text-white hover:text-primary'}`}
+                              >
+                                {item.name}
+                              </Typography>
+                            </Link>
+                          )}
+                        </MenuItem>
+                      ))}
+                      
+                      {/* <div className="pt-4 mt-2 border-t border-gray-100 space-y-3">
+                        <MenuItem>
+                          <Link href={routes.login} className="block">
+                            <Button
+                              title="Login"
+                              variant="outline"
+                              icon={<MdArrowOutward />}
+                              className="w-full !h-[40px]"
+                            />
+                          </Link>
+                        </MenuItem>
+                        <MenuItem>
+                          <Link href={routes.signup} className="block">
+                            <Button
+                              title="Signup"
+                              variant="black"
+                              icon={<MdArrowOutward />}
+                              className="w-full !h-[40px]"
+                            />
+                          </Link>
+                        </MenuItem>
+                      </div> */}
+                    </div>
+                  </MenuItems>
+                </Transition>
+              </>
+            )}
+          </Menu>
         </div>
       </div>
     </nav>

@@ -35,13 +35,13 @@ const tags: Record<Variant, ElementType> = {
 };
 
 const sizes: Record<Variant, string> = {
-  hDisplay: "font-sf-pro text-[32px] xl:text-[40px] xl:leading-auto text-white font-bold dark:text-white",
-  h1: "font-sf-pro text-[26px] xl:text-[32px] font-bold xl:leading-auto text-white dark:text-white",
-  h2: "font-sf-pro text-[22px] xl:text-[24px] font-semibold xl:leading-auto text-white dark:text-white",
-  h3: "font-sf-pro text-[18px] xl:text-[20px] font-semibold xl:leading-auto text-white dark:text-white",
-  bodyMedium: "font-sf-pro text-[14px] xl:text-[16px] font-normal xl:leading-auto text-white dark:text-white",
-  bodyMediumBold: "font-sf-pro text-[16px] xl:text-[18px] font-semibold xl:leading-auto text-white dark:text-white",
-  bodyLarge: "font-sf-pro text-[14px] xl:text-[16px] font-semibold xl:leading-auto text-white dark:text-white",
+  hDisplay: "font-sf-pro text-[32px] xl:text-[40px] xl:leading-auto text-white font-bold ",
+  h1: "font-sf-pro text-[26px] xl:text-[32px] font-bold xl:leading-auto text-white ",
+  h2: "font-sf-pro text-[22px] xl:text-[24px] font-semibold xl:leading-auto text-white ",
+  h3: "font-sf-pro text-[18px] xl:text-[20px] font-semibold xl:leading-auto text-white ",
+  bodyMedium: "font-sf-pro text-[14px] xl:text-[16px] font-normal xl:leading-auto text-white ",
+  bodyMediumBold: "font-sf-pro text-[16px] xl:text-[18px] font-semibold xl:leading-auto text-white ",
+  bodyLarge: "font-sf-pro text-[14px] xl:text-[16px] font-semibold xl:leading-auto text-white ",
   bodySmall: "font-sf-pro text-[12px] xl:text-[14px] font-normal xl:leading-auto text-white dark:text-white", 
   accentLarge: "font-homemade-apple text-[32px] xl:text-[40px] font-normal xl:leading-auto text-white dark:text-white",
   accentSmall: "font-homemade-apple text-[28px] xl:text-[32px] font-normal xl:leading-auto text-white dark:text-white",

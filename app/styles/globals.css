@@ -48,6 +48,8 @@
   --color-alert-success:#62818D;
   --color-alert-error:#E1835D;
   --color-alert-warning:#93543B;
+  
+  --main-background: var(--color-white-50);
 }
 
 @theme {
@@ -85,11 +87,12 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --main-background:#f7f7f7;
   }
 }
 
-body {
-  background: var(--background);
+html, body {
+  background: var(--main-background);
   color: var(--foreground);
   font-family: var(--font-sf-pro), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }

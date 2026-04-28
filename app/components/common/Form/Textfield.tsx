@@ -50,7 +50,7 @@ export const TextField = ({
             onChange={onChange}
             required={required}
             disabled={disabled}
-            className="placeholder:text-gray dark:placeholder:text-gray-500 mt-1 text-sm flex-1 outline-none bg-transparent text-gray-900 dark:text-gray-100"
+            className="placeholder:text-gray dark:placeholder:text-gray-500 mt-1 text-sm flex-1 outline-none bg-transparent text-gray-900"
             {...rest}
           />
         </div>

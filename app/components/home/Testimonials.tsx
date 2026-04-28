@@ -75,7 +75,7 @@ export const Testimonials = () => {
                     </Typography>
                     <Typography className="text-navy">Reinforce the ease & benefits of using the platform</Typography>
                 </div>
-                
+                <Image src="/images/blockQuotes.svg" alt="testimonialBg" width={48} height={30} className="absolute top-[20%] right-[5%] 2xl:right-[15%] " />
                 <div className="testimonial-slider-container">
                     <Slider {...settings}>
                         {testimonials.map((item) => (
