@@ -56,8 +56,10 @@ export const Navbar = () => {
         {/* Desktop & Mobile Toggle */}
         <div className="flex items-center gap-5 md:gap-10">
           {!isLoggedIn ? (
-            <div className="hidden sm:block" onClick={() => setIsLoggedIn(true)}>
-              <Button title="Login" variant="default" />
+            <div className="hidden sm:block" >
+              <Link href="login">
+                <Button title="Login" variant="default" />
+              </Link>
             </div>
           ) : (
             <div className="flex items-center gap-x-4">
