@@ -6,3 +6,4 @@ export * from "./OurNetwork";
 export * from "./Testimonials";
 export * from "./BeforeFooter";
 export * from "./Clients";
+export * from "./ChooseInventoryModal";

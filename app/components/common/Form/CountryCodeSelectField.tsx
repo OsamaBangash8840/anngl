@@ -120,6 +120,10 @@ export const CountryCodeSelectField: React.FC<CountryCodeSelectFieldProps> = ({
         isDisabled={isDisabled}
         isSearchable
         isClearable={false}
+        menuPortalTarget={typeof document !== "undefined" ? document.body : null}
+        styles={{
+          menuPortal: (base) => ({ ...base, zIndex: 9999 }),
+        }}
         components={{
           Option: CustomOption,
           SingleValue: CustomSingleValue,

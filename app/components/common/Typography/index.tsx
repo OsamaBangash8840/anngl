@@ -42,9 +42,9 @@ const sizes: Record<Variant, string> = {
   bodyMedium: "font-sf-pro text-[14px] xl:text-[16px] font-normal xl:leading-auto text-white ",
   bodyMediumBold: "font-sf-pro text-[16px] xl:text-[18px] font-semibold xl:leading-auto text-white ",
   bodyLarge: "font-sf-pro text-[14px] xl:text-[16px] font-semibold xl:leading-auto text-white ",
-  bodySmall: "font-sf-pro text-[12px] xl:text-[14px] font-normal xl:leading-auto text-white dark:text-white", 
-  accentLarge: "font-homemade-apple text-[32px] xl:text-[40px] font-normal xl:leading-auto text-white dark:text-white",
-  accentSmall: "font-homemade-apple text-[28px] xl:text-[32px] font-normal xl:leading-auto text-white dark:text-white",
+  bodySmall: "font-sf-pro text-[12px] xl:text-[14px] font-normal xl:leading-auto text-white", 
+  accentLarge: "font-homemade-apple text-[32px] xl:text-[40px] font-normal xl:leading-auto text-white",
+  accentSmall: "font-homemade-apple text-[28px] xl:text-[32px] font-normal xl:leading-auto text-white",
 };
 
 export const Typography = ({

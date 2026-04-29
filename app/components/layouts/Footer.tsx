@@ -7,7 +7,7 @@ import { BsInstagram, BsTwitter } from "react-icons/bs";
 export const Footer = () => {
     return (
         <footer className="bg-navy">
-            <div className="container flex justify-between items-center gap-12 my-8">
+            <div className="container flex justify-between items-center gap-12 my-12">
                 <div className="">
                     <Image
                         src="/images/footerLogo.svg"
@@ -26,8 +26,8 @@ export const Footer = () => {
                     <Typography variant="bodyLarge">
                         Learn More
                     </Typography>
-                    <div className="flex flex-col gap-2 mt-4">
-                        <Typography >How it works</Typography>
+                    <div className="flex flex-col gap-2.5 mt-4">
+                        <Typography >Help centre</Typography>
                         <Typography>About Us</Typography>
                         <Typography>Contact Us</Typography>
                     </div>
@@ -36,7 +36,7 @@ export const Footer = () => {
                     <Typography variant="bodyLarge">
                         Help and Solution
                     </Typography>
-                    <div className="flex flex-col gap-2 mt-4">
+                    <div className="flex flex-col gap-2.5 mt-4">
                         <Typography >Talk to support</Typography>
                         <Typography>Support docs</Typography>
                         <Typography>System status</Typography>
@@ -47,6 +47,9 @@ export const Footer = () => {
                     <Typography className="flex justify-center items-center gap-2">For All Your <Typography variant="h2" className="!text-primary">Q</Typography></Typography>
                 </div>
 
+            </div>
+            <div className="container -mt-3">
+                <Typography variant="bodySmall">2026 by ANNGL. </Typography>
             </div>
         </footer>
     )

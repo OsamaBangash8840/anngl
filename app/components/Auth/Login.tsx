@@ -13,7 +13,7 @@ export const Login = () => {
 
     const handleLogin = () => {
         console.log("Login triggered with phone:", phone);
-        router.push('/');
+        router.push('/verify-otp');
     }
 
     const handleKeyDown = (e: React.KeyboardEvent) => {

@@ -1,12 +1,21 @@
-import { MdArrowOutward } from "react-icons/md";
+'use client'
 import { Button, Typography, Tabs, TextField, SelectField, DateField } from "../common";
-import { FaBox, FaBuilding, FaHome } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import Image from "next/image";
+import { useState } from "react";
+import { ChooseInventoryModal } from "./ChooseInventoryModal";
 
 
 export const Hero = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleSelect = (type: "inventory" | "video") => {
+        console.log("User selected:", type);
+        // Add navigation or further logic here
+        setIsModalOpen(false);
+    }
+
   return (
     <section
       className=" h-[800px]"
@@ -29,6 +38,7 @@ export const Hero = () => {
               title="Compare Prices"
               variant="white"
               className="mt-16"
+              onClick={() => setIsModalOpen(true)}
             />
         </div>
         <div className="bg-primary/20 rounded-[6px] px-8 py-10  mt-16 border border-primary">
@@ -46,8 +56,10 @@ export const Hero = () => {
                               <SelectField label="Property Type" placeholder="Choose One" />
                               <SelectField label="Room Type" placeholder="Choose One" /> 
                              </div>
-                             <DateField label="Moving Date" className="!text-teal !text-sm" placeholder="Choose Date" />
-                             <Button title="Get a Free Quote" className="mt-2" variant="default" icon={<FaRegArrowAltCircleRight />} />
+                             <div className="flex flex-col gap-2">
+                                <DateField label="Moving Date" className="!text-teal !text-sm" placeholder="Choose Date" />
+                                <Button title="Find Best Price" onClick={() => setIsModalOpen(true)} className="mt-2" variant="default" icon={<FaRegArrowAltCircleRight />} />
+                             </div>
                          </div> 
                   },
                   { title: "Goods", icon: <Image src={'/images/goods.svg'} alt="location icon" width={31} height={26} />, content:<div className="flex flex-col gap-3">
@@ -57,8 +69,10 @@ export const Hero = () => {
                               <SelectField label="Property Type" placeholder="Choose One" />
                               <SelectField label="Room Type" placeholder="Choose One" /> 
                              </div>
-                             <DateField label="Moving Date" className="!text-teal !text-sm" placeholder="Choose Date" />
-                             <Button title="Get a Free Quote" className="mt-2" variant="default" icon={<FaRegArrowAltCircleRight />} />
+                             <div className="flex flex-col gap-2">
+                                <DateField label="Moving Date" className="!text-teal !text-sm" placeholder="Choose Date" />
+                                <Button title="Find Best Price" onClick={() => setIsModalOpen(true)} className="mt-2" variant="default" icon={<FaRegArrowAltCircleRight />} />
+                             </div>
                          </div> },
                   { title: "Refrigerator", icon: <Image src={'/images/refrigerator.svg'} alt="location icon" width={31} height={26} />, content: <div className="flex flex-col gap-3">
                              <TextField label="Moving From*" placeholder="Address, City or Zip" icon={<CiLocationOn />} />
@@ -67,8 +81,10 @@ export const Hero = () => {
                               <SelectField label="Property Type" placeholder="Choose One" />
                               <SelectField label="Room Type" placeholder="Choose One" /> 
                              </div>
-                             <DateField label="Moving Date" className="!text-teal !text-sm" placeholder="Choose Date" />
-                             <Button title="Get a Free Quote" className="mt-2" variant="default" icon={<FaRegArrowAltCircleRight />} />
+                             <div className="flex flex-col gap-2">
+                                <DateField label="Moving Date" className="!text-teal !text-sm" placeholder="Choose Date" />
+                                <Button title="Find Best Price" onClick={() => setIsModalOpen(true)} className="mt-2" variant="default" icon={<FaRegArrowAltCircleRight />} />
+                             </div>
                          </div>  },
                   { title: "Large Items", icon: <Image src={'/images/largeItems.svg'} alt="location icon" width={31} height={26} />, content: <div className="flex flex-col gap-3">
                              <TextField label="Moving From*" placeholder="Address, City or Zip" icon={<CiLocationOn />} />
@@ -77,8 +93,10 @@ export const Hero = () => {
                               <SelectField label="Property Type" placeholder="Choose One" />
                               <SelectField label="Room Type" placeholder="Choose One" /> 
                              </div>
-                             <DateField label="Moving Date" className="!text-teal !text-sm" placeholder="Choose Date" />
-                             <Button title="Get a Free Quote" className="mt-2" variant="default" icon={<FaRegArrowAltCircleRight />} />
+                             <div className="flex flex-col gap-2">
+                                <DateField label="Moving Date" className="!text-teal !text-sm" placeholder="Choose Date" />
+                                <Button title="Find Best Price" onClick={() => setIsModalOpen(true)} className="mt-2" variant="default" icon={<FaRegArrowAltCircleRight />} />
+                             </div>
                          </div>  }
                 ]}
                 className="w-full"
@@ -87,6 +105,12 @@ export const Hero = () => {
             </div>
         </div>
       </div>
+
+      <ChooseInventoryModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        onSelect={handleSelect}
+      />
     </section>
   );
-};
+};

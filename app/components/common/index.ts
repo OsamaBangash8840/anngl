@@ -8,3 +8,4 @@ export * from './Form/CountryCodeSelectField';
 export * from './Form/Textfield';
 export * from './Form/TextareaField';
 export * from './Faqs';
+export * from './Modal';
