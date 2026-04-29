@@ -57,34 +57,37 @@ export const Testimonials = () => {
                 }
             },
             {
-                breakpoint: 640,
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 1,
+                    centerMode: true,
+                    centerPadding: "20px",
                 }
             }
         ],
         dotsClass: "slick-dots custom-dots",
     };
 
+
     return (
-        <section className="py-24 bg-[#F7F7F7] overflow-hidden relative">
+        <section className="py-12 md:py-24 bg-[#F7F7F7] overflow-hidden relative">
             <div className="container mx-auto px-4">
-                <div className="text-center mb-16">
-                    <Typography variant="h1" className="!text-black relative inline-block ">
+                <div className="text-center mb-10 md:mb-16">
+                    <Typography variant="h1" className="!text-black relative inline-block text-[22px] md:text-[32px] leading-tight">
                         Words from the <span className="font-homemade-apple text-primary">Clients</span> we’ve moved
                     </Typography>
-                    <Typography className="text-navy">Reinforce the ease & benefits of using the platform</Typography>
+                    <Typography className="text-navy mt-2 text-sm md:text-base">Reinforce the ease & benefits of using the platform</Typography>
                 </div>
-                <Image src="/images/blockQuotes.svg" alt="testimonialBg" width={48} height={30} className="absolute top-[20%] right-[5%] 2xl:right-[15%] " />
-                <div className="testimonial-slider-container">
+                <Image src="/images/blockQuotes.svg" alt="testimonialBg" width={48} height={30} className="absolute top-[10%] right-[5%] 2xl:right-[15%] hidden md:block" />
+                <div className="testimonial-slider-container pt-16 md:pt-10">
                     <Slider {...settings}>
                         {testimonials.map((item) => (
                             <div key={item.id} className="px-4 outline-none">
                                 
-                                <div className="border w-full border-primary/20 bg-white relative rounded-2xl p-6 mt-12 shadow-[0px_3px_7.5px_2px_rgba(0,0,0,0.10)]">
-                                    <div className="flex -mt-18 relative z-20">
-                                        <div className="rounded-full mx-auto p-1">
-                                            <Image src={item.avatar} alt={item.name} width={110} height={110} className="relative z-20 rounded-full" />
+                                <div className="border w-full border-primary/20 bg-white relative rounded-2xl p-6 mt-20 md:mt-12 shadow-[0px_3px_7.5px_2px_rgba(0,0,0,0.10)] mb-10">
+                                    <div className="flex -mt-24 md:-mt-18 relative z-20">
+                                        <div className="rounded-full mx-auto p-1 bg-white">
+                                            <Image src={item.avatar} alt={item.name} width={100} height={100} className="relative z-20 rounded-full md:w-[110px] md:h-[110px]" />
                                         </div>
                                     </div>
                                     <div className="flex flex-col items-center justify-center mt-6">
@@ -101,7 +104,7 @@ export const Testimonials = () => {
                                         </div>
                                     </div>
                                     
-                                    <Typography variant="bodyMedium" className="!text-gray-600 italic mt-4 mb-4 leading-relaxed text-center text-lg">
+                                    <Typography variant="bodyMedium" className="!text-gray-600 italic mt-4 mb-4 leading-relaxed text-center text-[14px] md:text-[16px]">
                                         "{item.text}"
                                     </Typography>
                                     
@@ -113,29 +116,60 @@ export const Testimonials = () => {
                 </div>
             </div>
 
-            <style jsx global>{`
+            <style dangerouslySetInnerHTML={{ __html: `
                 .testimonial-slider-container .slick-dots {
-                    position: relative;
-                    bottom: -50px;
+                    position: relative !important;
+                    bottom: -30px !important;
+                    display: flex !important;
+                    justify-content: center !important;
+                    list-style: none !important;
+                    padding: 0 !important;
                 }
                 .testimonial-slider-container .slick-dots li {
-                    margin: 0 4px;
+                    margin: 0 6px !important;
+                }
+                .testimonial-slider-container .slick-dots li button {
+                    font-size: 0 !important;
+                    line-height: 0 !important;
+                    display: block !important;
+                    width: 12px !important;
+                    height: 12px !important;
+                    padding: 5px !important;
+                    cursor: pointer !important;
+                    color: transparent !important;
+                    border: 0 !important;
+                    outline: none !important;
+                    background: transparent !important;
                 }
                 .testimonial-slider-container .slick-dots li button:before {
-                    color: #ffff;
-                    font-size: 12px;
-                    opacity: 1;
-                    transition: all 0.3s ease;
+                    font-family: 'slick' !important;
+                    font-size: 12px !important;
+                    line-height: 20px !important;
+                    position: absolute !important;
+                    top: 0 !important;
+                    left: 0 !important;
+                    width: 20px !important;
+                    height: 20px !important;
+                    content: '•' !important;
+                    text-align: center !important;
+                    opacity: .25 !important;
+                    color: #ADAEB1 !important;
+                    -webkit-font-smoothing: antialiased !important;
+                    -moz-osx-font-smoothing: grayscale !important;
                 }
                 .testimonial-slider-container .slick-dots li.slick-active button:before {
-                    color: #DA6635;
-                    opacity: 1;
-                    font-size: 12px;
+                    opacity: 1 !important;
+                    color: #DA6635 !important;
                 }
                 .testimonial-slider-container .slick-list {
-                    padding-bottom: 20px;
+                    padding-bottom: 20px !important;
+                    overflow: visible !important;
                 }
-            `}</style>
+                .testimonial-slider-container .slick-track {
+                    display: flex !important;
+                    align-items: stretch !important;
+                }
+            ` }} />
         </section>
     );
 };

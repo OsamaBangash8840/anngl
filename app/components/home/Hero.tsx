@@ -18,7 +18,7 @@ export const Hero = () => {
 
   return (
     <section
-      className=" h-[800px]"
+      className=" md:h-[800px]"
       style={{
         backgroundImage: "url(/images/hero-bg.jpg)",
         backgroundPosition: "center",
@@ -26,8 +26,8 @@ export const Hero = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="container pt-40 pb-10 flex justify-center items-center gap-20">
-        <div>
+      <div className="container pt-40 pb-10 flex flex-col md:flex-row justify-center items-center md:gap-20">
+        <div className="mt-8 sm:mt-0">
             <Typography variant="bodyMedium">
                 Saudi Arabia's #1 Moving Platform
             </Typography>
@@ -41,11 +41,11 @@ export const Hero = () => {
               onClick={() => setIsModalOpen(true)}
             />
         </div>
-        <div className="bg-primary/20 rounded-[6px] px-8 py-10  mt-16 border border-primary">
+        <div className="bg-primary/20 rounded-[6px] px-4 py-2 md:px-8 md:py-10 mb-8 md:mb-0  mt-16 border border-primary w-full">
          <Typography variant="bodyMedium">
                 Compare guaranteed moving quotes from the best moving companies.
             </Typography>
-             <div className="mt-8">
+             <div className="mt-8 ">
               <Tabs 
                 items={[
                   { title: "Furniture", icon: <Image src={'/images/furniture.svg'} alt="location icon" width={31} height={26} /> ,
@@ -113,4 +113,4 @@ export const Hero = () => {
       />
     </section>
   );
-};
+};

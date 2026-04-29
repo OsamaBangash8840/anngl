@@ -7,7 +7,7 @@ import { BsInstagram, BsTwitter } from "react-icons/bs";
 export const Footer = () => {
     return (
         <footer className="bg-navy">
-            <div className="container flex justify-between items-center gap-12 my-12">
+            <div className="container flex flex-col md:flex-row justify-between md:items-center gap-12 my-12">
                 <div className="">
                     <Image
                         src="/images/footerLogo.svg"
@@ -43,8 +43,8 @@ export const Footer = () => {
                     </div>
                 </div>
                 <div className="">
-                    <Typography className="flex justify-center items-center gap-2">We Have <Typography variant="h2" className="!text-primary">A</Typography></Typography>
-                    <Typography className="flex justify-center items-center gap-2">For All Your <Typography variant="h2" className="!text-primary">Q</Typography></Typography>
+                    <Typography as="div" className="flex justify-start md:justify-center items-center gap-2">We Have <Typography variant="h2" className="!text-primary">A</Typography></Typography>
+                    <Typography as="div" className="flex justify-start md:justify-center items-center gap-2">For All Your <Typography variant="h2" className="!text-primary">Q</Typography></Typography>
                 </div>
 
             </div>

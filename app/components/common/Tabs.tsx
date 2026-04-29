@@ -26,7 +26,7 @@ export const Tabs = ({ items, className }: TabsProps): React.ReactElement => {
               key={title}
               className={({ selected }) =>
                 twMerge(
-                  "py-4 px-8 text-[14px] sm:text-sm font-regular flex flex-col justify-center font-sf-pro items-center gap-y-2 leading-5 border transition-all duration-300 outline-none cursor-pointer rounded-[6px] flex-1 overflow-hidden",
+                  " py-[8px] px-4 md:py-4 md:px-8 text-[14px] sm:text-sm font-regular flex flex-col justify-center font-sf-pro items-center gap-y-2 leading-5 border transition-all duration-300 outline-none cursor-pointer rounded-[6px] flex-1 overflow-hidden",
                   selected
                     ? "bg-primary text-white border-primary shadow-lg scale-105 z-10"
                     : "border-white text-white hover:bg-white/10"

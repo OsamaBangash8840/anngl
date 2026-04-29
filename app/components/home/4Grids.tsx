@@ -3,7 +3,7 @@ import { Typography } from "../common";
 
 export const FourGrids = () => {
     return (
-        <div className=" bg-white grid grid-cols-4 my-32">
+        <div className=" bg-white grid md:grid-cols-4 grid-cols-2 my-8 md:my-32">
             <Grid
                 image="/images/percentIcon.svg"
                 title="Up to 45% Lower Prices"
@@ -45,7 +45,7 @@ interface gridProps {
 
 const Grid = ({image, title, description, bgColor, titleColor, descriptionColor}: gridProps) => {
     return (
-        <div className={`${bgColor} flex flex-col items-center text-center mb-4 pb-16`}>
+        <div className={`${bgColor} flex flex-col items-center text-center mb-4 pb-16 mt-8 md:mt-0`}>
             <Image
                 src={image}
                 alt={title}
