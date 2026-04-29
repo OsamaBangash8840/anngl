@@ -43,7 +43,7 @@ export const SelectField = ({
         classNamePrefix="react-select"
         classNames={{
           control: ({ isFocused, isDisabled }) =>
-            `!min-h-[44px] !bg-white dark:!bg-gray-700 !border !rounded-[6px] !px-2 ${
+            `!min-h-[44px] !bg-white  !border !rounded-[6px] !px-2 ${
               isFocused ? "!border-primary !shadow-none" : "!border-primary-light-100 "
             } ${isDisabled ? "!opacity-50" : ""}`,
           placeholder: () => "!text-gray-900  !text-sm",
@@ -54,7 +54,7 @@ export const SelectField = ({
               isSelected
                 ? "!bg-primary !text-white"
                 : isFocused
-                ? "!bg-primary-light-100 dark:!bg-gray-700 !text-gray-900"
+                ? "!bg-primary-light-100 !text-gray-900"
                 : "!text-gray-900 "
             }`,
           input: () => "!text-gray-900 !text-sm",

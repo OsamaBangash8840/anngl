@@ -42,7 +42,7 @@ export const TextField = ({
             error ? "border-red-500" : "border-primary-light-100"
           }`}
         >
-          {icon && <span className="text-black-400 dark:text-gray-400 text-xl">{icon}</span>}
+          {icon && <span className="text-black-400  text-xl">{icon}</span>}
           <input
             type={type}
             placeholder={placeholder}
@@ -50,7 +50,7 @@ export const TextField = ({
             onChange={onChange}
             required={required}
             disabled={disabled}
-            className="placeholder:text-gray dark:placeholder:text-gray-500 mt-1 text-sm flex-1 outline-none bg-transparent text-gray-900"
+            className="placeholder:text-gray  mt-1 text-sm flex-1 outline-none bg-transparent text-gray-900"
             {...rest}
           />
         </div>

@@ -3,7 +3,7 @@ import { Typography } from "../common"
 
 export const ServicesSec = () => {
     return (
-        <section className="container my-10 grid grid-cols-2 gap-4">
+        <section className="container my-10 grid md:grid-cols-2 gap-4">
                 <div 
                 style={{
                     backgroundImage: "url(/images/localSupplies.svg)",

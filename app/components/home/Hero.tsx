@@ -41,7 +41,7 @@ export const Hero = () => {
               onClick={() => setIsModalOpen(true)}
             />
         </div>
-        <div className="bg-primary/20 rounded-[6px] px-4 py-2 md:px-8 md:py-10 mb-8 md:mb-0  mt-16 border border-primary w-full">
+        <div className="bg-primary/20 rounded-[6px] px-4 py-2 md:px-8 md:py-10 mb-8  mt-16 border border-primary w-[400px] md:w-full">
          <Typography variant="bodyMedium">
                 Compare guaranteed moving quotes from the best moving companies.
             </Typography>

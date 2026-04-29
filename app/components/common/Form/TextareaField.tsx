@@ -41,7 +41,7 @@ export const TextareaField = ({
         }`}
       >
         {icon && (
-          <span className="text-black-400 dark:text-gray-400 text-xl mt-0.5">
+          <span className="text-black-400  text-xl mt-0.5">
             {icon}
           </span>
         )}
@@ -52,7 +52,7 @@ export const TextareaField = ({
           required={required}
           disabled={disabled}
           rows={rows}
-          className="placeholder:text-gray dark:placeholder:text-gray-500 text-sm flex-1 outline-none bg-transparent text-gray-900 dark:text-gray-100 resize-none"
+          className="placeholder:text-gray text-sm flex-1 outline-none bg-transparent text-gray-900 resize-none"
           {...rest}
         />
       </div>

@@ -4,7 +4,7 @@ import { FaStar } from "react-icons/fa";
 
 export const Rating = () => {
     return (
-        <div className=" container flex justify-between items-center gap-16 2xl:24 my-8">
+        <div className=" container flex  flex-col md:flex-row justify-between items-center gap-16 2xl:24 my-8">
             <div className="flex flex-col justify-center items-center">
             <Typography variant="h3" className="!text-navy"> 100 <span className="!text-primary">+</span></Typography>
             <Typography variant="h3" className="!text-navy !font-medium"> 

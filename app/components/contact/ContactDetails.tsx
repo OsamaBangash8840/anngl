@@ -5,7 +5,7 @@ import { FaStar } from "react-icons/fa";
 
 export const ContactDetails = () => {
     return (
-        <div className=" container flex justify-between items-center gap-16 2xl:24 my-8">
+        <div className=" container flex flex-col md:flex-row justify-between items-center gap-16 2xl:24 my-8">
             <div className="flex gap-4 justify-center items-center">
                 <Image src="/images/callIcon.svg" alt="call" width={50} height={50}/>
                 <div>

@@ -13,7 +13,7 @@ const testimonials = [
         name: "Ahmed Mohammed",
         role: "Studio (400-600 sq ft) Moved in NY",
         text: "The best moving experience I've ever had. Fast, reliable, and very professional. The team was extremely helpful throughout the entire process.",
-        avatar: "/images/testimonial1.svg", // Using logo as placeholder
+        avatar: "/images/testimonial1.svg",
     },
     {
         id: 2,
@@ -38,8 +38,45 @@ const testimonials = [
     }
 ];
 
+const TestimonialCard = ({ item }: { item: typeof testimonials[0] }) => (
+    <div className="px-2 md:px-4 outline-none">
+        <div className="border w-full border-primary/20 bg-white relative rounded-2xl p-5 md:p-6 mt-16 md:mt-12 shadow-[0px_3px_7.5px_2px_rgba(0,0,0,0.10)] mb-10">
+            <div className="flex -mt-20 md:-mt-18 relative z-20">
+                <div className="rounded-full mx-auto p-1 bg-white">
+                    <Image
+                        src={item.avatar}
+                        alt={item.name}
+                        width={90}
+                        height={90}
+                        className="relative z-20 rounded-full md:w-[110px] md:h-[110px]"
+                    />
+                </div>
+            </div>
+            <div className="flex flex-col items-center justify-center mt-6">
+                <Typography variant="h3" className="!text-black !text-[18px] md:text-[20px] font-bold">
+                    {item.name}
+                </Typography>
+                <Typography className="!text-gray-500 !text-[13px] md:text-[14px] mt-1">
+                    {item.role}
+                </Typography>
+                <div className="flex items-center justify-center gap-1 mb-3 mt-5 md:mt-6">
+                    {[...Array(5)].map((_, i) => (
+                        <FaStar key={i} className="text-[#FFB900] text-base md:text-lg" />
+                    ))}
+                </div>
+            </div>
+            <Typography
+                variant="bodyMedium"
+                className="!text-gray-600 italic mt-4 mb-4 leading-relaxed text-center text-[13px] md:text-[16px]"
+            >
+                "{item.text}"
+            </Typography>
+        </div>
+    </div>
+);
+
 export const Testimonials = () => {
-    const settings = {
+    const desktopSettings = {
         dots: true,
         infinite: true,
         speed: 800,
@@ -55,62 +92,59 @@ export const Testimonials = () => {
                 settings: {
                     slidesToShow: 2,
                 }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    centerMode: true,
-                    centerPadding: "20px",
-                }
             }
         ],
         dotsClass: "slick-dots custom-dots",
     };
 
+    const mobileSettings = {
+        dots: true,
+        infinite: true,
+        speed: 800,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        centerMode: true,
+        centerPadding: "20px",
+        dotsClass: "slick-dots custom-dots",
+    };
 
     return (
         <section className="py-12 md:py-24 bg-[#F7F7F7] overflow-hidden relative">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-10 md:mb-16">
                     <Typography variant="h1" className="!text-black relative inline-block text-[22px] md:text-[32px] leading-tight">
-                        Words from the <span className="font-homemade-apple text-primary">Clients</span> we’ve moved
+                        Words from the <span className="font-homemade-apple text-primary">Clients</span> we've moved
                     </Typography>
-                    <Typography className="text-navy mt-2 text-sm md:text-base">Reinforce the ease & benefits of using the platform</Typography>
+                    <Typography className="text-navy mt-2 text-sm md:text-base">
+                        Reinforce the ease & benefits of using the platform
+                    </Typography>
                 </div>
-                <Image src="/images/blockQuotes.svg" alt="testimonialBg" width={48} height={30} className="absolute top-[10%] right-[5%] 2xl:right-[15%] hidden md:block" />
-                <div className="testimonial-slider-container pt-16 md:pt-10">
-                    <Slider {...settings}>
+
+                <Image
+                    src="/images/blockQuotes.svg"
+                    alt="testimonialBg"
+                    width={48}
+                    height={30}
+                    className="absolute top-[10%] right-[5%] 2xl:right-[15%] hidden md:block"
+                />
+
+                {/* Desktop View */}
+                <div className="hidden md:block testimonial-slider-container pt-10">
+                    <Slider {...desktopSettings}>
                         {testimonials.map((item) => (
-                            <div key={item.id} className="px-4 outline-none">
-                                
-                                <div className="border w-full border-primary/20 bg-white relative rounded-2xl p-6 mt-20 md:mt-12 shadow-[0px_3px_7.5px_2px_rgba(0,0,0,0.10)] mb-10">
-                                    <div className="flex -mt-24 md:-mt-18 relative z-20">
-                                        <div className="rounded-full mx-auto p-1 bg-white">
-                                            <Image src={item.avatar} alt={item.name} width={100} height={100} className="relative z-20 rounded-full md:w-[110px] md:h-[110px]" />
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-col items-center justify-center mt-6">
-                                        <Typography variant="h3" className="!text-black !text-[20px] font-bold">
-                                            {item.name}
-                                        </Typography>
-                                        <Typography className="!text-gray-500 !text-[14px] mt-1">
-                                            {item.role}
-                                        </Typography>
-                                         <div className="flex items-center justify-center gap-1 mb-3 mt-6">
-                                            {[...Array(5)].map((_, i) => (
-                                                <FaStar key={i} className="text-[#FFB900] text-lg" />
-                                            ))}
-                                        </div>
-                                    </div>
-                                    
-                                    <Typography variant="bodyMedium" className="!text-gray-600 italic mt-4 mb-4 leading-relaxed text-center text-[14px] md:text-[16px]">
-                                        "{item.text}"
-                                    </Typography>
-                                    
-                                 
-                                </div>
-                            </div>
+                            <TestimonialCard key={item.id} item={item} />
+                        ))}
+                    </Slider>
+                </div>
+
+                {/* Mobile View */}
+                <div className="md:hidden testimonial-slider-container pt-16">
+                    <Slider {...mobileSettings}>
+                        {testimonials.map((item) => (
+                            <TestimonialCard key={item.id} item={item} />
                         ))}
                     </Slider>
                 </div>
@@ -119,11 +153,12 @@ export const Testimonials = () => {
             <style dangerouslySetInnerHTML={{ __html: `
                 .testimonial-slider-container .slick-dots {
                     position: relative !important;
-                    bottom: -30px !important;
+                    bottom: -20px !important;
                     display: flex !important;
                     justify-content: center !important;
                     list-style: none !important;
                     padding: 0 !important;
+                    margin-top: 20px !important;
                 }
                 .testimonial-slider-container .slick-dots li {
                     margin: 0 6px !important;
@@ -132,8 +167,8 @@ export const Testimonials = () => {
                     font-size: 0 !important;
                     line-height: 0 !important;
                     display: block !important;
-                    width: 12px !important;
-                    height: 12px !important;
+                    width: 10px !important;
+                    height: 10px !important;
                     padding: 5px !important;
                     cursor: pointer !important;
                     color: transparent !important;
@@ -143,7 +178,7 @@ export const Testimonials = () => {
                 }
                 .testimonial-slider-container .slick-dots li button:before {
                     font-family: 'slick' !important;
-                    font-size: 12px !important;
+                    font-size: 10px !important;
                     line-height: 20px !important;
                     position: absolute !important;
                     top: 0 !important;

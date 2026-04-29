@@ -23,19 +23,19 @@ export const Login = () => {
     }
 
     return (
-        <div className="flex justify-center gap-8 2xl:gap-20 min-h-screen">
+        <div className="flex flex-col md:flex-row justify-center gap-8 2xl:gap-20 min-h-screen">
             <div style={{
                 backgroundImage: "url('/images/loginBg.svg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
             }}
-            className="relative flex-1 min-h-[600px] "
+            className="relative flex-1 md:min-h-[600px] min-h-[400px]"
             >
              <Image src="/images/bgCenterOverlay.svg" alt="loginBg" width={187} height={68} className="absolute bottom-[50%] left-[14%] -translate-x-1/2 translate-y-1/2" />   
              <Image src="/images/bgDownOverlay.svg" alt="loginBg" width={284} height={68} className="absolute bottom-0 -right-[14%] z-10" />   
             </div>
-            <div className="flex-1 flex flex-col gap-y-1 justify-center relative ">
+            <div className="flex-1 flex flex-col gap-y-1 justify-center relative mx-4 md:mx-0 ">
                 <Image 
                     src="/images/cross.svg" 
                     alt="loginBg" 
