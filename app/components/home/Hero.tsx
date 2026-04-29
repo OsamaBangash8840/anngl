@@ -27,7 +27,7 @@ export const Hero = () => {
       }}
     >
       <div className="container pt-40 pb-10 flex flex-col md:flex-row justify-center items-center md:gap-20">
-        <div className="mt-8 sm:mt-0">
+        <div className="mt-8 sm:mt-0 flex-1">
             <Typography variant="bodyMedium">
                 Saudi Arabia's #1 Moving Platform
             </Typography>
@@ -41,7 +41,7 @@ export const Hero = () => {
               onClick={() => setIsModalOpen(true)}
             />
         </div>
-        <div className="bg-primary/20 rounded-[6px] px-4 py-2 md:px-8 md:py-10 mb-8  mt-16 border border-primary w-[400px] md:w-full">
+        <div className="bg-primary/20 rounded-[6px] px-4 py-2 md:px-8 md:py-10 mb-8  mt-16 border border-primary w-full flex-1">
          <Typography variant="bodyMedium">
                 Compare guaranteed moving quotes from the best moving companies.
             </Typography>
