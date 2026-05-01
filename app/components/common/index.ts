@@ -9,3 +9,4 @@ export * from './Form/Textfield';
 export * from './Form/TextareaField';
 export * from './Faqs';
 export * from './Modal';
+export * from './Hero';

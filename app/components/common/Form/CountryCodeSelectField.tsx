@@ -4,6 +4,11 @@ import React, { useMemo } from "react";
 import Select, { components, SingleValueProps, OptionProps, DropdownIndicatorProps } from "react-select";
 import { Country } from "country-state-city";
 import Image from "next/image";
+import { clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+type CountryCodeSelectVariant = "outline" | "underlined";
+type LabelVariant = "default" | "bold" | "primary";
 
 interface CountryCodeOption {
   value: string;    // isoCode e.g. "US"
@@ -15,6 +20,7 @@ interface CountryCodeOption {
 
 interface CountryCodeSelectFieldProps {
   label?: string;
+  labelVariant?: LabelVariant;
   placeholder?: string;
   value?: string;   // isoCode e.g. "SA"
   onChange?: (phonecode: string, isoCode: string) => void;
@@ -23,8 +29,14 @@ interface CountryCodeSelectFieldProps {
   required?: boolean;
   isDisabled?: boolean;
   defaultCountry?: string; // isoCode, defaults to "SA"
-  noBorder?: boolean;
+  variant?: CountryCodeSelectVariant;
 }
+
+const labelStyles: Record<LabelVariant, string> = {
+  default: "text-primary",
+  bold: "text-navy font-bold",
+  primary: "text-primary-light-100",
+};
 
 const CustomOption = (props: OptionProps<CountryCodeOption>) => {
   const { data } = props;
@@ -69,6 +81,7 @@ const CustomDropdownIndicator = (props: DropdownIndicatorProps<CountryCodeOption
 
 export const CountryCodeSelectField: React.FC<CountryCodeSelectFieldProps> = ({
   label,
+  labelVariant = "default",
   placeholder = "+966",
   value,
   onChange,
@@ -77,7 +90,7 @@ export const CountryCodeSelectField: React.FC<CountryCodeSelectFieldProps> = ({
   required = false,
   isDisabled = false,
   defaultCountry = "SA",
-  noBorder = false,
+  variant = "outline",
 }) => {
   const options: CountryCodeOption[] = useMemo(() => {
     return Country.getAllCountries().map((country) => ({
@@ -106,9 +119,9 @@ export const CountryCodeSelectField: React.FC<CountryCodeSelectFieldProps> = ({
   }, [value, defaultCountry, options]);
 
   return (
-    <div className={`flex flex-col gap-y-1 w-full ${className || ""}`}>
+    <div className={twMerge("flex flex-col gap-y-1 w-full", className)}>
       {label && (
-        <label className="text-[13px] font-regular text-start text-primary">
+        <label className={clsx("text-[13px] text-start", labelStyles[labelVariant])}>
           {label}
         </label>
       )}
@@ -131,15 +144,17 @@ export const CountryCodeSelectField: React.FC<CountryCodeSelectFieldProps> = ({
         }}
         classNames={{
           control: ({ isFocused }) =>
-            `!min-h-[44px] !bg-white !px-4 !cursor-pointer ${
-              noBorder ? "!border-none !rounded-none" : "!border !rounded-[6px]"
-            } ${
-              isFocused && !noBorder
-                ? "!border-primary !shadow-none"
-                : error
-                ? "!border-red-500"
-                : !noBorder ? "!border-primary-light-100" : ""
-            }`,
+            clsx(
+              "!min-h-[44px] !px-4 !cursor-pointer !transition-all !duration-300",
+              {
+                "!bg-white !border !rounded-[6px]": variant === "outline",
+                "!bg-[#ECECED] !border !border-white !rounded-[6px]": variant === "underlined",
+                "!bg-[#C8D5D9]": isFocused && variant === "underlined",
+                "!border-red-500": error,
+                "!border-primary-light-100": !error && !isFocused && variant === "outline",
+                "!border-primary": isFocused && !error,
+              }
+            ),
           placeholder: () => "!text-gray !text-sm",
           singleValue: () => "!text-gray-900 !text-sm",
           menu: () => "!bg-white !border !border-black/10 !shadow-lg !z-50",
