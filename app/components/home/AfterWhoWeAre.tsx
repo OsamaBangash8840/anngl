@@ -1,3 +1,6 @@
+import Image from "next/image"
+import { Typography } from "../common"
+
 export const AfterWhoWeAre = () => {
     return (
         <div style={{
@@ -6,7 +9,12 @@ export const AfterWhoWeAre = () => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }} className="w-full h-[500px]">
-            <p className="text-white"></p>
+       <div className="flex items-center justify-center">
+        <Typography variant="hDisplay" className="flex items-center justify-center pt-[220px]" >Why Choose <Image src="/images/logoPrimary.svg" alt="logo" width={173} height={56} /> ?</Typography>
+       </div>
+       <div className="flex items-center justify-center mt-3">
+        <Typography variant="bodySmall">We’ll make this whole moving thing easy for you!</Typography>
+       </div>
         </div>
     )
 }

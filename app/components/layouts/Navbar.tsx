@@ -1,12 +1,13 @@
 "use client";
 
-import Link from "next/link";
+import { Link, usePathname } from "@/routing";
 import Image from "next/image";
 import { Fragment, useState } from "react";
-import { MdArrowOutward, MdMenu, MdClose } from "react-icons/md";
-import { usePathname } from "next/navigation";
+import { MdMenu, MdClose } from "react-icons/md";
 import { routes } from "@/app/base/utils/constants";
 import { Button, Typography } from "../common";
+import { useTranslations } from "next-intl";
+import { LanguageSwitcher } from "../common/LanguageSwitcher";
 import {
   Menu,
   MenuButton,
@@ -15,29 +16,30 @@ import {
   Transition,
 } from '@headlessui/react';
 
-const navItems = [
-  {
-    name: "Home",
-    path: routes.home,
-  },
-  {
-    name: "About",
-    path: routes.aboutUs,
-  },
-  {
-    name: "Services",
-    path: routes.services,
-  },
-  {
-    name: "Contact",
-    path: routes.contactUs,
-  },
-];
-
 export const Navbar = () => {
+  const t = useTranslations('common.navbar');
   const pathname = usePathname();
   const [isLoggedIn, setIsLoggedIn] = useState(false) 
   const isActive = (menuPath: string): boolean => menuPath === pathname;
+
+  const navItems = [
+    {
+      name: t("home"),
+      path: routes.home,
+    },
+    {
+      name: t("about"),
+      path: routes.aboutUs,
+    },
+    {
+      name: t("services"),
+      path: routes.services,
+    },
+    {
+      name: t("contact"),
+      path: routes.contactUs,
+    },
+  ];
 
   return (
     <nav className="bg-navy py-4 z-50 relative">
@@ -55,10 +57,12 @@ export const Navbar = () => {
 
         {/* Desktop & Mobile Toggle */}
         <div className="flex items-center gap-5 md:gap-10">
+          <LanguageSwitcher />
+
           {!isLoggedIn ? (
             <div className="hidden sm:block" >
-              <Link href="login">
-                <Button title="Login" variant="default" />
+              <Link href={routes.login}>
+                <Button title={t("login")} variant="default" />
               </Link>
             </div>
           ) : (
@@ -116,29 +120,6 @@ export const Navbar = () => {
                           )}
                         </MenuItem>
                       ))}
-                      
-                      {/* <div className="pt-4 mt-2 border-t border-gray-100 space-y-3">
-                        <MenuItem>
-                          <Link href={routes.login} className="block">
-                            <Button
-                              title="Login"
-                              variant="outline"
-                              icon={<MdArrowOutward />}
-                              className="w-full !h-[40px]"
-                            />
-                          </Link>
-                        </MenuItem>
-                        <MenuItem>
-                          <Link href={routes.signup} className="block">
-                            <Button
-                              title="Signup"
-                              variant="black"
-                              icon={<MdArrowOutward />}
-                              className="w-full !h-[40px]"
-                            />
-                          </Link>
-                        </MenuItem>
-                      </div> */}
                     </div>
                   </MenuItems>
                 </Transition>

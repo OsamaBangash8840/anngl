@@ -10,12 +10,7 @@ export const WhoWeAre = () => {
                         <Typography variant="hDisplay" className="mt-4 ">Moving made Simple, across Saudi Arabia</Typography>
                     </div>
                 </div>
-                <div className="flex flex-col justify-center items-end p-12 md:p-24" style={{
-                    backgroundImage: "url(/images/aboutUsWoWeAre.svg)",
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                }}>
+                <div className="flex flex-col justify-center items-end p-12 md:p-24 bg-gray">
                     <Image
                         src="/images/aboutUsWoWeAreIcon.svg"
                         alt="About Us"

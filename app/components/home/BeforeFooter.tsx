@@ -4,30 +4,24 @@ import { IoIosArrowForward } from "react-icons/io";
 
 export const BeforeFooter = () => {
     return (
-    <section style={{
-        backgroundImage: "url(/images/beforeFooterBg.svg)",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }} className="w-full py-12 mt-28 ">
-            <div className="container flex flex-col md:flex-row items-center justify-between gap-2 md:gap-12 ">
-                <div className=" flex-1">
-                    <Typography variant="hDisplay" className="relative inline-block after:content-[''] after:absolute after:-bottom-1 after:right-0 after:w-16 after:h-[2px] after:bg-primary ">
-                        Ready To Make Your Move?
-                    </Typography>
-                    <Typography variant="h2" className="mt-6" >Reinforce the ease & benefits of using the platform</Typography>
-                     <Button title="Get Price & Compare Movers" variant="white" className="mt-16 !px-14" icon={<IoIosArrowForward  color="navy"/>}/>
-                </div>
-                <div className="flex-1 -mt-12 md:-mt-68 z-10">
-                <Image
-                    src="/images/crates.svg"
-                    alt="Before Footer"
-                    width={600}
-                    height={600}
-                    className="w-[600px] scale-125"
-                />
-                </div>
-            </div>
-        </section>
+     <div style={{
+           backgroundImage: "url(/images/ready-sec.gif)",
+           backgroundPosition: "center",
+           backgroundSize: "cover",
+           backgroundRepeat: "no-repeat",
+         }} className="w-full h-[400px]">
+          <div className="flex items-center justify-center">
+           <Typography variant="hDisplay" className="flex items-center justify-center pt-[120px]" >Ready To Make Your Move?</Typography>
+          </div>
+          <div className="flex items-center justify-center mt-3">
+           <Typography variant="h3">Reinforce the ease & benefits of using the platform</Typography>
+          </div>
+            <Button
+                      title="Get Price & Compare Movers"
+                      variant="white"
+                      className="!px-14 mt-6 mx-auto !bg-teal !text-white"
+                      icon={<IoIosArrowForward  color="white"/>}
+                    />
+     </div>
     );
 };

@@ -39,7 +39,7 @@ const testimonials = [
 ];
 
 const TestimonialCard = ({ item }: { item: typeof testimonials[0] }) => (
-    <div className="px-2 md:px-4 outline-none">
+    <div className="px-2 md:px-4 outline-none bg-[#ECECED]">
         <div className="border w-full border-primary/20 bg-white relative rounded-2xl p-5 md:p-6 mt-16 md:mt-12 shadow-[0px_3px_7.5px_2px_rgba(0,0,0,0.10)] mb-10">
             <div className="flex -mt-20 md:-mt-18 relative z-20">
                 <div className="rounded-full mx-auto p-1 bg-white">

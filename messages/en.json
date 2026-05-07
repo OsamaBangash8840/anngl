@@ -1,0 +1,63 @@
+{
+    "common": {
+        "appTitle": "AnnGL",
+        "welcome": "Welcome",
+        "selectCity": "Select City",
+        "herosectionH1": "Find New & Used Cars in Pakistan.",
+        "forums": "Forums",
+        "login": "Login",
+        "signup": "Sign Up",
+        "navbar": {
+            "home": "Home",
+            "about": "About",
+            "services": "Services",
+            "contact": "Contact",
+            "login": "Login"
+        },
+        "hero": {
+            "platform": "Saudi Arabia's #1 Moving Platform",
+            "title": "Effortless moving services at your",
+            "titleAccent": "fingertips",
+            "comparePrices": "Compare Prices",
+            "description": "Compare guaranteed moving quotes from the best moving companies.",
+            "tabs": {
+                "furniture": "Furniture",
+                "goods": "Goods",
+                "refrigerator": "Refrigerator",
+                "largeItems": "Large Items"
+            },
+            "form": {
+                "movingFrom": "Moving From*",
+                "movingTo": "Moving To*",
+                "placeholder": "Address, City or Zip",
+                "propertyType": "Property Type",
+                "roomType": "Room Type",
+                "chooseOne": "Choose One",
+                "movingDate": "Moving Date",
+                "chooseDate": "Choose Date",
+                "findBestPrice": "Find Best Price"
+            }
+        },
+        "auth": {
+            "welcomeBack": "Welcome Back!",
+            "enterPhone": "Enter your phone number to login",
+            "phonePlaceholder": "Enter phone number",
+            "login": "Login",
+            "noAccount": "Didn’t have an account?",
+            "registerHere": "Register here"
+        },
+        "home": {
+            "whyChoose": "Why Choose",
+            "easyMoving": "We’ll make this whole moving thing easy for you!",
+            "readyMove": "Ready To Make Your Move?",
+            "easeBenefits": "Reinforce the ease & benefits of using the platform",
+            "getPrice": "Get Price & Compare Movers",
+            "ourNetwork": "Our Network",
+            "coverArea": "Cover a large area to all Corners of the world"
+        },
+        "footer": {
+            "connectTrusted": "Connect with trusted moving companies to make your move hassle-free. Enjoy peace of mind with verified professionals handling your belongings.",
+            "copyright": "2026 by ANNGL."
+        }
+    }
+}

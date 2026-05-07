@@ -2,11 +2,12 @@
 
 import Image from "next/image"
 import { Button, CountryCodeSelectField, Typography } from "../common"
-import Link from "next/link"
+import { Link, useRouter } from "@/routing"
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 export const Login = () => {
+    const t = useTranslations('common.auth');
     const [phone, setPhone] = useState("");
     const [countryCode, setCountryCode] = useState("SA");
     const router = useRouter();
@@ -45,8 +46,8 @@ export const Login = () => {
                     onClick={() => router.push('/')}
                 />
                 <div className="max-w-[600px]">
-                    <Typography variant="h2" className="!text-navy mt-2">Welcome Back!</Typography>
-                    <Typography className="!text-navy mt-3">Enter your phone number to login</Typography>
+                    <Typography variant="h2" className="!text-navy mt-2">{t('welcomeBack')}</Typography>
+                    <Typography className="!text-navy mt-3">{t('enterPhone')}</Typography>
                     
                     <div className="flex items-center mt-5 w-full border border-primary-light-100 rounded-[6px] bg-white overflow-hidden focus-within:border-primary">
                         <div className="w-[120px]">
@@ -59,22 +60,21 @@ export const Login = () => {
                         <div className="w-[1px] h-6 bg-gray-200"></div>
                         <input
                             type="tel"
-                            placeholder="Enter phone number"
+                            placeholder={t('phonePlaceholder')}
                             value={phone}
                             onChange={(e) => setPhone(e.target.value)}
                             onKeyDown={handleKeyDown}
                             className="flex-1 px-4 py-3 outline-none text-sm text-gray-900 placeholder:text-gray"
                         />
                     </div>
-                    <Button onClick={handleLogin} title="Login" variant="white" className=" !font-normal !w-full !text-[16px] mt-6 !bg-primary !text-white" />
+                    <Button onClick={handleLogin} title={t('login')} variant="white" className=" !font-normal !w-full !text-[16px] mt-6 !bg-primary !text-white" />
                     
 
                     <Typography className="!text-navy mt-8 text-center">
-                        Didn’t have an account? <span className="!text-primary font-medium"><Link href="/register">Register here</Link></span>
+                        {t('noAccount')} <span className="!text-primary font-medium"><Link href="/register">{t('registerHere')}</Link></span>
                     </Typography>
                 </div>
             </div>
         </div>
     )
 }
-

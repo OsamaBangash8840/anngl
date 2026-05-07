@@ -6,9 +6,47 @@ import { BsInstagram, BsTwitter } from "react-icons/bs";
 
 export const Footer = () => {
     return (
+    <div className="">
+    {/* Globe Sec */}
+<div className="w-full h-[375px] bg-primary relative  flex items-center">
+  
+  {/* Left decoration */}
+  <Image
+    src="/images/globeLeft.svg"
+    alt="line"
+    width={235}
+    height={122}
+    className="absolute left-[10%] 2xl:left-[20%] top-[64%] -translate-y-1/2 z-0"
+  />
+
+  {/* Right decoration */}
+  <Image
+    src="/images/globeRight.svg"
+    alt="line"
+    width={235}
+    height={122}
+    className="absolute right-[20.5%] 2xl:right-[27%] top-[53%] -translate-y-1/2 z-11"
+  />
+
+  {/* Text */}
+  <div className="relative z-20 ml-[27%] 2xl:ml-[33%] max-w-[520px]">
+    <Typography variant="hDisplay" className="leading-tight text-white ">
+      Cover a Large Area to All Corners of the <span className="font-homemade-apple !text-primary">world</span>
+    </Typography>
+  </div>
+
+  {/* Globe */}
+  <Image
+    src="/images/globe.gif"
+    alt="World Map"
+    width={500}
+    height={500}
+    className="absolute right-[18%] 2xl:right-[25%] top-1/2 -translate-y-1/2 h-[450px] -mt-10 w-auto object-contain z-10"
+  />
+</div>
         <footer className="bg-navy">
-            <div className="container flex flex-col md:flex-row justify-between md:items-center gap-12 my-12">
-                <div className="">
+            <div className="container flex flex-col md:flex-row justify-between md:items-center gap-12 mb-12">
+                <div className=" pt-12">
                     <Image
                         src="/images/footerLogo.svg"
                         alt="Footer"
@@ -52,5 +90,6 @@ export const Footer = () => {
                 <Typography variant="bodySmall">2026 by ANNGL. </Typography>
             </div>
         </footer>
+        </div>
     )
 }
