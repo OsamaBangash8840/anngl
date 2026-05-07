@@ -15,6 +15,7 @@ interface textFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   variant?: TextFieldVariant;
   error?: string;
   errorVariant?: ErrorVariant;
+  gradientBorder?: boolean;
 }
 
 const labelStyles: Record<LabelVariant, string> = {
@@ -45,6 +46,7 @@ export const TextField = ({
   error,
   errorVariant = "default",
   variant = "outline",
+  gradientBorder = false,
   ...rest
 }: textFieldProps): React.ReactElement => {
   const containerClasses = clsx(
@@ -53,7 +55,8 @@ export const TextField = ({
       "border bg-white rounded-[6px] px-4": variant === "outline",
       "border !border-white bg-[#ECECED] rounded-[6px] px-4 focus-within:bg-[#C8D5D9]": variant === "underlined",
       "border-red-500": error,
-      "border-primary-light-100 focus-within:border-primary": !error,
+      "border-primary-light-100 focus-within:border-primary": !error && !gradientBorder,
+      "border-2 border-transparent bg-gradient-to-r from-primary to-primary-light-400 bg-clip-border": gradientBorder,
     }
   );
 

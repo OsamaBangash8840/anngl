@@ -30,6 +30,7 @@ interface CountryCodeSelectFieldProps {
   isDisabled?: boolean;
   defaultCountry?: string; // isoCode, defaults to "SA"
   variant?: CountryCodeSelectVariant;
+  noBorder?: boolean;
 }
 
 const labelStyles: Record<LabelVariant, string> = {
@@ -91,6 +92,7 @@ export const CountryCodeSelectField: React.FC<CountryCodeSelectFieldProps> = ({
   isDisabled = false,
   defaultCountry = "SA",
   variant = "outline",
+  noBorder = false,
 }) => {
   const options: CountryCodeOption[] = useMemo(() => {
     return Country.getAllCountries().map((country) => ({
@@ -147,12 +149,13 @@ export const CountryCodeSelectField: React.FC<CountryCodeSelectFieldProps> = ({
             clsx(
               "!min-h-[44px] !px-4 !cursor-pointer !transition-all !duration-300",
               {
-                "!bg-white !border !rounded-[6px]": variant === "outline",
-                "!bg-[#ECECED] !border !border-white !rounded-[6px]": variant === "underlined",
-                "!bg-[#C8D5D9]": isFocused && variant === "underlined",
-                "!border-red-500": error,
-                "!border-primary-light-100": !error && !isFocused && variant === "outline",
-                "!border-primary": isFocused && !error,
+                "!bg-white !border !rounded-[6px]": variant === "outline" && !noBorder,
+                "!bg-[#ECECED] !border !border-white !rounded-[6px]": variant === "underlined" && !noBorder,
+                "!bg-[#C8D5D9]": isFocused && variant === "underlined" && !noBorder,
+                "!border-red-500": error && !noBorder,
+                "!border-primary-light-100": !error && !isFocused && variant === "outline" && !noBorder,
+                "!border-primary": isFocused && !error && !noBorder,
+                "!border-none !bg-transparent": noBorder,
               }
             ),
           placeholder: () => "!text-gray !text-sm",

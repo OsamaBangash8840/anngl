@@ -1,7 +1,7 @@
 import { getMessages, getTranslations } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import type { Locale } from '@/routing';
-import { Geist, Geist_Mono, Homemade_Apple, Inter } from "next/font/google";
+import { Homemade_Apple, Inter } from "next/font/google";
 import "@/app/styles/globals.css";
 
 
@@ -18,7 +18,7 @@ const inter = Inter({
 
 interface Props {
     children: React.ReactNode;
-    params: Promise<{ locale: Locale }>;
+    params: Promise<{ locale: string }>;
 }
 
 export default async function LocaleLayout({ children, params }: Props) {
