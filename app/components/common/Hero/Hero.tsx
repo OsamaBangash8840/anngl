@@ -3,9 +3,9 @@ import { Typography } from "../Typography";
 import { Button } from "../Button";
 
 interface HeroProps {
-  title: string;
-  heading: string;
-  description: string;
+  title?: string;
+  heading?: string;
+  description?: string;
   buttonTitle?: string;
   buttonIcon?: ReactNode;
   bgImage?: string;
@@ -23,13 +23,13 @@ export const Hero = ({
 }: HeroProps) => {
   return (
     <section
-      style={{
-        backgroundImage: `url(${bgImage})`,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
-      className={`w-full ${className}`}
+      // style={{
+      //   backgroundImage: `url(${bgImage})`,
+      //   backgroundPosition: "center",
+      //   backgroundSize: "cover",
+      //   backgroundRepeat: "no-repeat",
+      // }}
+      className={`w-full ${className} bg-primary`}
     >
       <div className="container flex flex-col items-center justify-center my-32">
         <Typography

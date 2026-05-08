@@ -10,3 +10,4 @@ export * from './Form/TextareaField';
 export * from './Faqs';
 export * from './Modal';
 export * from './Hero';
+export * from './ServiceCard';

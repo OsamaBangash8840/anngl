@@ -1,14 +1,22 @@
 import { IoIosArrowForward } from "react-icons/io"
-import { Hero } from "../common"
+import { Hero, Typography } from "../common"
 
 export const ContactHero = () => {
     return (
-        <Hero 
-            title="Contact Us"
-            heading="Get in Touch With ANNGL"
-            description="Have questions or need assistance? Our team is here to help!"
-            buttonTitle="Get Price & Compare Movers"
-            buttonIcon={<IoIosArrowForward color="navy"/>}
-        />
+        <>
+          <section
+              className={`w-full bg-primary`}
+            >
+              <div className="container flex flex-col items-center justify-center my-32">
+            
+                <Typography variant="hDisplay" className="mt-4 text-center md:text-left">
+                 Contact Us
+                </Typography>
+                <Typography className="text-center mt-3 max-w-[900px]">
+                  ave questions or need assistance? Our team is here to help!
+                </Typography>
+              </div>
+            </section>
+                    </>
     )
 }

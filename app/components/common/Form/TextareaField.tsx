@@ -1,9 +1,15 @@
 import React from "react";
+import { twMerge } from "tailwind-merge";
+import { clsx } from "clsx";
+
+type TextareaFieldVariant = "outline" | "contact";
+type LabelVariant = "default" | "bold" | "primary";
 
 interface TextareaFieldProps {
   icon?: React.ReactNode;
   placeholder?: string;
   label?: string;
+  labelVariant?: LabelVariant;
   className?: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
@@ -12,36 +18,51 @@ interface TextareaFieldProps {
   maxLength?: number;
   rows?: number;
   error?: string;
+  variant?: TextareaFieldVariant;
 }
+
+const labelStyles: Record<LabelVariant, string> = {
+  default: "text-primary",
+  bold: "text-navy",
+  primary: "text-primary-light-100",
+};
 
 export const TextareaField = ({
   icon,
   placeholder,
   className,
   label,
+  labelVariant = "default",
   value,
   onChange,
   required,
   disabled,
   rows = 4,
   error,
+  variant = "outline",
   ...rest
 }: TextareaFieldProps): React.ReactElement => {
+  const containerClasses = clsx(
+    "w-full flex items-start gap-x-2 px-4 py-3 transition-all duration-300",
+    {
+      "border bg-white rounded-[6px]": variant === "outline",
+      "!border-b !border-navy bg-[#ECECED] ": variant === "contact",
+      "border-red-500": error,
+      "border-primary-light-100": !error && variant === "outline",
+    }
+  );
+
   return (
     <div className="flex flex-col gap-y-1 w-full">
       {label && (
-        <label className="text-[13px] font-regular text-start text-primary">
+        <label className={clsx("text-[13px] font-regular text-start mt-3", labelStyles[labelVariant])}>
           {label}
         </label>
       )}
 
-      <div
-        className={`w-full flex items-start gap-x-2 border bg-white rounded-[6px] px-4 py-3 ${className || ""} ${
-          error ? "border-red-500" : "border-primary-light-100"
-        }`}
-      >
+      <div className={twMerge(containerClasses, className)}>
         {icon && (
-          <span className="text-black-400  text-xl mt-0.5">
+          <span className="text-black-400 text-xl mt-0.5">
             {icon}
           </span>
         )}

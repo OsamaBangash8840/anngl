@@ -2,7 +2,7 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 import { clsx } from "clsx";
 
-type TextFieldVariant = "outline" | "underlined";
+type TextFieldVariant = "outline" | "underlined" | "contact";
 type LabelVariant = "default" | "bold" | "primary";
 type IconVariant = "default" | "primary" | "muted";
 type ErrorVariant = "default" | "bold";
@@ -20,7 +20,7 @@ interface textFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 const labelStyles: Record<LabelVariant, string> = {
   default: "text-primary",
-  bold: "text-navy",
+  bold: "text-navy mt-4",
   primary: "text-primary-light-100",
 };
 
@@ -54,6 +54,7 @@ export const TextField = ({
     {
       "border bg-white rounded-[6px] px-4": variant === "outline",
       "border !border-white bg-[#ECECED] rounded-[6px] px-4 focus-within:bg-[#C8D5D9]": variant === "underlined",
+      "!border-b !border-navy bg-[#ECECED] px-4 ": variant === "contact",
       "border-red-500": error,
       "border-primary-light-100 focus-within:border-primary": !error && !gradientBorder,
       "border-2 border-transparent bg-gradient-to-r from-primary to-primary-light-400 bg-clip-border": gradientBorder,

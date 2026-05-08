@@ -1,90 +1,60 @@
-import Image from "next/image"
-import { Typography } from "../common"
-
+import { ServiceCard, Typography } from "../common"
 export const ServicesSec = () => {
     return (
-        <section className="container my-10 grid md:grid-cols-2 gap-4">
-                <div 
-                style={{
-                    backgroundImage: "url(/images/localSupplies.svg)",
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                }}
-                className="relative rounded-[6px] h-[280px]"
-                >
-                    <div className=" absolute flex  items-center bottom-4 gap-4 left-8 ">
-                        <Image
-                        src="/images/servicesArrow.svg"
-                        alt="Local Supplies"
-                        width={12}
-                        height={12}
-                        className="w-[12px] h-[12px]"
-                        />
-                        <Typography variant="h2" className="!font-bold">Quality Local Moving Supplies</Typography>
-                    </div>
-                </div>
-                <div 
-                style={{
-                    backgroundImage: "url(/images/movingSupplies.svg)",
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                }}
-                className="relative rounded-[6px] h-[280px]"
-                >
-                    <div className=" absolute flex  items-center bottom-4 gap-4 left-8 ">
-                        <Image
-                        src="/images/servicesArrow.svg"
-                        alt="Local Supplies"
-                        width={12}
-                        height={12}
-                        className="w-[12px] h-[12px]"
-                        />
-                        <Typography variant="h2" className="!font-bold">Reliable Long Distance Moving Supplies</Typography>
-                    </div>
-                </div>  
-                  <div 
-                style={{
-                    backgroundImage: "url(/images/secureSolutions.svg)",
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                }}
-                className="relative rounded-[6px] h-[280px]"
-                >
-                    <div className=" absolute flex  items-center bottom-4 gap-4 left-8 ">
-                        <Image
-                        src="/images/servicesArrow.svg"
-                        alt="Local Supplies"
-                        width={12}
-                        height={12}
-                        className="w-[12px] h-[12px]"
-                        />
-                        <Typography variant="h2" className="!font-bold">Secure Storage Solutions</Typography>
-                    </div>
-                </div>
-                <div 
-                style={{
-                    backgroundImage: "url(/images/packagingSolutions.svg)",
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                }}
-                className="relative rounded-[6px] h-[280px]"
-                >
-                    <div className=" absolute flex  items-center bottom-4 gap-4 left-8 ">
-                        <Image
-                        src="/images/servicesArrow.svg"
-                        alt="Local Supplies"
-                        width={12}
-                        height={12}
-                        className="w-[12px] h-[12px]"
-                        />
-                        <Typography variant="h2" className="!font-bold">Efficient Packing & Unpacking Essentials</Typography>
-                    </div>
-                </div>
-            
+        <>
+        <section className="grid md:grid-cols-5"
+        style={{
+        backgroundImage: "url(/images/ourServicesBg.svg)",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+        >
+                <ServiceCard 
+                  icon="/images/transportationIcon.svg"
+                  title="International Transportation"
+                  description="Move your belongings from the Kingdom to Malaysia, the UAE, or any country within the Kingdom, with the most suitable carrier for your needs"
+                  backgroundColor="#ADAEB1/70"
+                />  
+                  <ServiceCard 
+                  icon="/images/boxIcon.svg"
+                  title="Local Transportation"
+                  description="Move your belongings within your city or from one city to another within the Kingdom with ease, while choosing the most suitable carrier through Move"
+                  backgroundColor="#DA6635/70"
+                  textColor="white"
+                />   
+                 <ServiceCard 
+                  icon="/images/transportationIcon.svg"
+                  title="Car Transport"
+                  description="Move your car between cities within the Kingdom at the best prices with movers specialized in Annql."
+                  backgroundColor="#FFFFFF/70"
+                />  
+                  <ServiceCard 
+                  icon="/images/carmeraIcon.svg"
+                  title="Device Transmission"
+                  description="Move your electronic and electrical appliances with confidence with competent carriers and technicians through Mov"
+                  backgroundColor="#204A60/70"
+                   textColor="white"
+                />  
+                  <ServiceCard 
+                  icon="/images/furnitureIcon.svg"
+                  title="Moving Furniture"
+                  description="Enjoy a safe and seamless moving experience of moving your furniture to your new location with Move authorized movers"
+                  backgroundColor="#112A35/70"
+                   textColor="white"
+                />
+  
         </section>
+        <section className="flex justify-center items-center gap-24 my-16">
+            <div className="bg-[#ADAEB1] w-[300px] ">
+                <Typography variant="bodyLarge" className="!text-navy text-center px-8 pt-9">Fast, Organized & Secure services</Typography>
+                <Typography variant="bodySmall" className="!text-navy text-center px-8  my-5">ANNGL is committed to providing flexibility and speed through a smart and integrated system that moves your belongings via fast-delivery moving companies</Typography>
+            </div>
+            <div className="bg-[#ADAEB1] w-[300px] ">
+                <Typography variant="bodyLarge" className="!text-navy text-center px-8 pt-9">Services Wide</Typography>
+                <Typography variant="bodySmall" className="!text-navy text-center px-8  my-5">ANNGL provides comprehensive services in cooperation with reliable moving companies that ensure you an easy, comfortable and safe transportation of your belongings</Typography>
+            </div>
+        </section>
+            </>
     )
 }

@@ -53,7 +53,12 @@
             "easeBenefits": "Reinforce the ease & benefits of using the platform",
             "getPrice": "Get Price & Compare Movers",
             "ourNetwork": "Our Network",
-            "coverArea": "Cover a large area to all Corners of the world"
+            "coverArea": "Cover a large area to all Corners of the world",
+            "locations": {
+                "malaysia": "Malaysia",
+                "saudiArabia": "Saudi Arabia",
+                "unitedStates": "United States"
+            }
         },
         "footer": {
             "connectTrusted": "Connect with trusted moving companies to make your move hassle-free. Enjoy peace of mind with verified professionals handling your belongings.",
