@@ -1,5 +1,4 @@
 import { Hero } from "@/app/components/common";
-import { OurNetwork } from "@/app/components/home";
 import { JoinUsForm, WhyChooseUs } from "@/app/components/workWithUs";
 import { IoIosArrowForward } from "react-icons/io";
 
@@ -15,7 +14,6 @@ export default function WorkWithUsPage() {
                 />
                 <WhyChooseUs />
                 <JoinUsForm />
-                <OurNetwork/>
                 
         </>
     );

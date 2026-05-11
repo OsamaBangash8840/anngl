@@ -14,26 +14,49 @@ interface TabItem {
 interface TabsProps {
   items: TabItem[];
   className?: string;
+  variant?: "default" | "underline";
 }
 
-export const Tabs = ({ items, className }: TabsProps): React.ReactElement => {
+export const Tabs = ({
+  items,
+  className,
+  variant = "default",
+}: TabsProps): React.ReactElement => {
+  const variantStyles = {
+    default: {
+      list: "gap-2 sm:gap-3",
+      tab: (selected: boolean) =>
+        twMerge(
+          "py-[8px] px-4 md:py-4 md:px-8 text-[14px] sm:text-sm font-regular flex flex-col justify-center font-sf-pro items-center gap-y-2 leading-5 border transition-all duration-300 outline-none cursor-pointer rounded-[6px] flex-1 overflow-hidden",
+          selected
+            ? "bg-primary text-white border-primary shadow-lg scale-105 z-10"
+            : "border-white text-white hover:bg-white/10"
+        ),
+    },
+    underline: {
+      list: "isActive:bg-[#63818D] rounded-sm bg-white isActive:text-white text-[#112A35] border border-[#C8D5D9]",
+      tab: (selected: boolean) =>
+        twMerge(
+          "pb-4 text-sm font-medium transition-all duration-300 outline-none cursor-pointer relative rounded-sm",
+          selected
+            ? "text-white bg-[#63818D] "
+            : "text-[#112A35] hover:text-[#112A35]"
+        ),
+    },
+  };
+
+  const currentVariant = variantStyles[variant];
+
   return (
     <div className={twMerge("w-full", className)}>
       <TabGroup>
-        <TabList className="flex w-full gap-2 sm:gap-3">
+        <TabList className={twMerge("flex w-full", currentVariant.list)}>
           {items.map(({ title, icon }) => (
             <Tab
               key={title}
-              className={({ selected }) =>
-                twMerge(
-                  " py-[8px] px-4 md:py-4 md:px-8 text-[14px] sm:text-sm font-regular flex flex-col justify-center font-sf-pro items-center gap-y-2 leading-5 border transition-all duration-300 outline-none cursor-pointer rounded-[6px] flex-1 overflow-hidden",
-                  selected
-                    ? "bg-primary text-white border-primary shadow-lg scale-105 z-10"
-                    : "border-white text-white hover:bg-white/10"
-                )
-              }
+              className={({ selected }) => currentVariant.tab(selected)}
             >
-              {icon && <span className="mx-auto">{icon}</span>}
+              {icon && <span className={variant === "underline" ? "" : "mx-auto"}>{icon}</span>}
               {title}
             </Tab>
           ))}
@@ -49,3 +72,4 @@ export const Tabs = ({ items, className }: TabsProps): React.ReactElement => {
     </div>
   );
 };
+
