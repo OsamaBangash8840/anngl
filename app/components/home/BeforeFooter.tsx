@@ -11,10 +11,10 @@ export const BeforeFooter = () => {
            backgroundRepeat: "no-repeat",
          }} className="w-full h-[400px]">
           <div className="flex items-center justify-center">
-           <Typography variant="hDisplay" className="flex items-center justify-center pt-[120px]" >Ready To Make Your Move?</Typography>
+           <Typography variant="hDisplay" className="flex items-center justify-center pt-[120px] text-center" >Ready To Make Your Move?</Typography>
           </div>
           <div className="flex items-center justify-center mt-3">
-           <Typography variant="h3">Reinforce the ease & benefits of using the platform</Typography>
+           <Typography variant="h3" className="text-center">Reinforce the ease & benefits of using the platform</Typography>
           </div>
             <Button
                       title="Get Price & Compare Movers"

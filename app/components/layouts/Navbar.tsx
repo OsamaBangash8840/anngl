@@ -36,6 +36,14 @@ export const Navbar = () => {
       path: routes.services,
     },
     {
+      name: "ServiceBenefits",
+      path: routes.serviceBenefits,
+    },
+    {
+      name: "WorkWithUs",
+      path: routes.workWithUs,
+    },
+    {
       name: t("contact"),
       path: routes.contactUs,
     },

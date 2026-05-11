@@ -3,7 +3,7 @@ import { Button, Typography } from "../common"
 
 export const WorkWithUsBenefits = () => {
     return (
-        <section className="grid grid-cols-2">
+        <section className="grid grid-cols-1 md:grid-cols-2">
             <div className=" bg-navy  py-32  ">
                 <Typography className="text-center">Would you like to work with us as a carrier</Typography>
                 <Button

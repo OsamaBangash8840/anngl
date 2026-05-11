@@ -8,7 +8,7 @@ export const Form = () => {
         <Image src={'/images/contactAnnglLine.svg'} alt="background" width={900} height={34} className="mx-auto"/>
         <section className="container flex flex-col items-center gap-8 md:gap-12 mt-12 mb-16">
             <div className=" w-full md:w-[60%] mx-auto">
-                <Typography variant="h2" className="!text-navy text-center"> Our Team is here to help!</Typography>
+                <Typography variant="h2" className="!text-navy text-center"> Our team is here to serve you!</Typography>
                 <form className="mt-6">
                     <div className="flex flex-col sm:flex-row items-center gap-3">
                         <TextField variant="contact" label="First Name *" labelVariant="bold" className="w-full" icon={<Image src={'/images/profileIcon.svg'} alt="Profile Icon" width={24} height={24}/>}/>
@@ -39,7 +39,7 @@ export const Form = () => {
             </div>  
 
         </section>
-            <div className="w-full md:w-[60%] mx-auto flex items-center gap-32 my-16 justify-center">
+            <div className="w-full md:w-[60%] mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-32 md:my-16 my-8 justify-center">
                   <div className="flex flex-col gap-4  items-center">
                                 <Image src="/images/callIcon.svg" alt="call" width={50} height={50}/>
                                 <div>

@@ -8,7 +8,7 @@ export const Footer = () => {
     return (
     <div className="">
     {/* Globe Sec */}
-<div className="w-full h-[375px] bg-primary relative  flex items-center">
+<div className="w-full md:h-[375px] h-[200px] bg-primary relative  flex items-center" dir="ltr">
   
   {/* Left decoration */}
   <Image
@@ -16,7 +16,7 @@ export const Footer = () => {
     alt="line"
     width={235}
     height={122}
-    className="absolute left-[10%] 2xl:left-[20%] top-[64%] -translate-y-1/2 z-0"
+    className="absolute left-[0%]  md:left-[6%] 2xl:left-[20%] md:top-[64%] top-[48%] -translate-y-1/2 z-0 w-[80px] h-[50px]  md:w-[235px] md:h-[122px]"
   />
 
   {/* Right decoration */}
@@ -25,12 +25,12 @@ export const Footer = () => {
     alt="line"
     width={235}
     height={122}
-    className="absolute right-[20.5%] 2xl:right-[27%] top-[53%] -translate-y-1/2 z-11"
+    className="absolute right-[2%] md:right-[20.5%] 2xl:right-[27%] md:top-[53%] top-[43%] w-[80px] h-[50px] md:w-[235px] md:h-[122px] -translate-y-1/2 z-11"
   />
 
   {/* Text */}
-  <div className="relative z-20 ml-[27%] 2xl:ml-[33%] max-w-[520px]">
-    <Typography variant="hDisplay" className="leading-tight text-white ">
+  <div className="relative z-20 ml-[20%] md:ml-[23%] 2xl:ml-[33%] max-w-[275px]  md:max-w-[620px]">
+    <Typography variant="hDisplay" className="leading-tight !text-[25px] md:!text-[48px] -mt-12 md:mt-0  text-white text-center md:text-start ">
       Cover a Large Area to All Corners of the <span className="font-homemade-apple !text-primary">world</span>
     </Typography>
   </div>
@@ -41,7 +41,7 @@ export const Footer = () => {
     alt="World Map"
     width={500}
     height={500}
-    className="absolute right-[18%] 2xl:right-[25%] top-1/2 -translate-y-1/2 h-[450px] -mt-10 w-auto object-contain z-10"
+    className="absolute right-[0%] md:right-[18%] 2xl:right-[25%] top-1/2 -translate-y-1/2 h-[450px] -mt-10 w-auto object-contain z-10"
   />
 </div>
         <footer className="bg-navy">

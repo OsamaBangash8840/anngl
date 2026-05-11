@@ -2,9 +2,9 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 import { clsx } from "clsx";
 
-type TextFieldVariant = "outline" | "underlined" | "contact";
+type TextFieldVariant = "outline" | "underlined" | "contact" | "search";
 type LabelVariant = "default" | "bold" | "primary";
-type IconVariant = "default" | "primary" | "muted";
+type IconVariant = "default" | "primary" | "muted" | "search";
 type ErrorVariant = "default" | "bold";
 
 interface textFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -28,6 +28,7 @@ const iconStyles: Record<IconVariant, string> = {
   default: "text-black-400",
   primary: "text-primary",
   muted: "text-gray-400",
+  search: "text-[#ADAEB1]",
 };
 
 const errorStyles: Record<ErrorVariant, string> = {
@@ -55,6 +56,7 @@ export const TextField = ({
       "border bg-white rounded-[6px] px-4": variant === "outline",
       "border !border-white bg-[#ECECED] rounded-[6px] px-4 focus-within:bg-[#C8D5D9]": variant === "underlined",
       "!border-b !border-navy bg-[#ECECED] px-4 ": variant === "contact",
+      "border border-primary-light-100 bg-white !text-[#ADAEB1] rounded-[6px] px-4 focus-within:bg-[#C8D5D9]": variant === "search",
       "border-red-500": error,
       "border-primary-light-100 focus-within:border-primary": !error && !gradientBorder,
       "border-2 border-transparent bg-gradient-to-r from-primary to-primary-light-400 bg-clip-border": gradientBorder,
@@ -73,7 +75,10 @@ export const TextField = ({
         <input
           type={type}
           placeholder={placeholder}
-          className="placeholder:text-gray mt-1 text-sm flex-1 outline-none bg-transparent text-primary font-semibold"
+          className={twMerge(
+            "placeholder:text-gray mt-1 text-sm flex-1 outline-none bg-transparent text-primary",
+            variant === "search" ? "font-normal" : "font-semibold"
+          )}
           {...rest}
         />
       </div>

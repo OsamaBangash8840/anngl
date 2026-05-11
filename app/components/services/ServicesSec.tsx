@@ -45,7 +45,7 @@ export const ServicesSec = () => {
                 />
   
         </section>
-        <section className="flex justify-center items-center gap-24 my-16">
+        <section className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24 my-16">
             <div className="bg-[#ADAEB1] w-[300px] ">
                 <Typography variant="bodyLarge" className="!text-navy text-center px-8 pt-9">Fast, Organized & Secure services</Typography>
                 <Typography variant="bodySmall" className="!text-navy text-center px-8  my-5">ANNGL is committed to providing flexibility and speed through a smart and integrated system that moves your belongings via fast-delivery moving companies</Typography>

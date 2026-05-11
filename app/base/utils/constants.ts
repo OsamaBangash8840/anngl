@@ -1,15 +1,17 @@
 export const routes = {
   home: "/",
-  login: "/authentication?mode=login",
-  signup: "/authentication?mode=signup",
-  forgotPassword: "/authentication/forgot-password",
+  login: "/login",
+  signup: "/register",
+  forgotPassword: "/forgot-password",
   aboutUs: "/about-us",
   contactUs: "/contact-us",
   services: "/services",
   blogs: "/blogs",
   chat: "/chat",
-  metaTrader5Platform: "/services/metaTrader-5-platform",
-
+  booking: "/booking",
+  workWithUs: "/work-with-us",
+  serviceBenefits: "/service-benefit",
+  
   // customer
   settings: "/customer/settings",
   overview: "/customer/overview",
