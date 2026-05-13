@@ -76,7 +76,7 @@ export const TextField = ({
           type={type}
           placeholder={placeholder}
           className={twMerge(
-            "placeholder:text-gray mt-1 text-sm flex-1 outline-none bg-transparent text-primary",
+            "placeholder:text-gray placeholder:font-light mt-1 text-sm flex-1 outline-none bg-transparent text-primary",
             variant === "search" ? "font-normal" : "font-semibold"
           )}
           {...rest}

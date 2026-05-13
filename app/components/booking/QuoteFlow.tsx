@@ -6,6 +6,8 @@ import { IoChevronForward } from "react-icons/io5";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { MyInventory } from "./MyInventory";
+import { UploadVideo } from "./UploadVideo";
+import { Location } from "./Location";
 
 interface Step {
   id: number;
@@ -77,13 +79,13 @@ export const QuoteFlow = () => {
       <div className=" ">
         {currentStep === 1 && (
           <div className="animate-fadeIn">
-            <MyInventory />
+            {/* <MyInventory /> */}
+            <UploadVideo/>
           </div>
         )}
         {currentStep === 2 && (
           <div className="animate-fadeIn">
-            <Typography variant="h3" className="mb-4">My Location</Typography>
-            <Typography>Content for Location step goes here...</Typography>
+           <Location/>
           </div>
         )}
         {currentStep === 3 && (

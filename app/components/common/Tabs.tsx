@@ -34,13 +34,13 @@ export const Tabs = ({
         ),
     },
     underline: {
-      list: "isActive:bg-[#63818D] rounded-sm bg-white isActive:text-white text-[#112A35] border border-[#C8D5D9]",
+      list: "flex gap-2 p-1 isActive:bg-[#63818D] rounded-sm  isActive:text-white text-[#112A35]",
       tab: (selected: boolean) =>
         twMerge(
-          "pb-4 text-sm font-medium transition-all duration-300 outline-none cursor-pointer relative rounded-sm",
+          "flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium transition-all duration-300 outline-none cursor-pointer relative rounded-sm flex-1",
           selected
             ? "text-white bg-[#63818D] "
-            : "text-[#112A35] hover:text-[#112A35]"
+            : "text-[#112A35] hover:text-[#112A35] border border-[#C8D5D9]"
         ),
     },
   };

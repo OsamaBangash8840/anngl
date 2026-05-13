@@ -57,19 +57,19 @@ export const SelectField = ({
         isDisabled={isDisabled}
         classNamePrefix="react-select"
         classNames={{
-          control: ({ isFocused, isDisabled, hasValue }) =>
-            clsx(
-              "!min-h-[44px] !px-4 !cursor-pointer !transition-all !duration-300",
-              {
-                "!bg-white !border !rounded-[6px]": variant === "outline",
-                "!bg-[#ECECED] !border !border-white !rounded-[6px]": variant === "underlined",
-                "!bg-[#C8D5D9]": (isFocused || (hasValue && variant === "underlined")) && variant === "underlined",
-                "!border-red-500": error,
-                "!border-primary-light-100": !error && !isFocused && variant === "outline",
-                "!border-primary": isFocused && !error && variant === "outline",
-                "!opacity-50": isDisabled,
-              }
-            ),
+         control: ({ isFocused, isDisabled, hasValue }) =>
+  clsx(
+    "!min-h-[44px] !px-4 !cursor-pointer !transition-all !duration-300",
+    {
+      "!bg-white !border !rounded-[6px]": variant === "outline",
+      "!bg-[#ECECED] !border !border-white !rounded-[6px]": variant === "underlined",
+      "!bg-[#C8D5D9]": (isFocused || (hasValue && variant === "underlined")) && variant === "underlined",
+      "!border-red-500": error,
+      "!border-primary/30": !error && !isFocused && variant === "outline",
+      "!border-primary !ring-1 !ring-primary/20": isFocused && !error && variant === "outline",
+      "!opacity-50": isDisabled,
+    }
+  ),
           placeholder: () => "!text-gray-900 !text-sm",
           singleValue: () => "!text-gray-900 !text-sm",
           menu: () => "!bg-white !border !border-black/10 !shadow-lg !z-50",
