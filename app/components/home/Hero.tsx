@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { ChooseInventoryModal } from "./ChooseInventoryModal";
 import { useTranslations } from "next-intl";
+import { MdOutlineDateRange } from "react-icons/md";
 
 
 export const Hero = () => {
@@ -59,7 +60,7 @@ export const Hero = () => {
                               <SelectField label={t('form.roomType')} placeholder={t('form.chooseOne')} /> 
                              </div>
                              <div className="flex flex-col gap-2">
-                                <DateField label={t('form.movingDate')} className="!text-teal !text-sm" placeholder={t('form.chooseDate')} />
+                                <DateField label={t('form.movingDate')} className="!text-teal !text-sm" placeholder={t('form.chooseDate')}   inputClassName="!text-navy !font-light" icon={<MdOutlineDateRange color="#204A60" size={20}/>}/>
                                 <Button title={t('form.findBestPrice')} onClick={() => setIsModalOpen(true)} className="mt-2" variant="default" icon={<FaRegArrowAltCircleRight />} />
                              </div>
                          </div> 

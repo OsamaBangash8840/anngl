@@ -28,11 +28,11 @@ export default async function LocaleLayout({ children, params }: Props) {
     const isRTL = locale === 'ar';
 
     return (
-        <html lang={locale} dir={isRTL ? 'rtl' : 'ltr'} className={`${homemadeApple.variable} ${inter.variable} h-full antialiased`}>
+        <html lang={locale} dir={isRTL ? 'rtl' : 'ltr'} className={`${homemadeApple.variable} ${inter.variable} h-full antialiased`} suppressHydrationWarning>
             <head>
                 <title>{t('appTitle')}</title>
             </head>
-            <body className="min-h-full flex flex-col">
+            <body className="min-h-full flex flex-col" suppressHydrationWarning>
                 <NextIntlClientProvider messages={messages}>
                     {children}
                 </NextIntlClientProvider>

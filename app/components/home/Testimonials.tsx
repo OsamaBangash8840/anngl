@@ -39,8 +39,8 @@ const testimonials = [
 ];
 
 const TestimonialCard = ({ item }: { item: typeof testimonials[0] }) => (
-    <div className="px-2 md:px-4 outline-none bg-[#ECECED]">
-        <div className="border w-full border-primary/20 bg-white relative rounded-2xl p-5 md:p-6 mt-16 md:mt-12 shadow-[0px_3px_7.5px_2px_rgba(0,0,0,0.10)] mb-10">
+    <div className="px-2 md:px-4 outline-none ">
+        <div className="border w-full border-primary/20 bg-white relative rounded-sm p-5 md:p-6 mt-16 md:mt-12 shadow-[0px_3px_7.5px_2px_rgba(0,0,0,0.10)] mb-10">
             <div className="flex -mt-20 md:-mt-18 relative z-20">
                 <div className="rounded-full mx-auto p-1 bg-white">
                     <Image
@@ -67,7 +67,7 @@ const TestimonialCard = ({ item }: { item: typeof testimonials[0] }) => (
             </div>
             <Typography
                 variant="bodyMedium"
-                className="!text-gray-600 italic mt-4 mb-4 leading-relaxed text-center text-[13px] md:text-[16px]"
+                className="!text-black mt-4 mb-4 leading-relaxed text-center text-[13px] md:text-[16px]"
             >
                 "{item.text}"
             </Typography>
@@ -116,7 +116,7 @@ export const Testimonials = () => {
             <div className="container mx-auto px-4">
                 <div className="text-center mb-10 md:mb-16">
                     <Typography variant="h1" className="!text-black relative inline-block text-[22px] md:text-[32px] leading-tight">
-                        Words from the <span className="font-homemade-apple text-primary">Clients</span> we've moved
+                        Words from the <span className="font-homemade-apple !font-regular text-primary">Clients</span> we've moved
                     </Typography>
                     <Typography className="text-navy mt-2 text-sm md:text-base">
                         Reinforce the ease & benefits of using the platform

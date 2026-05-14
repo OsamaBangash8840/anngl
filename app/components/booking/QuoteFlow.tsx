@@ -5,9 +5,12 @@ import { Typography } from "../common";
 import { IoChevronForward } from "react-icons/io5";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { usePathname } from "next/navigation";
 import { MyInventory } from "./MyInventory";
 import { UploadVideo } from "./UploadVideo";
 import { Location } from "./Location";
+import { PersonalInfo } from "./PersonalInfo";
+import { Companies } from "./Companies";
 
 interface Step {
   id: number;
@@ -22,6 +25,8 @@ const steps: Step[] = [
 ];
 
 export const QuoteFlow = () => {
+  const pathname = usePathname();
+  const isVideoRoute = pathname?.includes("upload-video");
   const [currentStep, setCurrentStep] = useState(1);
 
   return (
@@ -79,8 +84,7 @@ export const QuoteFlow = () => {
       <div className=" ">
         {currentStep === 1 && (
           <div className="animate-fadeIn">
-            {/* <MyInventory /> */}
-            <UploadVideo/>
+            {isVideoRoute ? <UploadVideo /> : <MyInventory />}
           </div>
         )}
         {currentStep === 2 && (
@@ -90,14 +94,12 @@ export const QuoteFlow = () => {
         )}
         {currentStep === 3 && (
           <div className="animate-fadeIn">
-            <Typography variant="h3" className="mb-4">Personal Info</Typography>
-            <Typography>Content for Personal Info goes here...</Typography>
+            <PersonalInfo/>
           </div>
         )}
         {currentStep === 4 && (
           <div className="animate-fadeIn">
-            <Typography variant="h3" className="mb-4">Compare</Typography>
-            <Typography>Content for Compare step goes here...</Typography>
+            <Companies/>
           </div>
         )}
       </div>

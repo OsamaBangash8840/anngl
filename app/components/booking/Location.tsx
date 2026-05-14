@@ -87,7 +87,7 @@ export const Location = () => {
                 </div>
                 <div className="flex items-center gap-4">
                   <TextField placeholder="Floor" />
-                  <SelectField placeholder="Elevator i.e yes or now"/>
+                  <SelectField placeholder="Elevator i.e yes or now" variant="location"/>
                 </div>
               </div>
               <div className="flex items-center gap-3">

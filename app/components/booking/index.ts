@@ -4,3 +4,6 @@ export * from "./CustomModal";
 export * from "./UploadVideo";
 export * from "./ContinueModal";
 export * from "./Location";
+export * from "./PersonalInfo";
+export * from "./Companies";
+export * from "./CompaniesModal";

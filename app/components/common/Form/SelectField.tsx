@@ -5,7 +5,7 @@ import Select, { components, Props as SelectProps, SingleValue } from "react-sel
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-type SelectVariant = "outline" | "underlined";
+type SelectVariant = "outline" | "underlined" | "location";
 type LabelVariant = "default" | "bold" | "primary";
 
 interface Option {
@@ -63,6 +63,7 @@ export const SelectField = ({
     {
       "!bg-white !border !rounded-[6px]": variant === "outline",
       "!bg-[#ECECED] !border !border-white !rounded-[6px]": variant === "underlined",
+      "!bg-white !border !border-primary-light-100 !rounded-[6px]": variant === "location",
       "!bg-[#C8D5D9]": (isFocused || (hasValue && variant === "underlined")) && variant === "underlined",
       "!border-red-500": error,
       "!border-primary/30": !error && !isFocused && variant === "outline",

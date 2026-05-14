@@ -34,9 +34,9 @@ export const Clients = () => {
     };
 
     return (
-        <div className="my-8">
+        <div className="py-12 bg-white w-full">
             {/* Desktop View: Static Flex */}
-            <div className="hidden md:flex container justify-center items-center gap-10 lg:gap-16 2xl:gap-24">
+            <div className="hidden md:flex  container justify-center items-center gap-10 lg:gap-16 2xl:gap-24">
                 {clientList.map((client, index) => (
                     <Typography key={index} variant="h3" className="!text-teal whitespace-nowrap pb-6">
                         {client}

@@ -16,6 +16,9 @@ interface textFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   error?: string;
   errorVariant?: ErrorVariant;
   gradientBorder?: boolean;
+  wrapperClassName?: string;
+  inputClassName?: string;
+  inputRef?: React.Ref<HTMLInputElement>;
 }
 
 const labelStyles: Record<LabelVariant, string> = {
@@ -41,6 +44,9 @@ export const TextField = ({
   iconVariant = "default",
   placeholder,
   className,
+  wrapperClassName,
+  inputClassName,
+  inputRef,
   label,
   labelVariant = "default",
   type = "text",
@@ -64,7 +70,7 @@ export const TextField = ({
   );
 
   return (
-    <div className="flex flex-col gap-y-1 w-full ">
+    <div className={twMerge("flex flex-col gap-y-1 w-full", wrapperClassName)}>
       {label && (
         <label className={clsx("text-[13px] text-start", labelStyles[labelVariant])}>
           {label}
@@ -73,11 +79,13 @@ export const TextField = ({
       <div className={twMerge(containerClasses, className)}>
         {icon && <span className={clsx("text-xl", iconStyles[iconVariant])}>{icon}</span>}
         <input
+          ref={inputRef}
           type={type}
           placeholder={placeholder}
           className={twMerge(
             "placeholder:text-gray placeholder:font-light mt-1 text-sm flex-1 outline-none bg-transparent text-primary",
-            variant === "search" ? "font-normal" : "font-semibold"
+            variant === "search" ? "font-normal" : "font-semibold",
+            inputClassName
           )}
           {...rest}
         />

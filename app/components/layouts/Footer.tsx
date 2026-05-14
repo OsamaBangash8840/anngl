@@ -53,7 +53,7 @@ export const Footer = () => {
                         width={160}
                         height={100}
                     />
-                    <Typography variant="bodyMedium" className="mt-5 max-w-[454px]">Connect with trusted moving companies to make your move hassle-free. Enjoy peace of mind with verified professionals handling your belongings.</Typography>
+                    <Typography variant="bodyMedium" className="mt-5 !text-[14px] max-w-[371px]">Connect with trusted moving companies to make your move hassle-free. Enjoy peace of mind with verified professionals handling your belongings.</Typography>
                     <div className="flex justify-start  gap-8 mt-6">
                         <div className=""><FaFacebookF color="white" size={26} /></div>
                         <div className=""><BsTwitter color="white" size={26} /></div>
@@ -64,7 +64,7 @@ export const Footer = () => {
                     <Typography variant="bodyLarge">
                         Learn More
                     </Typography>
-                    <div className="flex flex-col gap-2.5 mt-4">
+                    <div className="flex flex-col gap-4 mt-4">
                         <Typography >Help centre</Typography>
                         <Typography>About Us</Typography>
                         <Typography>Contact Us</Typography>
@@ -74,7 +74,7 @@ export const Footer = () => {
                     <Typography variant="bodyLarge">
                         Help and Solution
                     </Typography>
-                    <div className="flex flex-col gap-2.5 mt-4">
+                    <div className="flex flex-col gap-4 mt-4">
                         <Typography >Talk to support</Typography>
                         <Typography>Support docs</Typography>
                         <Typography>System status</Typography>
@@ -86,8 +86,8 @@ export const Footer = () => {
                 </div>
 
             </div>
-            <div className="container -mt-3">
-                <Typography variant="bodySmall">2026 by ANNGL. </Typography>
+            <div className="container border-t border-[#F4F7F7]">
+                <Typography variant="bodySmall" className="pt-5">© 2026 All Right Reserved | ANNGL </Typography>
             </div>
         </footer>
         </div>

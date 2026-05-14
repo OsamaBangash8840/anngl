@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Modal, Typography } from "../common";
 import { FiBox, FiVideo } from "react-icons/fi";
 
@@ -27,21 +28,21 @@ export const ChooseInventoryModal = ({ isOpen, onClose, onSelect }: IChooseInven
                 </Typography>
 
                 <div className="flex flex-col gap-6 mt-12 w-full">
-                    <div 
+                    <Link href="/booking" 
                         onClick={() => onSelect?.("inventory")}
                         className="cursor-pointer flex items-center justify-center gap-4 bg-primary-light-100 hover:bg-primary-light-200 transition-all rounded-[6px] py-4 w-full group"
                     >
                         <FiBox size={20} className="text-navy group-hover:scale-110 transition-transform" />
                         <Typography className="!text-navy ">Inventory</Typography>
-                    </div>
+                    </Link>
 
-                    <div 
+                    <Link href="/booking/upload-video" 
                         onClick={() => onSelect?.("video")}
                         className="cursor-pointer flex items-center justify-center gap-4 bg-primary-light-100 hover:bg-primary-light-200 transition-all rounded-[6px] py-4 w-full group"
                     >
                         <FiVideo size={20} className="text-navy group-hover:scale-110 transition-transform" />
                         <Typography className="!text-navy ">Upload videos</Typography>
-                    </div>
+                    </Link>
                 </div>
             </div>
         </Modal>
