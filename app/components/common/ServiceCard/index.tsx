@@ -66,7 +66,7 @@ export const ServiceCard = ({
           <Button
             title={buttonText}
             variant="white"
-            className="!px-4 !text-[14px] mt-6 !bg-navy !text-white !font-light !rounded-[12px]"
+            className="!px-8 !text-[14px] mt-6 !bg-navy !text-white !font-light !rounded-[12px]"
             icon={<FaArrowRightLong className="text-white" />}
           />
         </div>

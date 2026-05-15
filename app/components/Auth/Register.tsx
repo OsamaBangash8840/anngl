@@ -21,7 +21,7 @@ export const RegisterComponent = () => {
                 <div className="max-w-[600px]">
                 <Typography variant="h2" className="!text-navy mt-2">Create an Account</Typography>
                 <Typography className="!text-navy mt-3">Create account & become part of movers</Typography>
-                <TextField  placeholder="First Name" className="mt-4" icon={<Image src={'/images/profileIcon.svg'} alt="Profile Icon" width={24} height={24}/>}/>
+                <TextField  placeholder="Name" className="mt-4" icon={<Image src={'/images/profileIcon.svg'} alt="Profile Icon" width={24} height={24}/>}/>
                 <TextField type="number"  placeholder="Phone Number" className="mt-4" icon={<Image src={'/images/phoneIcon.svg'} alt="Profile Icon" width={24} height={24}/>}/>
                 <div className="flex items-center gap-2 mt-4"><Image src={'/images/agreeIcon.svg'} alt="Profile Icon" width={20} height={20}/>
                 <Typography className="!text-navy mt-5">By creating account you’re agreeing to our <span className="!font-bold !text-navy ">Terms of services</span> and <span className="!font-bold !text-navy ">Privacy policy</span></Typography>

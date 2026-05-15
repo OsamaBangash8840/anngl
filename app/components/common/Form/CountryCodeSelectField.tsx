@@ -151,16 +151,15 @@ export const CountryCodeSelectField: React.FC<CountryCodeSelectFieldProps> = ({
               {
                 "!bg-white !border !rounded-[6px]": variant === "outline" && !noBorder,
                 "!bg-[#ECECED] !border !border-white !rounded-[6px]": variant === "underlined" && !noBorder,
-                "!bg-[#C8D5D9]": isFocused && variant === "underlined" && !noBorder,
                 "!border-red-500": error && !noBorder,
                 "!border-primary-light-100": !error && !isFocused && variant === "outline" && !noBorder,
                 "!border-primary": isFocused && !error && !noBorder,
-                "!border-none !bg-transparent": noBorder,
+                "!border-none !bg-transparent !shadow-none !outline-none": noBorder,
               }
             ),
           placeholder: () => "!text-gray !text-sm",
           singleValue: () => "!text-gray-900 !text-sm",
-          menu: () => "!bg-white !border !border-black/10 !shadow-lg !z-50",
+          menu: () => "!bg-white !border !border-black/10 !shadow-lg !z-50 !w-[300px]",
           option: ({ isFocused, isSelected }) =>
             `!text-sm ${
               isSelected

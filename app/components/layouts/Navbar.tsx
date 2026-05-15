@@ -45,11 +45,11 @@ export const Navbar = () => {
 
   const navItems = [
     { name: t("home"),    path: routes.home },
-    { name: t("about"),   path: routes.aboutUs },
-    { name: t("services"), path: routes.services },
-    { name: "ServiceBenefits", path: routes.serviceBenefits },
-    { name: "WorkWithUs", path: routes.workWithUs },
-    { name: t("contact"), path: routes.contactUs },
+    { name: "About Us",   path: routes.aboutUs },
+    { name: "Our Services", path: routes.services },
+    { name: "How to benefit from our services", path: routes.serviceBenefits },
+    { name: "Work With Us", path: routes.workWithUs },
+    { name: "Contact Us", path: routes.contactUs },
   ];
 
   return (
@@ -116,7 +116,7 @@ export const Navbar = () => {
                   leaveFrom="transform opacity-100 scale-100"
                   leaveTo="transform opacity-0 scale-95"
                 >
-                  <MenuItems className="absolute right-0 mt-4 w-48 origin-top-right bg-navy focus:outline-none py-4 z-[70] rounded-[6px]">
+                  <MenuItems className="absolute right-0 mt-4 w-48 origin-top-right bg-navy focus:outline-none py-4 z-[70] rounded-[6px] mt-6">
                     <div className="px-4 space-y-2">
                       {navItems.map((item) => (
                         <MenuItem key={item.name}>

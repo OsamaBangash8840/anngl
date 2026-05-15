@@ -18,12 +18,12 @@
   --color-navy: #112A35;
 
   /* Steel/Teal */
-  --color-steel: #63818D;
-  --color-steel-light-50: #F4F7F7;
-  --color-steel-light-100: #E2E9EB;
-  --color-steel-light-200: #C8D5D9;
-  --color-steel-light-300: #A2B6BE;
-  --color-steel-light-400: #75919B;
+  --color-teal: #204A60;
+  --color-teal-light-50: #F4F7F7;
+  --color-teal-light-100: #E2E9EB;
+  --color-teal-light-200: #C8D5D9;
+  --color-teal-light-300: #A2B6BE;
+  --color-teal-light-400: #75919B;
 
   /* Neutral/Gray */
   --color-white: #FFFFFF;

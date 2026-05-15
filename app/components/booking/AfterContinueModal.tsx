@@ -63,7 +63,7 @@ export const AfterContinueModal = ({ isOpen, onClose, onSelect }: IChooseInvento
                 </Typography>
             </div>
 
-      <div className="grid grid-cols-3 gap-4 mt-3">
+      <div className="grid md:grid-cols-3 gap-4 mt-3">
             <div>
                 <Typography className="!text-navy mb-2" variant="bodyLarge">Small Carton</Typography>
                 <InventoryItem title="Small Carton" />
@@ -73,11 +73,11 @@ export const AfterContinueModal = ({ isOpen, onClose, onSelect }: IChooseInvento
                 <AddCustomItem/>
                             </div>
              <div>
-                <Typography className="!text-navy mb-2" variant="bodyLarge">Large Carton</Typography>
+                <Typography className="!text-navy mb-2 mt-6 md:mt-0" variant="bodyLarge">Large Carton</Typography>
                 <AddCustomItem/>
             </div>        
       </div>
-                      <Button title="Continue" className="mt-10 w-full" onClick={onClose} variant="default"  />
+                      <Button title="Continue" className="mt-20 md:mt-10 w-full" onClick={onClose} variant="default"  />
 
         </Modal>
     )

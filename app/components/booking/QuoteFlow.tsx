@@ -30,7 +30,7 @@ export const QuoteFlow = () => {
   const [currentStep, setCurrentStep] = useState(1);
 
   return (
-    <div className="w-full container-booking my-12">
+    <div className="w-full container md:container-booking my-12">
       {/* Stepper Header */}
       <div className="flex flex-wrap md:flex-nowrap gap-4 mb-8">
         {steps.map((step) => {

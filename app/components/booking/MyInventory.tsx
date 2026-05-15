@@ -6,8 +6,11 @@ import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import { CollapsibleCard } from "../common/CollapsibleCard";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import { CustomModal } from "./CustomModal";
+import { Dialog, Transition } from "@headlessui/react";
+import { HiMenu, HiX } from "react-icons/hi";
+import { AdditionalCarton } from "./AdditionalCarton";
 
 
 const listItems =[
@@ -17,8 +20,48 @@ const listItems =[
     "Drawers",
     "Wardrobes",
     "Appliances",
-    "Others",
+    "Additional Carton",
 ]
+
+const SidebarContent = ({ onSelect }: { onSelect: (category: string) => void }) => (
+    <div className="space-y-4">
+        <CollapsibleCard onClick={() => onSelect("Bedroom Items")} defaultOpen={true} title="Bedroom Items" count={7} icon={<Image src={'/images/bookingIcon.svg'} alt="" width={24} height={24}/>}>
+            {listItems.map((item, index) => (
+                <li key={index} className="py-1 px-3 list-none">
+                    <Typography className="!text-navy">{item}</Typography>
+                </li>
+            ))}
+        </CollapsibleCard>
+        <CollapsibleCard onClick={() => onSelect("Bed Room")} title="Bed Room" count={0} icon={<Image src={'/images/bookingIcon.svg'} alt="" width={24} height={24}/>}>
+            {listItems.map((item, index) => (
+                <li key={index} className="py-1 px-3 list-none">
+                    <Typography className="!text-navy">{item}</Typography>
+                </li>
+            ))}
+        </CollapsibleCard>
+        <CollapsibleCard onClick={() => onSelect("Dining Room")} title="Dining Room" count={0} icon={<Image src={'/images/bookingIcon.svg'} alt="" width={24} height={24}/>}>
+            {listItems.map((item, index) => (
+                <li key={index} className="py-1 px-3 list-none">
+                    <Typography className="!text-navy">{item}</Typography>
+                </li>
+            ))}
+        </CollapsibleCard> 
+        <CollapsibleCard onClick={() => onSelect("Storage Room")} title="Storage Room" count={0} icon={<Image src={'/images/bookingIcon.svg'} alt="" width={24} height={24}/>}>
+            {listItems.map((item, index) => (
+                <li key={index} className="py-1 px-3 list-none">
+                    <Typography className="!text-navy">{item}</Typography>
+                </li>
+            ))}
+        </CollapsibleCard>
+        <CollapsibleCard onClick={() => onSelect("Additional Carton")} title="Additional Carton" count={0} icon={<Image src={'/images/bookingIcon.svg'} alt="" width={24} height={24}/>}>
+            {listItems.map((item, index) => (
+                <li key={index} className="py-1 px-3 list-none">
+                    <Typography className="!text-navy">{item}</Typography>
+                </li>
+            ))}
+        </CollapsibleCard>
+    </div>
+);
 
 
 const InventoryItem = ({ title }: { title: string }) => {
@@ -56,7 +99,7 @@ const AddCustomItem = ({ onAdd }: { onAdd: () => void }) => {
 
 const TabContent = ({ onAdd }: { onAdd: () => void }) => (
   <div className="mt-6">
-    <div className="grid grid-cols-4 gap-8 mb-8">
+    <div className="grid md:grid-cols-4 grid-cols-2 gap-8 mb-8">
       <SelectField />
       <SelectField />
       <SelectField />
@@ -74,79 +117,110 @@ const TabContent = ({ onAdd }: { onAdd: () => void }) => (
 export const MyInventory = () => {
   const t = useTranslations("common");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("Bedroom Items");
   
   return (
         <>
-        <div className=" flex justify-between items-center">
+        <div className=" flex flex-col md:flex-row md:justify-between md:items-center">
             <div>
                 <Typography variant="h3" className="!text-navy">Manage inventory</Typography>
                 <Typography className="!text-navy max-w-[550px]">Manage your inventory and we are the only service that gives you a guaranteed price based on the size of your inventory.</Typography>
             </div>
-            <Button title="Continue" variant="default" className="!rounded-[6px]" icon={<IoChevronForward className="text-white" />}/>
+            <Button title="Continue" variant="default" className="!rounded-[6px] mt-5 md:mt-0 " icon={<IoChevronForward className="text-white" />}/>
         </div>
-        <TextField variant="search" placeholder="Search for an items" className="mt-8" icon={<CiSearch />} />
-        <div className="flex items-center items-start gap-6">
-            <div className="mt-8 w-1/4 space-y-4">
-                <CollapsibleCard defaultOpen={true} title="Bedroom Items" count={7} icon={<Image src={'/images/bookingIcon.svg'} alt="" width={24} height={24}/>}>
-                    {listItems.map((item, index) => (
-                        <li key={index} className="py-1 px-3 list-none">
-                            <Typography className="!text-navy">{item}</Typography>
-                        </li>
-                    ))}
-                </CollapsibleCard>
-                <CollapsibleCard title="Bed Room" count={0} icon={<Image src={'/images/bookingIcon.svg'} alt="" width={24} height={24}/>}>
-                    {listItems.map((item, index) => (
-                        <li key={index} className="py-1 px-3 list-none">
-                            <Typography className="!text-navy">{item}</Typography>
-                        </li>
-                    ))}
-                </CollapsibleCard>
-                <CollapsibleCard title="Dining Room" count={0} icon={<Image src={'/images/bookingIcon.svg'} alt="" width={24} height={24}/>}>
-                    {listItems.map((item, index) => (
-                        <li key={index} className="py-1 px-3 list-none">
-                            <Typography className="!text-navy">{item}</Typography>
-                        </li>
-                    ))}
-                </CollapsibleCard> 
-                <CollapsibleCard title="Storage Room" count={0} icon={<Image src={'/images/bookingIcon.svg'} alt="" width={24} height={24}/>}>
-                    {listItems.map((item, index) => (
-                        <li key={index} className="py-1 px-3 list-none">
-                            <Typography className="!text-navy">{item}</Typography>
-                        </li>
-                    ))}
-                </CollapsibleCard>
-                <CollapsibleCard title="Office" count={0} icon={<Image src={'/images/bookingIcon.svg'} alt="" width={24} height={24}/>}>
-                    {listItems.map((item, index) => (
-                        <li key={index} className="py-1 px-3 list-none">
-                            <Typography className="!text-navy">{item}</Typography>
-                        </li>
-                    ))}
-                </CollapsibleCard>
+
+        <div className="flex items-center gap-4 mt-8">
+            <button 
+                onClick={() => setIsSidebarOpen(true)}
+                className="md:hidden p-2 bg-[#112A35] text-white rounded-sm"
+            >
+                <HiMenu size={24} />
+            </button>
+            <TextField variant="search" placeholder="Search for an items" className="flex-1 py-2" icon={<CiSearch />} />
+        </div>
+
+        {/* Mobile Sidebar (Left Drawer) */}
+        <Transition show={isSidebarOpen} as={Fragment}>
+            <Dialog as="div" className="relative z-[9999] md:hidden" onClose={() => setIsSidebarOpen(false)}>
+                <Transition.Child
+                    as={Fragment}
+                    enter="ease-out duration-300"
+                    enterFrom="opacity-0"
+                    enterTo="opacity-100"
+                    leave="ease-in duration-200"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
+                >
+                    <div className="fixed inset-0 bg-black/30 backdrop-blur-sm" />
+                </Transition.Child>
+
+                <div className="fixed inset-0 flex">
+                    <Transition.Child
+                        as={Fragment}
+                        enter="transform transition ease-in-out duration-300"
+                        enterFrom="-translate-x-full"
+                        enterTo="translate-x-0"
+                        leave="transform transition ease-in-out duration-300"
+                        leaveFrom="translate-x-0"
+                        leaveTo="-translate-x-full"
+                    >
+                        <Dialog.Panel className="relative flex w-full max-w-xs flex-col overflow-y-auto bg-white p-6 shadow-xl">
+                            <div className="flex items-center justify-between mb-8">
+                                <Typography variant="h3" className="!text-navy">Categories</Typography>
+                                <button
+                                    onClick={() => setIsSidebarOpen(false)}
+                                    className="p-2 text-navy"
+                                >
+                                    <HiX size={24} />
+                                </button>
+                            </div>
+                            <SidebarContent onSelect={(category) => {
+                                setSelectedCategory(category);
+                                setIsSidebarOpen(false);
+                            }} />
+                        </Dialog.Panel>
+                    </Transition.Child>
+                </div>
+            </Dialog>
+        </Transition>
+
+        <div className="flex items-start gap-6">
+            {/* Desktop Sidebar */}
+            <div className="hidden md:block mt-8 w-1/4">
+                <SidebarContent onSelect={setSelectedCategory} />
             </div>
-            <div className="mt-8 w-3/4">
-                <Typography variant="bodyLarge" className="!bg-[#112A35] text-center !px-2 !py-3 !rounded-sm">My Rooms</Typography>
-          <Tabs
-            variant="underline"
-            className="mt-6"
-            items={[
-              {
-                title: "Living Room 1",
-                content: <TabContent onAdd={() => setIsModalOpen(true)} />
-              },
-              {
-                title: "Living Room 2",
-                content: <TabContent onAdd={() => setIsModalOpen(true)} />
-              },
-              {
-                title: "Living Room 3",
-                content: <TabContent onAdd={() => setIsModalOpen(true)} />
-              },
-              {
-                title: "Living Room 4",
-                content: <TabContent onAdd={() => setIsModalOpen(true)} />
-              }
-            ]}
-          />
+
+            <div className="mt-8 w-full md:w-3/4">
+                {selectedCategory === "Additional Carton" ? (
+                    <AdditionalCarton />
+                ) : (
+                    <>
+                        <Typography variant="bodyLarge" className="!bg-[#112A35] text-center !px-2 !py-3 !rounded-sm">My Rooms</Typography>
+                        <Tabs
+                            variant="underline"
+                            className="mt-6"
+                            items={[
+                                {
+                                    title: "Living Room 1",
+                                    content: <TabContent onAdd={() => setIsModalOpen(true)} />
+                                },
+                                {
+                                    title: "Living Room 2",
+                                    content: <TabContent onAdd={() => setIsModalOpen(true)} />
+                                },
+                                {
+                                    title: "Living Room 3",
+                                    content: <TabContent onAdd={() => setIsModalOpen(true)} />
+                                },
+                                {
+                                    title: "Living Room 4",
+                                    content: <TabContent onAdd={() => setIsModalOpen(true)} />
+                                }
+                            ]}
+                        />
+                    </>
+                )}
             </div>
         </div>
  <CustomModal 

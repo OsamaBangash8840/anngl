@@ -10,11 +10,10 @@ export const MakeYourMove = () => {
         backgroundRepeat: "no-repeat",
         backgroundColor: "rgba(17, 42, 53, 0.8)",
         backgroundBlendMode: "multiply",
-      }} className="w-full py-12">
+      }} className="w-full py-16">
             <div className="container flex flex-col items-center gap-4 my-9">
                 <Typography variant="hDisplay" className="" >Ready To Make Your <span className="font-homemade-apple text-primary">Move?</span></Typography>
-                <Typography variant="h2">Reinforce the ease & benefits of using the platform</Typography>
-                <Button title="Get Price & Compare Movers" variant="white" className="!px-14 !bg-navy !text-white" icon={<IoIosArrowForward  color="white"/>}/>
+                <Button title="Reinforce the ease & benefits of using the platform" variant="white" className="md:!px-14 !py-3 md:!py-0 !bg-navy !text-white" icon={<IoIosArrowForward  color="white"/>}/>
             </div>
         </section>
     );

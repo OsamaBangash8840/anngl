@@ -13,6 +13,7 @@ interface CollapsibleCardProps {
   count?: number;
   className?: string;
   defaultOpen?: boolean;
+  onClick?: () => void;
 }
 
 export const CollapsibleCard = ({
@@ -22,6 +23,7 @@ export const CollapsibleCard = ({
   count,
   className,
   defaultOpen = false,
+  onClick,
 }: CollapsibleCardProps) => {
   return (
     <Collapsible
@@ -31,7 +33,10 @@ export const CollapsibleCard = ({
         className
       )}
     >
-      <CollapsibleTrigger className="flex w-full cursor-pointer items-center justify-between p-4 transition-all duration-300 focus:outline-none md:py-3 md:px-5 data-[state=open]:bg-[#63818D] data-[state=open]:text-white">
+      <CollapsibleTrigger 
+        onClick={onClick}
+        className="flex w-full cursor-pointer items-center justify-between p-4 transition-all duration-300 focus:outline-none md:py-3 md:px-5 data-[state=open]:bg-[#63818D] data-[state=open]:text-white"
+      >
         <div className="flex items-center gap-3">
           <div className=" flex items-center gap-1">
           {icon && <div className="text-primary group-data-[state=open]:text-white">{icon}</div>}

@@ -39,7 +39,7 @@ export const Hero = () => {
                     <Button
                       title="Get Price & Compare Movers"
                       variant="white"
-                      className="!px-5 md:!px-22  mt-6 ml-[10%] md:ml-[17%] z-90 !bg-[#ADAEB1] !border-primary !border !font-regular !text-primary"
+                      className="!px-5 md:!px-22  mt-6 ml-[10%] md:ml-[15%] z-90 !bg-[#ADAEB1] !border-primary !border !font-regular !text-primary"
                       icon={<FaArrowRightLong  className="text-primary"/>}
                       />
                   </div>

@@ -27,7 +27,7 @@ const TabContent = ({ onAdd }: { onAdd: () => void }) => {
   // ── After upload: video player view ──────────────────────────────────────
 if (uploadedVideo) {
   return (
-    <div className="mt-6 relative w-[766px] h-[390px] mx-auto rounded-[8px] bg-black">
+    <div className="mt-6 relative w-full md:w-[766px] h-[390px] mx-auto rounded-[8px] bg-black">
       {/* Close / remove button */}
       <button
         onClick={handleRemove}
@@ -51,7 +51,7 @@ if (uploadedVideo) {
   // ── Before upload: file upload view ──────────────────────────────────────
   return (
     <div className="mt-6">
-      <div className="relative mt-8 w-[60%] mx-auto border-dashed bg-white border border-gray flex flex-col items-center justify-center rounded-[6px] py-24 cursor-pointer group">
+      <div className="relative mt-8 w-[95%] mx-auto md:w-[60%] border-dashed bg-white border border-gray flex flex-col items-center justify-center rounded-[6px] py-24 cursor-pointer group">
         <FaUpload className="text-[#9CA3AF] text-[33px] mb-3 group-hover:scale-110 transition-transform" />
         <Typography variant="bodySmall" className="!text-[#6B7280]">
           Click to upload a video
@@ -73,7 +73,7 @@ export const UploadVideo = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center">
         <div>
           <Typography variant="h3" className="!text-navy">Upload video</Typography>
           <Typography className="!text-navy max-w-[550px]">
@@ -84,7 +84,7 @@ export const UploadVideo = () => {
           onClick={() => setIsModalOpen(true)}
           title="Continue"
           variant="default"
-          className="!rounded-[6px]"
+          className="!rounded-[6px] mt-5 md:mt-0"
           icon={<IoChevronForward className="text-white" />}
         />
       </div>

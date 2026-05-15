@@ -8,16 +8,16 @@ export const Form = () => {
         <Image src={'/images/contactAnnglLine.svg'} alt="background" width={900} height={34} className="mx-auto"/>
         <section className="container flex flex-col items-center gap-8 md:gap-12 mt-12 mb-16">
             <div className=" w-full md:w-[60%] mx-auto">
-                <Typography variant="h2" className="!text-navy text-center"> Our team is here to serve you!</Typography>
+                <Typography variant="h2" className="!text-navy md:!text-[26px] text-center"> Our team is here to serve you!</Typography>
                 <form className="mt-6">
                     <div className="flex flex-col sm:flex-row items-center gap-3">
                         <TextField variant="contact" label="First Name *" labelVariant="bold" className="w-full" icon={<Image src={'/images/profileIcon.svg'} alt="Profile Icon" width={24} height={24}/>}/>
                         <TextField variant="contact" label="Last Name *" labelVariant="bold" className="w-full" icon={<Image src={'/images/profileIcon.svg'} alt="Profile Icon" width={24} height={24}/>}/>
                     </div>
-                    <TextField  label="Email" labelVariant="bold" variant="contact" className="mt-3" icon={<Image src={'/images/mailIcon.svg'} alt="Message Icon" width={24} height={24}/>}/>
+                    <TextField  label="Email *" labelVariant="bold" variant="contact" className="mt-3" icon={<Image src={'/images/mailIcon.svg'} alt="Message Icon" width={24} height={24}/>}/>
                     <TextareaField
                         variant="contact"
-                        label="Your Message *"
+                        label="Your Message.."
                         labelVariant="bold"
                         placeholder="Your Message"
                         className="mt-3"
@@ -39,23 +39,23 @@ export const Form = () => {
             </div>  
 
         </section>
-            <div className="w-full md:w-[60%] mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-32 md:my-16 my-8 justify-center">
+            <div className="w-full md:w-[60%] mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-32 md:my-16 my-8 justify-center md:-mt-2">
                   <div className="flex flex-col gap-4  items-center">
-                                <Image src="/images/callIcon.svg" alt="call" width={50} height={50}/>
+                                <Image src="/images/callIcon.svg" alt="call" width={64} height={56}/>
                                 <div>
                             <Typography  className="!text-navy !font-regular text-center "> Call Us</Typography>
                             <Typography variant="h3" className="!text-navy !font-medium mt-3"> (123) 456 - 7890</Typography>
                                 </div>
                             </div>
                             <div className="flex flex-col gap-4 justify-center items-center">
-                                <Image src="/images/emailIcon.svg" alt="email" width={58} height={51}/>
+                                <Image src="/images/emailIcon.svg" alt="email" width={83} height={73}/>
                                 <div>
                             <Typography  className="!text-navy !font-regular text-center "> Email Us </Typography>
                             <Typography variant="h3" className="!text-navy !font-medium mt-3"> Support @anngl.com </Typography>
                                 </div>
                             </div>
                             <div className="flex flex-col gap-4 justify-center items-center">
-                                <Image src="/images/locationIcon.svg" alt="building" width={44} height={48}/>
+                                <Image src="/images/locationIcon.svg" alt="building" width={64} height={69}/>
                                 <div>
                             <Typography  className="!text-navy !font-regular text-center "> Location</Typography>
                             <Typography variant="h3" className="!text-navy !font-medium mt-3"> Riyadh, KSA</Typography>

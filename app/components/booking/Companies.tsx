@@ -74,8 +74,8 @@ const dummyData: ICompanyCard[] =[
 export const CompanyCard = ({image, title, rating, price, availablitiy, phoneNo, yearsInBusiness, employeesNo, buttonText, reviewsNo, topBadge, diamondIcon, onPriceRequest}: ICompanyCard) => {
     return (
         <>
-        <div className=" flex justify-between  gap-2 border border-primary-light-100 bg-white p-2 rounded-sm w-[75%] mx-auto">
-            <div className=" flex  gap-4">
+        <div className=" flex flex-col md:flex-row md:justify-between items-center md:items-stretch gap-2 border border-primary-light-100 bg-white p-2 rounded-sm md:w-[75%] w-[100%] mx-auto">
+            <div className=" flex flex-col md:flex-row  gap-4">
 
         
             <div className=" h-[213px] w-[205px]">
@@ -126,10 +126,10 @@ export const CompanyCard = ({image, title, rating, price, availablitiy, phoneNo,
                 </div>
             </div>
                 </div>
-            <div className=" flex flex-col w-1/3">
-            <Typography variant="h3" className="!text-[#204A60] !font-semibold">{price} <span className="!text-black !font-normal !text-[14px]">Approximate price</span></Typography>
-            <Typography className="!text-[#204A60] flex gap-2 mt-3">Services included <Image src="/images/exclmationIcon.svg" alt=" Icon" width={20} height={20}/></Typography>
-            <Button onClick={onPriceRequest} title="Request Price" variant="default" className="!rounded-[6px] mt-auto"/>
+            <div className=" flex flex-col md:w-1/3">
+            <Typography variant="h3" className="!text-[#204A60] !font-semibold mt-3 md:mt-0">{price} <span className="!text-black !font-normal !text-[14px] ">Approximate price</span></Typography>
+            <Typography className="!text-[#204A60] flex gap-2 mt-6 md:mt-3 ">Services included <Image src="/images/exclmationIcon.svg" alt=" Icon" width={20} height={20}/></Typography>
+            <Button onClick={onPriceRequest} title="Request Price" variant="default" className="!rounded-[6px] mt-3 md:mt-auto"/>
             </div>
         </div>
         </>
@@ -141,7 +141,7 @@ export const Companies = () => {
     
     return (
         <> 
-         <div className=" flex justify-between items-center">
+         <div className="  flex flex-col md:flex-row md:justify-between md:items-center">
                         <div>
                             <Typography variant="h3" className="!text-navy">Movers list</Typography>
                             <div className=" flex items-center gap-1">
@@ -149,7 +149,7 @@ export const Companies = () => {
                                 <Image src="/images/exclmationIcon.svg" alt=" Icon" width={20} height={20}/>
                             </div>
                         </div>
-                        <Button title="Continue" variant="default" className="!rounded-[6px]" icon={<IoChevronForward className="text-white" />}/>
+                        <Button title="Continue" variant="default" className="!rounded-[6px] mt-5 md:mt-0" icon={<IoChevronForward className="text-white" />}/>
                     </div>
                     <div className=" flex flex-col gap-8 mt-8">
                     {

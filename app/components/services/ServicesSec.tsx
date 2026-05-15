@@ -2,6 +2,7 @@ import { ServiceCard, Typography } from "../common"
 export const ServicesSec = () => {
     return (
         <>
+        <Typography className="text-center !text-navy my-8 " variant="hDisplay">Our Services</Typography>
         <section className="grid md:grid-cols-5"
         style={{
         backgroundImage: "url(/images/ourServicesBg.svg)",
@@ -48,11 +49,11 @@ export const ServicesSec = () => {
         <section className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24 my-16">
             <div className="bg-[#ADAEB1] w-[300px] ">
                 <Typography variant="bodyLarge" className="!text-navy text-center px-8 pt-9">Fast, Organized & Secure services</Typography>
-                <Typography variant="bodySmall" className="!text-navy text-center px-8  my-5">ANNGL is committed to providing flexibility and speed through a smart and integrated system that moves your belongings via fast-delivery moving companies</Typography>
+                <Typography variant="bodySmall" className="!text-navy text-center px-8  my-3">ANNGL is committed to providing flexibility and speed through a smart and integrated system that moves your belongings via fast-delivery moving companies</Typography>
             </div>
             <div className="bg-[#ADAEB1] w-[300px] ">
                 <Typography variant="bodyLarge" className="!text-navy text-center px-8 pt-9">Services Wide</Typography>
-                <Typography variant="bodySmall" className="!text-navy text-center px-8  my-5">ANNGL provides comprehensive services in cooperation with reliable moving companies that ensure you an easy, comfortable and safe transportation of your belongings</Typography>
+                <Typography variant="bodySmall" className="!text-navy text-center px-8  my-3">ANNGL provides comprehensive services in cooperation with reliable moving companies that ensure you an easy, comfortable and safe transportation of your belongings</Typography>
             </div>
         </section>
             </>

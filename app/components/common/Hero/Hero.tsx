@@ -34,7 +34,7 @@ export const Hero = ({
       <div className="container flex flex-col items-center justify-center my-32">
         <Typography
           variant="h3"
-          className="relative inline-block after:content-[''] after:absolute after:-bottom-1 after:right-[-8px] after:w-16 after:h-[2px] after:bg-black"
+          className="relative md:!text-[20px] inline-block after:content-[''] after:absolute after:-bottom-1 after:right-[-8px] after:w-16 after:h-[2px] after:bg-black"
         >
           {title}
         </Typography>
@@ -48,7 +48,7 @@ export const Hero = ({
           <Button
             title={buttonTitle}
             variant="white"
-            className="!px-14 mt-6"
+            className="!px-20 mt-6"
             icon={buttonIcon}
           />
         )}

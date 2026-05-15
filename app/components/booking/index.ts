@@ -7,3 +7,4 @@ export * from "./Location";
 export * from "./PersonalInfo";
 export * from "./Companies";
 export * from "./CompaniesModal";
+export * from "./AdditionalCarton";

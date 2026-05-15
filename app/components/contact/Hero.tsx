@@ -13,7 +13,7 @@ export const ContactHero = () => {
                  Contact Us
                 </Typography>
                 <Typography className="text-center mt-3 max-w-[900px]">
-                  ave questions or need assistance? Our team is here to help!
+                  Have questions or need assistance? Our team is here to help!
                 </Typography>
               </div>
             </section>

@@ -1,6 +1,6 @@
 'use client'
 import { useState } from "react";
-import { Button, CountryCodeSelectField, SelectField, TextField, Typography } from "../common"
+import { Button, PhoneField, SelectField, TextField, Typography } from "../common"
 
 export const JoinUsForm = () => {
     const [formData, setFormData] = useState({
@@ -45,7 +45,7 @@ export const JoinUsForm = () => {
     };
 
     return (
-        <section className="container max-w-[750px] mx-auto my-5 md:my-20  border border-primary-light-400 rounded-[6px]">
+        <section className="container max-w-[750px] mx-auto mb-8 md:mb-0 my-2 md:my-20  border border-primary-light-400 rounded-[6px]">
             <div className="pt-12">
                 <Typography variant="h3" className="!text-primary text-center">Join Us</Typography>
                 <Typography className="text-center mt-3 !text-navy" >Join our network of trusted transportation partners and expand your business with us</Typography>
@@ -86,7 +86,7 @@ export const JoinUsForm = () => {
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         error={errors.email}
                     />
-                    <CountryCodeSelectField 
+                    <PhoneField 
                         label="Phone Number*" 
                         variant="underlined" 
                         labelVariant="bold" 
@@ -151,7 +151,7 @@ export const JoinUsForm = () => {
             </Typography>   
             <div className="px-4 md:px-10">
                 <Button
-                    title={"Submit"}
+                    title={"Submit the application"}
                     variant="primary"
                     className="!px-14 mt-6 w-full bg-primary text-white mb-10"
                     onClick={handleSubmit}

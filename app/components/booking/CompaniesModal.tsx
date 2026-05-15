@@ -37,7 +37,7 @@ export const CompaniesModal = ({ isOpen, onClose,  }: IChooseInventoryModal) => 
         paddingClass="p-8"
       >
         <div className="flex flex-col mx-auto w-full">
-          <div className="flex justify-between items-start gap-8 w-full">
+          <div className="flex flex-col md:flex-row justify-between items-start gap-8 w-full">
              <div className="flex items-start gap-6">
                        <div className=" relative">
                            <Image src="/images/companiesImg1.svg" alt="Icon" width={205} height={130} className="rounded-lg h-[130px] w-[205px] -mt-8"/>
@@ -61,7 +61,7 @@ export const CompaniesModal = ({ isOpen, onClose,  }: IChooseInventoryModal) => 
                            </div>
                        </div>
              </div>
-            <div className="flex flex-col gap-2 -mt-5">
+            <div className="flex  flex-col  gap-2 -mt-5">
                   <div className="flex items-center gap-3">
                                <CiClock2 className="text-[#204A60] w-5 h-5"/>
                                <Typography className="!text-[#204A60]">Working days: Mon - Fri</Typography>
@@ -86,8 +86,8 @@ export const CompaniesModal = ({ isOpen, onClose,  }: IChooseInventoryModal) => 
 
           </div>
           <Typography className="!text-navy my-6">Welcome to Direct Movers! If you are in need of professional moving labor, you have come to the right place. Our team has years of experience in the moving industry and we are dedicated to providing top-notch service to all of our clients. When you hire us, you can expect reliable and efficient service. We take pride in being punctual and getting the job done right the first time. Care for your belongings. We handle all of your items with the utmost care, ensuring that they are safely transported to your new home. Customized solutions. We understand that every move is different and we work with you to create a personalized plan that meets your needs and budget We are confident that you will be satisfied with our services and we look forward to helping you with your next move. Contact us today to get started!</Typography>
-          <div className="flex justify-center items-center gap-6">
-            <div className="w-1/4">
+          <div className="flex flex-col md:flex-row justify-start md:justify-center items-center gap-6">
+            <div className="w-full md:w-1/4">
             <Typography variant="bodyLarge" className="!text-navy">Service area</Typography>
             <Image src="/images/mapImage.svg" alt="Map" width={251} height={247}/>
 
@@ -124,7 +124,7 @@ export const CompaniesModal = ({ isOpen, onClose,  }: IChooseInventoryModal) => 
                 <Typography className="!text-navy">Issuing City: BIRMINGHAM</Typography>
             </div>
             </div>
-            <div className="w-3/4">
+            <div className="md:w-3/4">
              <div className="flex items-center gap-4 mt-2 justify-center gap-2">
                 <Typography variant="h2" className="!text-navy font-semibold">4.8</Typography>
                     <div>

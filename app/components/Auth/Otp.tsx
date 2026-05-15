@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Button, Typography } from "../common";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export const Otp = () => {
@@ -62,7 +61,7 @@ export const Otp = () => {
                                 value={digit}
                                 onChange={(e) => handleChange(index, e.target.value)}
                                 onKeyDown={(e) => handleKeyDown(index, e)}
-                                className="w-full h-14 sm:h-16 border border-[#E5E7EB] rounded-[6px] text-center text-xl font-medium outline-none focus:border-primary transition-all text-navy placeholder:text-gray-300"
+                                className="w-full h-14 sm:h-16 px-8 border border-primary-light-100 rounded-[6px] text-primary text-center text-xl font-medium outline-none focus:border-primary transition-all text-navy placeholder:text-gray-300"
                                 placeholder="3"
                             />
                         ))}

@@ -33,7 +33,7 @@ export const Location = () => {
   };
     return (
         <>
-            <div className=" flex justify-between items-center">
+            <div className="  flex flex-col md:flex-row md:justify-between md:items-center">
                 <div>
                     <Typography variant="h3" className="!text-navy">Move details</Typography>
                     <div className=" flex items-center gap-1">
@@ -41,7 +41,7 @@ export const Location = () => {
                         <Image src="/images/exclmationIcon.svg" alt=" Icon" width={20} height={20}/>
                     </div>
                 </div>
-                <Button title="Continue" variant="default" className="!rounded-[6px]" icon={<IoChevronForward className="text-white" />}/>
+                <Button title="Continue" variant="default" className="!rounded-[6px]  mt-5 md:mt-0 " icon={<IoChevronForward className="text-white" />}/>
             </div>
             <div>
                  <div className=" gap-8">
@@ -49,11 +49,11 @@ export const Location = () => {
               {/* 1. Moving From */}
               <div className="space-y-4">
                 <Typography variant="bodyLarge" className="!text-navy mt-8">Moving from</Typography>
-                <div className="flex items-center gap-4">
+                <div className="flex md:flex-row flex-col items-center gap-4">
                 <TextField placeholder="Moving from address, city, or Zip" icon={<CiLocationOn />} />
                 <TextField placeholder="Apartment"  />
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex md:flex-row flex-col items-center gap-4">
                   <TextField placeholder="Floor" />
                   <SelectField placeholder="Elevator i.e yes or now"/>
                 </div>
@@ -81,11 +81,11 @@ export const Location = () => {
                     <>
                   <div className="space-y-4">
                 <Typography variant="bodyLarge" className="!text-navy mt-8">Extra Pick-up</Typography>
-                <div className="flex items-center gap-4">
+                <div className="flex md:flex-row flex-col items-center gap-4">
                 <TextField placeholder="Moving from address, city, or Zip" icon={<CiLocationOn />} />
                 <TextField placeholder="Apartment"  />
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex md:flex-row flex-col items-center gap-4">
                   <TextField placeholder="Floor" />
                   <SelectField placeholder="Elevator i.e yes or now" variant="location"/>
                 </div>
@@ -105,11 +105,11 @@ export const Location = () => {
                 {/* 3 Moving To */}
               <div className="space-y-4">
                 <Typography variant="bodyLarge" className="!text-navy mt-8">Moving to</Typography>
-                <div className="flex items-center gap-4">
+                <div className="flex md:flex-row flex-col items-center gap-4">
                 <TextField placeholder="Moving from address, city, or Zip" icon={<CiLocationOn />} />
                 <TextField placeholder="Apartment"  />
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex md:flex-row flex-col items-center gap-4">
                   <TextField placeholder="Floor" />
                   <SelectField placeholder="Elevator i.e yes or now"/>
                 </div>
