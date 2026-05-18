@@ -1,8 +1,10 @@
 'use client'
 import { useState } from "react";
 import { Button, PhoneField, SelectField, TextField, Typography } from "../common"
+import { useTranslations } from "next-intl";
 
 export const JoinUsForm = () => {
+    const t = useTranslations("common.workWithUs.joinUsForm");
     const [formData, setFormData] = useState({
         companyName: "",
         commercialRegistration: "",
@@ -47,12 +49,12 @@ export const JoinUsForm = () => {
     return (
         <section className="container max-w-[750px] mx-auto mb-8 md:mb-0 my-2 md:my-20  border border-primary-light-400 rounded-[6px]">
             <div className="pt-12">
-                <Typography variant="h3" className="!text-primary text-center">Join Us</Typography>
-                <Typography className="text-center mt-3 !text-navy" >Join our network of trusted transportation partners and expand your business with us</Typography>
+                <Typography variant="h3" className="!text-primary text-center">{t("title")}</Typography>
+                <Typography className="text-center mt-3 !text-navy" >{t("description")}</Typography>
             </div>
             <div className="mt-14 px-4 md:px-10">
                 <TextField 
-                    label="Company Name*" 
+                    label={t("fields.companyName")} 
                     variant="underlined" 
                     labelVariant="bold" 
                     value={formData.companyName}
@@ -61,7 +63,7 @@ export const JoinUsForm = () => {
                 />
                 <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-6">
                     <TextField 
-                        label="Commercial Registration Number" 
+                        label={t("fields.commercialRegistration")} 
                         variant="underlined" 
                         labelVariant="bold" 
                         value={formData.commercialRegistration}
@@ -69,7 +71,7 @@ export const JoinUsForm = () => {
                         error={errors.commercialRegistration}
                     />
                     <TextField 
-                        label="TGA Registration Number" 
+                        label={t("fields.tgaRegistration")} 
                         variant="underlined" 
                         labelVariant="bold" 
                         value={formData.tgaRegistration}
@@ -79,7 +81,7 @@ export const JoinUsForm = () => {
                 </div>
                 <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-6">
                     <TextField 
-                        label="Email *" 
+                        label={t("fields.email")}
                         variant="underlined" 
                         labelVariant="bold" 
                         value={formData.email}
@@ -87,7 +89,7 @@ export const JoinUsForm = () => {
                         error={errors.email}
                     />
                     <PhoneField 
-                        label="Phone Number*" 
+                        label={t("fields.phone")}
                         variant="underlined" 
                         labelVariant="bold" 
                         value={formData.phone}
@@ -96,7 +98,7 @@ export const JoinUsForm = () => {
                     />
                 </div>
                 <SelectField 
-                    label="Cities you worked in*" 
+                    label={t("fields.cities")}
                     variant="underlined" 
                     labelVariant="bold" 
                     className="mt-4" 
@@ -104,14 +106,14 @@ export const JoinUsForm = () => {
                     onChange={(val) => setFormData({ ...formData, cities: val })}
                     error={errors.cities}
                     options={[
-                        { value: "riyadh", label: "Riyadh" },
-                        { value: "jeddah", label: "Jeddah" },
-                        { value: "dammam", label: "Dammam" },
+                        { value: "riyadh", label: t("cities.riyadh") },
+                        { value: "jeddah", label: t("cities.jeddah") },
+                        { value: "dammam", label: t("cities.dammam") },
                     ]}
                 />
                  <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-6">
                     <TextField 
-                        label="Address " 
+                        label={t("fields.address")}
                         variant="underlined" 
                         labelVariant="bold" 
                         value={formData.address}
@@ -119,7 +121,7 @@ export const JoinUsForm = () => {
                         error={errors.address}
                     /> 
                     <TextField 
-                        label="Services Provided " 
+                        label={t("fields.services")} 
                         variant="underlined" 
                         labelVariant="bold" 
                         value={formData.services}
@@ -129,7 +131,7 @@ export const JoinUsForm = () => {
                  </div>
                 <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-6">
                     <TextField 
-                        label="Number of your fleet (licensed trucks)*" 
+                        label={t("fields.fleet")} 
                         variant="underlined" 
                         labelVariant="bold" 
                         value={formData.fleetNumber}
@@ -137,7 +139,7 @@ export const JoinUsForm = () => {
                         error={errors.fleetNumber}
                     />
                     <TextField 
-                        label="Estimated no of transactions" 
+                        label={t("fields.transactions")}
                         variant="underlined" 
                         labelVariant="bold" 
                         value={formData.transactions}
@@ -147,11 +149,11 @@ export const JoinUsForm = () => {
                 </div>
             </div>  
             <Typography className="!text-[13px] !text-navy my-5 text-center px-4">
-                By submitting this form, you agree to our <b className="!font-bold">terms and conditions</b>. We will review your application and communicate with you during the <b>2–3 working days</b>.             
+                {t("agreement")}
             </Typography>   
             <div className="px-4 md:px-10">
                 <Button
-                    title={"Submit the application"}
+                    title={t("submit")}
                     variant="primary"
                     className="!px-14 mt-6 w-full bg-primary text-white mb-10"
                     onClick={handleSubmit}

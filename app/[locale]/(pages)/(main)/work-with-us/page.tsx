@@ -1,15 +1,17 @@
 import { Hero } from "@/app/components/common";
 import { JoinUsForm, WhyChooseUs } from "@/app/components/workWithUs";
 import { IoIosArrowForward } from "react-icons/io";
+import { useTranslations } from "next-intl";
 
 export default function WorkWithUsPage() {
+    const t = useTranslations("common.workWithUs");
     return (
         <>
          <Hero
-                    title="Work With Us"
-                    heading="Enter Your Move Details"
-                    description="Begin by providing your move specifics, including the type of move, locations, and date. This information helps us match you with the best moving companies."
-                    buttonTitle="Get Price & Compare Movers"
+                    title={t("hero.title")}
+                    heading={t("hero.heading")}
+                    description={t("hero.description")}
+                    buttonTitle={t("hero.button")}
                     buttonIcon={<IoIosArrowForward color="navy"/>}
                 />
                 <WhyChooseUs />

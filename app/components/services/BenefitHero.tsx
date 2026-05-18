@@ -1,14 +1,16 @@
 import Image from "next/image"
 import { Typography } from "../common"
+import { useTranslations } from "next-intl"
 
 export const BenefitHero = () => {
+    const t = useTranslations("common.serviceBenefit.hero");
     return (
         <>
         <section
         className=" bg-[#63818D] ">
             <div className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-52 pt-10 py-8 ">
-                <Typography variant="hDisplay" className="text-white !text-[40px] w-[286.5px]">How to benefit from our services in</Typography>
-                <Typography variant="bodyMedium" className="w-[320px] ">At Move, we offer you an innovative platform that makes the transfer process easier and faster than all your previous experiences. Whether you are on your way to a new location or work for a moving company and are looking to expand your business, our services are tailored to meet your needs and achieve the best results.</Typography>
+                <Typography variant="hDisplay" className="text-white !text-[40px] w-[286.5px]">{t('title')}</Typography>
+                <Typography variant="bodyMedium" className="w-[320px] ">{t('description')}</Typography>
             </div>
 
             <div className="flex justify-between items-center pb-10 " dir="ltr">

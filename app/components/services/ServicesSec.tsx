@@ -1,8 +1,10 @@
 import { ServiceCard, Typography } from "../common"
+import { useTranslations } from "next-intl";
 export const ServicesSec = () => {
+  const t = useTranslations('common.services');
     return (
         <>
-        <Typography className="text-center !text-navy my-8 " variant="hDisplay">Our Services</Typography>
+        <Typography className="text-center !text-navy my-8 " variant="hDisplay">{t('title')}</Typography>
         <section className="grid md:grid-cols-5"
         style={{
         backgroundImage: "url(/images/ourServicesBg.svg)",
@@ -13,34 +15,34 @@ export const ServicesSec = () => {
         >
                 <ServiceCard 
                   icon="/images/transportationIcon.svg"
-                  title="International Transportation"
-                  description="Move your belongings from the Kingdom to Malaysia, the UAE, or any country within the Kingdom, with the most suitable carrier for your needs"
+                  title={t('cards.international.title')}
+                  description={t('cards.international.description')}
                   backgroundColor="#ADAEB1/70"
                 />  
                   <ServiceCard 
                   icon="/images/boxIcon.svg"
-                  title="Local Transportation"
-                  description="Move your belongings within your city or from one city to another within the Kingdom with ease, while choosing the most suitable carrier through Move"
+                  title={t('cards.local.title')}
+                  description={t('cards.local.description')}
                   backgroundColor="#DA6635/70"
                   textColor="white"
                 />   
                  <ServiceCard 
                   icon="/images/transportationIcon.svg"
-                  title="Car Transport"
-                  description="Move your car between cities within the Kingdom at the best prices with movers specialized in Annql."
+                  title={t('cards.car.title')}
+                  description={t('cards.car.description')}
                   backgroundColor="#FFFFFF/70"
                 />  
                   <ServiceCard 
                   icon="/images/carmeraIcon.svg"
-                  title="Device Transmission"
-                  description="Move your electronic and electrical appliances with confidence with competent carriers and technicians through Mov"
+                  title={t('cards.device.title')}
+                  description={t('cards.device.description')}
                   backgroundColor="#204A60/70"
                    textColor="white"
                 />  
                   <ServiceCard 
                   icon="/images/furnitureIcon.svg"
-                  title="Moving Furniture"
-                  description="Enjoy a safe and seamless moving experience of moving your furniture to your new location with Move authorized movers"
+                  title={t('cards.furniture.title')}
+                  description={t('cards.furniture.description')}
                   backgroundColor="#112A35/70"
                    textColor="white"
                 />
@@ -48,12 +50,12 @@ export const ServicesSec = () => {
         </section>
         <section className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24 my-16">
             <div className="bg-[#ADAEB1] w-[300px] ">
-                <Typography variant="bodyLarge" className="!text-navy text-center px-8 pt-9">Fast, Organized & Secure services</Typography>
-                <Typography variant="bodySmall" className="!text-navy text-center px-8  my-3">ANNGL is committed to providing flexibility and speed through a smart and integrated system that moves your belongings via fast-delivery moving companies</Typography>
+                <Typography variant="bodyLarge" className="!text-navy text-center px-8 pt-9">{t('features.fastSecure.title')}</Typography>
+                <Typography variant="bodySmall" className="!text-navy text-center px-8  my-3">{t('features.fastSecure.description')}</Typography>
             </div>
             <div className="bg-[#ADAEB1] w-[300px] ">
-                <Typography variant="bodyLarge" className="!text-navy text-center px-8 pt-9">Services Wide</Typography>
-                <Typography variant="bodySmall" className="!text-navy text-center px-8  my-3">ANNGL provides comprehensive services in cooperation with reliable moving companies that ensure you an easy, comfortable and safe transportation of your belongings</Typography>
+                <Typography variant="bodyLarge" className="!text-navy text-center px-8 pt-9">{t('features.servicesWide.title')}</Typography>
+                <Typography variant="bodySmall" className="!text-navy text-center px-8  my-3">{t('features.servicesWide.description')}</Typography>
             </div>
         </section>
             </>

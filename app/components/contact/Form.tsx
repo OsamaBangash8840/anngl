@@ -1,25 +1,27 @@
 
 import { Button, TextareaField, TextField, Typography } from "../common"
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export const Form = () => {
+    const t = useTranslations("common.contact");
     return (
         <>
         <Image src={'/images/contactAnnglLine.svg'} alt="background" width={900} height={34} className="mx-auto"/>
         <section className="container flex flex-col items-center gap-8 md:gap-12 mt-12 mb-16">
             <div className=" w-full md:w-[60%] mx-auto">
-                <Typography variant="h2" className="!text-navy md:!text-[26px] text-center"> Our team is here to serve you!</Typography>
+                <Typography variant="h2" className="!text-navy md:!text-[26px] text-center"> {t("form.title")}</Typography>
                 <form className="mt-6">
                     <div className="flex flex-col sm:flex-row items-center gap-3">
-                        <TextField variant="contact" label="First Name *" labelVariant="bold" className="w-full" icon={<Image src={'/images/profileIcon.svg'} alt="Profile Icon" width={24} height={24}/>}/>
-                        <TextField variant="contact" label="Last Name *" labelVariant="bold" className="w-full" icon={<Image src={'/images/profileIcon.svg'} alt="Profile Icon" width={24} height={24}/>}/>
+                        <TextField variant="contact" label={t("form.firstName")}labelVariant="bold" className="w-full" icon={<Image src={'/images/profileIcon.svg'} alt="Profile Icon" width={24} height={24}/>}/>
+                        <TextField variant="contact" label={t("form.lastName")} labelVariant="bold" className="w-full" icon={<Image src={'/images/profileIcon.svg'} alt="Profile Icon" width={24} height={24}/>}/>
                     </div>
-                    <TextField  label="Email *" labelVariant="bold" variant="contact" className="mt-3" icon={<Image src={'/images/mailIcon.svg'} alt="Message Icon" width={24} height={24}/>}/>
+                    <TextField  label={t("form.email")} labelVariant="bold" variant="contact" className="mt-3" icon={<Image src={'/images/mailIcon.svg'} alt="Message Icon" width={24} height={24}/>}/>
                     <TextareaField
                         variant="contact"
-                        label="Your Message.."
+                        label={t("form.message")}
                         labelVariant="bold"
-                        placeholder="Your Message"
+                        placeholder={t("form.placeholder")}
                         className="mt-3"
                         rows={4}
                     />
@@ -34,7 +36,7 @@ export const Form = () => {
                         </div>
                         <Typography variant="bodySmall" className="!text-navy ">Send me promotion messages!</Typography>
                     </label> */}
-                    <Button title="Submit" variant="white" className=" !w-full !text-[16px] mt-8 !bg-navy !text-white !h-14" />
+                    <Button title={t("form.submit")} variant="white" className=" !w-full !text-[16px] mt-8 !bg-navy !text-white !h-14" />
                 </form>
             </div>  
 
@@ -43,21 +45,21 @@ export const Form = () => {
                   <div className="flex flex-col gap-4  items-center">
                                 <Image src="/images/callIcon.svg" alt="call" width={64} height={56}/>
                                 <div>
-                            <Typography  className="!text-navy !font-regular text-center "> Call Us</Typography>
+                            <Typography  className="!text-navy !font-regular text-center "> {t("details.callUs")}</Typography>
                             <Typography variant="h3" className="!text-navy !font-medium mt-3"> (123) 456 - 7890</Typography>
                                 </div>
                             </div>
                             <div className="flex flex-col gap-4 justify-center items-center">
                                 <Image src="/images/emailIcon.svg" alt="email" width={83} height={73}/>
                                 <div>
-                            <Typography  className="!text-navy !font-regular text-center "> Email Us </Typography>
+                            <Typography  className="!text-navy !font-regular text-center "> {t("details.emailUs")} </Typography>
                             <Typography variant="h3" className="!text-navy !font-medium mt-3"> Support @anngl.com </Typography>
                                 </div>
                             </div>
                             <div className="flex flex-col gap-4 justify-center items-center">
                                 <Image src="/images/locationIcon.svg" alt="building" width={64} height={69}/>
                                 <div>
-                            <Typography  className="!text-navy !font-regular text-center "> Location</Typography>
+                            <Typography  className="!text-navy !font-regular text-center "> {t("details.location")}</Typography>
                             <Typography variant="h3" className="!text-navy !font-medium mt-3"> Riyadh, KSA</Typography>
                                 </div>
                             </div>

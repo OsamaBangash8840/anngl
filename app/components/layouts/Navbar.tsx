@@ -45,11 +45,11 @@ export const Navbar = () => {
 
   const navItems = [
     { name: t("home"),    path: routes.home },
-    { name: "About Us",   path: routes.aboutUs },
-    { name: "Our Services", path: routes.services },
-    { name: "How to benefit from our services", path: routes.serviceBenefits },
-    { name: "Work With Us", path: routes.workWithUs },
-    { name: "Contact Us", path: routes.contactUs },
+    { name: t("about"),   path: routes.aboutUs },
+    { name: t("services"), path: routes.services },
+    { name: t("benefitServices"), path: routes.serviceBenefits },
+    { name: t("workWithUs"), path: routes.workWithUs },
+    { name: t("contact"), path: routes.contactUs },
   ];
 
   return (
@@ -59,7 +59,7 @@ export const Navbar = () => {
         bg-navy py-4 z-50 sticky top-0
         transition-transform duration-300 ease-in-out
         ${isVisible ? "translate-y-0" : "-translate-y-full"}
-      `}
+      `} dir="ltr"
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}

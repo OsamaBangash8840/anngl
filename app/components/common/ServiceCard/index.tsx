@@ -4,6 +4,7 @@ import { Button } from "../Button";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { useTranslations } from "next-intl";
 
 interface IServiceCard {
   icon: string;
@@ -17,10 +18,11 @@ interface IServiceCard {
 }
 
 export const ServiceCard = ({
+  
   icon,
   title,
   description,
-  buttonText = "Find Best Price",
+  buttonText,
   iconAlt = "Service Icon",
   backgroundColor,
   className,
@@ -36,6 +38,8 @@ export const ServiceCard = ({
           : color,
       }
     : {};
+        const t = useTranslations('common.services');
+
 
   return (
     <div
@@ -64,7 +68,7 @@ export const ServiceCard = ({
         </Typography>
         <div className="mt-auto">
           <Button
-            title={buttonText}
+            title={t("button")}
             variant="white"
             className="!px-8 !text-[14px] mt-6 !bg-navy !text-white !font-light !rounded-[12px]"
             icon={<FaArrowRightLong className="text-white" />}

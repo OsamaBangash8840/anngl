@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Typography } from "../common";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 const testimonials = [
     {
@@ -39,6 +40,7 @@ const testimonials = [
 ];
 
 const TestimonialCard = ({ item }: { item: typeof testimonials[0] }) => (
+    
     <div className="px-2 md:px-4 outline-none ">
         <div className="border w-full border-primary/20 bg-white relative rounded-sm p-5 md:p-6 mt-16 md:mt-12 shadow-[0px_3px_7.5px_2px_rgba(0,0,0,0.10)] mb-10">
             <div className="flex -mt-20 md:-mt-18 relative z-20">
@@ -111,15 +113,17 @@ export const Testimonials = () => {
         dotsClass: "slick-dots custom-dots",
     };
 
+    const t = useTranslations('common.home');
+
     return (
         <section className="py-12 md:py-24 bg-[#F7F7F7] overflow-hidden relative">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-10 md:mb-16">
                     <Typography variant="h1" className="!text-black relative inline-block text-[22px] md:text-[32px] leading-tight">
-                        Words from the <span className="font-homemade-apple !font-regular text-primary">Clients</span> we've moved
+                        {t('testimonials.title1')} <span className="font-homemade-apple !font-regular text-primary">{t('testimonials.titleAccent')}</span> {t('testimonials.title2')}
                     </Typography>
                     <Typography className="text-navy mt-2 text-sm md:text-base">
-                        Reinforce the ease & benefits of using the platform
+                        {t('easeBenefits')}
                     </Typography>
                 </div>
 

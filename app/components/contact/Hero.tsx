@@ -1,7 +1,9 @@
 import { IoIosArrowForward } from "react-icons/io"
 import { Hero, Typography } from "../common"
+import { useTranslations } from "next-intl"
 
 export const ContactHero = () => {
+    const t = useTranslations("common.contact.hero");
     return (
         <>
           <section
@@ -10,10 +12,10 @@ export const ContactHero = () => {
               <div className="container flex flex-col items-center justify-center my-32">
             
                 <Typography variant="hDisplay" className="mt-4 text-center md:text-left">
-                 Contact Us
+                {t("title")}
                 </Typography>
                 <Typography className="text-center mt-3 max-w-[900px]">
-                  Have questions or need assistance? Our team is here to help!
+                  {t("description")}
                 </Typography>
               </div>
             </section>

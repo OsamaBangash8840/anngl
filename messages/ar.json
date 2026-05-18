@@ -11,20 +11,22 @@
             "home": "الرئيسية",
             "about": "من نحن",
             "services": "خدماتنا",
-            "contact": "اتصل بنا",
+            "benefitServices": "كيف تستفيد من خدماتنا",
+            "workWithUs": "اعمل معنا",
+            "contact": "تواصل معنا",
             "login": "تسجيل الدخول"
         },
         "hero": {
-            "platform": "منصة النقل رقم 1 في المملكة العربية السعودية",
+            "platform": "المنصة الأولى للنقل في المملكة العربية السعودية",
             "title": "خدمات نقل سهلة في",
             "titleAccent": "متناول يدك",
             "comparePrices": "قارن الأسعار",
-            "description": "قارن بين عروض أسعار النقل المضمونة من أفضل شركات النقل.",
+            "description": "قارن عروض النقل المضمونة من أفضل شركات النقل",
             "tabs": {
-                "furniture": "أثاث",
-                "goods": "بضائع",
-                "refrigerator": "ثلاجة",
-                "largeItems": "قطع كبيرة"
+                "furniture": "نقل الأثاث",
+                "goods": "نقل الأجهزة",
+                "refrigerator": "نقل السيارات",
+                "largeItems": "النقل المحلي"
             },
             "form": {
                 "movingFrom": "النقل من*",
@@ -47,22 +49,337 @@
             "registerHere": "سجل هنا"
         },
         "home": {
-            "whyChoose": "لماذا تختار",
+            "whyChoose": "ماالذي يمّيزنا فيـــــ",
             "easyMoving": "سنجعل عملية النقل هذه سهلة بالنسبة لك!",
-            "readyMove": "هل أنت مستعد للانتقال؟",
-            "easeBenefits": "استمتع بسهولة وفوائد استخدام المنصة",
-            "getPrice": "احصل على السعر وقارن بين شركات النقل",
+            "readyMove": "جـــــــاهز تبـــــــــدأ النقـــــــل؟",
+            "easeBenefits": "مع انقل، كل خطوات النقل أسهل وأسرع!",
+            "getPrice": "احصل على السعر وقارن شركات النقل",
             "ourNetwork": "شبكتنا",
             "coverArea": "تغطية منطقة واسعة لجميع أنحاء العالم",
             "locations": {
                 "malaysia": "ماليزيا",
                 "saudiArabia": "المملكة العربية السعودية",
                 "unitedStates": "الولايات المتحدة"
+            },
+            "whoWeAre": {
+                "title": "من نحن",
+                "heading": "نحن رواد في شركات النقل",
+                "leader": "قائد",
+                "description": "نحن فريق سعودي مخصص لجعل كل عملية نقل في المملكة أبسط وأسرع وأكثر توفيراً. تربطك ANNGL بمجموعة واسعة من شركات النقل الموثوقة والمعتمدة حتى تحصل دائماً على أفضل خدمة بأفضل سعر.",
+                "aboutUs": "تعرف علينا"
+            },
+            "features": {
+                "lowerPrices": "أسعار أقل تصل إلى %45",
+                "lowerPricesDesc": "نقدم مجموعة واسعة من الخيارات بأفضل أسعار السوق مع خدمات عالية الجودة.",
+                "freeCancellation": "إلغاء مجاني قبل 48 ساعة",
+                "freeCancellationDesc": "نقدم مجموعة واسعة من الخيارات بأفضل أسعار السوق مع خدمات عالية الجودة.",
+                "trustedExperts": "خبراء نقل موثوقون",
+                "trustedExpertsDesc": "نقدم مجموعة واسعة من الخيارات بأفضل أسعار السوق مع خدمات عالية الجودة.",
+                "highSafety": "أمان عالٍ وراحة بال",
+                "highSafetyDesc": "نقدم مجموعة واسعة من الخيارات بأفضل أسعار السوق مع خدمات عالية الجودة."
+            },
+            "testimonials": {
+                "title1": "كلمات من  الذين نقلنا لهم",
+                "titleAccent": "عملائنا",
+                "title2": "الذين نقلنا لهم"
             }
         },
         "footer": {
-            "connectTrusted": "تواصل مع شركات نقل موثوقة لجعل عملية نقلك خالية من المتاعب. استمتع براحة البال مع محترفين معتمدين يتعاملون مع ممتلكاتك.",
-            "copyright": "2026 بواسطة ANNGL."
+            "globalNetwork": "تغطية مساحة واسعة في جميع أنحاء",
+            "globalNetworkAccent": "العالم",
+            "connectTrusted": "تواصل مع شركات النقل الموثوقة لجعل انتقالك خالياً من المتاعب. استمتع براحة البال مع محترفين معتمدين يتولون نقل ممتلكاتك.",
+            "copyright": "2026 جميع الحقوق محفوظة | ANNGL.",
+             "navlinks": {
+                "learnMore": "تعرف أكثر",
+                "about": "عن أنقل",
+                "commercialRegistration": "السجل التجاري",
+                "privacyPolicy": "سياسة الخصوصية",
+                "weCanHelpYou": "نقدر نساعدك",
+                "ourServices": "خدماتنا",
+                "carriers": "الناقلون",
+                "workWithUs": "أعمل معنا",
+                "weHave": "كـــــل ",
+                "weHaveAccent":"س",
+                "ForAllYour": "لــــــــــــه ",
+                "ForAllYourAccent": "ج"
+            }
+        },
+          "about": {
+            "whoWeAre": {
+                "title": "من نحن",
+                "subheading": "النقل أصبح بسيطاً في جميع أنحاء المملكة العربية السعودية",
+                "description": "نحن فريق سعودي يهدف إلى تسهيل تجربة النقل لجميع سكان المملكة العربية السعودية من خلال تقديم خدمات نقل سريعة ومريحة. ANNGL منصة تقدم مجموعة متنوعة من خدمات النقل عبر عرض قائمة بأفضل شركات النقل الموثوقة والمعتمدة، مما يضمن لك الحصول على أعلى مستوى من الجودة بأفضل الأسعار."
+            },
+            "vision": {
+                "title": "رسالتنا",
+                "description": "أن نكون المزود الرائد لخدمات النقل في المملكة العربية السعودية، من خلال تقديم تجربة نقل شاملة تجمع بين الجودة والأمان والسهولة لعملاء ANNGL."
+            },
+            "mission": {
+                "title": "مهمتنا",
+                "description": "تقديم خدمة سلسة وموثوقة بمستوى عالٍ من الشفافية. ANNGL دائماً بجانبك أثناء انتقالك وتضمن أن ممتلكاتك في أيدٍ أمينة وموثوقة."
+            },
+            "makeYourMove": {
+                "title": "انقل ممتلكاتك معنا في",
+                "titleAccent": "يتحرك?",
+                "buttonText": "احصل على السعر وقارن شركات النقل"
+            }
+        },
+         "services": {
+            "hero": {
+                "title1": "كل رحلة",
+                "title2": "انـــــــتـــــــقــــــــــــــــــــــــــــــــــــــــــال",
+                "title3": "تحتـــــــاح",
+                "brand": "anngl",
+                "button": "اختر شركة النقل المناسبة لك"
+            },
+            "title": "خدماتنا",
+            "button":"أفضل سعر",
+            "cards": {
+                "international": {
+                    "title": "النقل الدولي",
+                    "description": "انقل ممتلكاتك من المملكة إلى ماليزيا أو الإمارات أو من أي دولة داخل المملكة، مع الناقل الأنسب لإحتياجاتك."
+                },
+                "local": {
+                    "title": "النقل المحلي",
+                    "description": "انقل ممتلكاتك داخل مديتنك أو من مدينة إلى أخرى داخل المملكة بكل سهولة، مع اختيارك للناقل الأنسب عبر انقل"
+                },
+                "car": {
+                    "title": "نقل السيارات",
+                    "description": "نقل سيارتك بين المدن داخل المملكة بأفضل الأسعار مع ناقلين متخصصين في انقل."
+                },
+                "device": {
+                    "title": "نقل الأجهزة",
+                    "description": "قل أجهزتك الإلكترونية والكهربائيــة بكل ثقة مع ناقلين وفنيين مختصين من خلال انقل"
+                },
+                "furniture": {
+                    "title": "نقل الأثاث",
+                    "description": "استمتع بتجربة نقل آمنة وسلسة لنقل أثاثك إلى موقعك الجديد مع شركات النقل المعتمدة من موڤ"
+                }
+            },
+            "features": {
+                "fastSecure": {
+                    "title": "خدمات سريعة ومنظمة وآمنة",
+                    "description": "تحرص ANNGL على توفير المرونة والسرعة في ظل نظام ذكي ومتكامل ينقل ممتلكاتك عبر شركات نقل سريعة التسليم."
+                },
+                "servicesWide": {
+                    "title": "خدمات شاملة",
+                    "description": "تقدم ANNGL خدمات متكاملة بالتعاون مع شركات نقل موثوقة تضمن لك نقلاً سهلاً ومريحاً وآمناً لممتلكاتك"
+                }
+            }
+        },
+        "workWithUs": {
+            "hero": {
+                "title": "اعمل معنا",
+                "heading": "أدخل تفاصيل نقلك",
+                "description": "ابدأ بتقديم تفاصيل نقلك، بما في ذلك نوع النقل والمواقع والتاريخ. تساعدنا هذه المعلومات في مطابقتك مع أفضل شركات النقل.",
+                "button": "احصل على عرض سعر وقارن بين شركات النقل"
+            },
+            "whyChooseUs": {
+                "title": "كيف تقدم خدماتك معنا في انقل؟",
+                "feature1": "انضم إلينا لعرض خدماتك على أكبر منصات النقل في المملكة والوصول إلى آلاف العملاء.",
+                "feature2": "نمنحك ثقة العملاء بوصفك شريكاً معتمداً في النقل مما يعزز سمعتك في السوق.",
+                "feature3": "يمكنك متابعة طلباتك وإدارتها بكفاءة وسلاسة من خلال النظام الذكي على منصة انقل."
+            },
+            "joinUsForm": {
+                "title": "نضم معنا",
+                "description": "انضم إلى شبكتنا من شركاء النقل الموثوقين ووسّع نطاق أعمالك معنا",
+                "fields": {
+                    "companyName": "اسم الشركة*",
+                    "companyNameRequired": "اسم الشركة مطلوب",
+                    "commercialRegistration": "رقم السجل التجاري",
+                    "commercialRegistrationRequired": "الحقل مطلوب",
+                    "tgaRegistration": "رقم تسجيل TGA",
+                    "tgaRegistrationRequired": "الحقل مطلوب",
+                    "email": "البريد الإلكتروني *",
+                    "emailRequired": "البريد الإلكتروني مطلوب",
+                    "phone": "رقم الهاتف *",
+                    "phoneRequired": "رقم الهاتف مطلوب",
+                    "cities": "المدن التي عملت فيها *",
+                    "citiesRequired": "يرجى اختيار مدينة واحدة على الأقل",
+                    "address": "العنوان",
+                    "addressRequired": "العنوان مطلوب",
+                    "services": "الخدمات المقدمة ",
+                    "servicesRequired": "الخدمات المقدمة مطلوبة",
+                    "fleet": "عدد أسطولك (الشاحنات المرخصة) *",
+                    "fleetRequired": "عدد شاحناتك مطلوبة",
+                    "transactions": "العدد التقديري للمعاملات ",
+                    "transactionsRequired": "الخدمات المقدمة مطلوبة"
+                },
+                "cities": {
+                    "riyadh": "الرياض",
+                    "jeddah": "جدة",
+                    "dammam": "الدمام"
+                },
+                "agreement": "بتقديم هذا النموذج، فإنك توافق على الشروط والأحكام الخاصة بنا. سنقوم بمراجعة طلبك والتواصل معك خلال 2-3 أيام عمل.",
+                "submit": "تقديم الطلب"
+            }
+        },
+        "serviceBenefit": {
+            "hero": {
+                "title": "كيف تستفيد من خدمـاتــنـا فيـــــــــــــــــــــــــ",
+                "brand": "anngl",
+                "description": "في انقل، نو ّفر لك منصة مبتكرة تجعل عملية النقل أسهل وأسرع من كل تجاربك السابقة. إن كنت في طريقك للانتقال إلى موقع جديد أو تعمل في شركة نقل وتسعى لتوسيع نطاق عملك،خدماتنا صُممت خصيًصا لتلبي احتياجاتك وتحقق لك أفضل النتائج."
+            },
+            "workWithUs": {
+                "carrierTitle": "ترغب في العمل معنا كناقل",
+                "carrierButton":"أفضل سعر",
+                "clientTitle": "تبحث عن خدمة نقل موثوقة ",
+                "clientButton": "أفضل سعر"
+            }
+        },
+        "contact": {
+            "hero": {
+                "title": "تواصل معنا",
+                "description": "هل لديك أسئلة أو تحتاج إلى مساعدة؟ فريقنا هنا للمساعدة!"
+            },
+            "form": {
+                "title": "فريقنا هنا لخدمتك!",
+                "firstName": "الاسم الأول *",
+                "lastName": "اسم العائلة *",
+                "email": "البريد الإلكتروني*",
+                "message": "رسالتك..",
+                "placeholder": "رسالتك",
+                "submit": "إرسال"
+            },
+            "details": {
+                "callUs": "اتصل بنا",
+                "phone": "(123) 456 - 7890",
+                "emailUs": "راسلنا",
+                "email": "Support @anngl.com",
+                "location": "الموقع",
+                "address": "Riyadh, KSA"
+            }
+        },
+        "booking": {
+            "stepper": {
+                "step1": "My Inventory",
+                "step2": "My Location",
+                "step3": "Personal Info",
+                "step4": "Compare"
+            },
+            "inventory": {
+                "title": "Manage inventory",
+                "subtitle": "Manage your inventory and we are the only service that gives you a guaranteed price based on the size of your inventory.",
+                "searchPlaceholder": "Search for an items",
+                "categories": "Categories",
+                "roomsHeader": "My Rooms",
+                "cannotFind": "Couldn’t find your furniture?",
+                "addItem": "Add item +",
+                "roomItems": {
+                    "sofa": "Sofa and Couches",
+                    "table": "Table and Chairs",
+                    "bed": "Bed and Mattress",
+                    "drawers": "Drawers",
+                    "wardrobes": "Wardrobes",
+                    "appliances": "Appliances",
+                    "additionalCarton": "Additional Carton"
+                },
+                "categoryList": {
+                    "bedroomItems": "Bedroom Items",
+                    "bedroom": "Bed Room",
+                    "diningRoom": "Dining Room",
+                    "storageRoom": "Storage Room",
+                    "additionalCarton": "Additional Carton"
+                },
+                "uploadVideo": {
+                    "title": "Upload video",
+                    "subtitle": "Manage your inventory and we are the only service that gives you a guaranteed price based on the size of your inventory.",
+                    "clickUpload": "Click to upload a video",
+                    "livingRoomItems": "My Living Room Items"
+                },
+                "cartons": {
+                    "small": "Small Carton",
+                    "medium": "Medium Carton",
+                    "large": "Large Carton",
+                    "title": "Additional Carton",
+                    "subText": "Carton"
+                }
+            },
+            "location": {
+                "title": "Move details",
+                "subtitle": "Verify your location info below. Prices are right around the corner!",
+                "movingFrom": "Moving from",
+                "movingTo": "Moving to",
+                "extraPickup": "Extra Pick-up",
+                "placeholderAddress": "Moving from address, city, or Zip",
+                "placeholderApartment": "Apartment",
+                "placeholderFloor": "Floor",
+                "placeholderElevator": "Elevator i.e yes or now",
+                "additionalStop": "Additional pick up stop",
+                "services": "Services",
+                "servicesList": {
+                    "packing": "Packing",
+                    "wrapping": "Wrapping",
+                    "kitchenAssemble": "Kitchen assemble",
+                    "bedroomAssemble": "Bedroom assemble",
+                    "acInstallation": "Air condition installation",
+                    "unpacking": "Unpacking",
+                    "orderBoxes": "Order boxes",
+                    "kitchenDisassemble": "Kitchen disassemble",
+                    "bedroomDisassemble": "Bedroom disassemble",
+                    "acRemoval": "Air condition removal"
+                }
+            },
+            "personalInfo": {
+                "title": "Personal info",
+                "subtitle": "Review and confirm your details below to ensure everything is accurate and ready to go.",
+                "header": "Personal Info",
+                "placeholderName": "Name",
+                "placeholderEmail": "Email",
+                "placeholderPhone": "Phone",
+                "detailsHeader": "Details",
+                "placeholderAddress": "Moving from address, city, or Zip",
+                "specialRequests": "Any Special Requests?",
+                "placeholderRequest": "Request",
+                "terms": "I have read, understand and accept the Terms and Conditions"
+            },
+            "companies": {
+                "title": "Movers list",
+                "subtitle": "Verify your location info below. Prices are right around the corner!",
+                "approxPrice": "Approximate price",
+                "servicesIncluded": "Services included",
+                "requestPrice": "Request Price",
+                "topRated": "Top Rated",
+                "reviews": "reviews",
+                "availableToday": "Available Today",
+                "years": "years",
+                "employees": "employees",
+                "included": "Included",
+                "modal": {
+                    "workingDays": "Working days: Mon - Fri",
+                    "workingTime": "Working time: 09 am - 06 pm",
+                    "call": "Call",
+                    "yearsBusiness": "Years in Business",
+                    "employeesCount": "Employees",
+                    "aboutCompany": "Welcome to Direct Movers! If you are in need of professional moving labor, you have come to the right place. Our team has years of experience in the moving industry and we are dedicated to providing top-notch service to all of our clients. When you hire us, you can expect reliable and efficient service. We take pride in being punctual and getting the job done right the first time. Care for your belongings. We handle all of your items with the utmost care, ensuring that they are safely transported to your new home. Customized solutions. We understand that every move is different and we work with you to create a personalized plan that meets your needs and budget We are confident that you will be satisfied with our services and we look forward to helping you with your next move. Contact us today to get started!",
+                    "serviceArea": "Service area",
+                    "seeAll": "See all",
+                    "servicesHandling": "Services & Handling",
+                    "licensedBusiness": "Licensed Business",
+                    "licenseNumber": "License Number",
+                    "issuingCity": "Issuing City",
+                    "verifiedReviews": "verified reviews",
+                    "reviewSample": "\"The platform made finding and booking a mover so easy. The movers were professional and careful with my belongings. Highly recommend!\"",
+                    "movedText": "Studio (400-600 sq ft) Moved in NY"
+                }
+            },
+            "modals": {
+                "continueLocation": "Continue to location",
+                "addCartonsQuestion": "Do you want to add additional cartons",
+                "yes": "Yes",
+                "no": "No",
+                "thanks": "thanks",
+                "addCustomItem": "Add Custom Item",
+                "customItemWarning": "Please add items from the catalog on the left unless the custom items are really unique.",
+                "clickUpload": "Click to upload an image",
+                "uniqueItemDetails": "Have a unique item? Fill in the details below to add it.",
+                "itemName": "Name of Item",
+                "width": "Width in inches",
+                "height": "Height in inches",
+                "depth": "Depth in inches",
+                "addItemButton": "Add Item"
+            },
+            "continue": "Continue"
         }
     }
 }

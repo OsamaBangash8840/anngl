@@ -1,33 +1,35 @@
 import Image from "next/image";
 import { Typography } from "../common";
+import { useTranslations } from "next-intl";
 
 export const FourGrids = () => {
+    const t = useTranslations("common.home.features");
     return (
         <div className=" bg-white grid md:grid-cols-4 grid-cols-2 my-8 md:my-32">
             <Grid
                 image="/images/percentIcon.svg"
-                title="Up to 45% Lower Prices"
-                description="We offer a wide range of options at the best market prices with high-quality services."
+                title={t('lowerPrices')}
+                description={t('lowerPricesDesc')}
                 bgColor="bg-navy"
             />
             <Grid
                 image="/images/watchIcon.svg"
-                title="Free Cancellation 48 Hours Prior"
-                description="We offer a wide range of options at the best market prices with high-quality services."
+                title={t('freeCancellation')} 
+                description={t('freeCancellationDesc')}
                 bgColor="bg-primary"
             />
             <Grid
                 image="/images/handshakeIcon.svg"
-                title="Trusted Moving Experts"
-                description="We offer a wide range of options at the best market prices with high-quality services."
+                title={t('trustedExperts')} 
+                description={t('trustedExpertsDesc')}
                 bgColor="bg-white"
                 titleColor="text-[#204A60]"
                 descriptionColor="text-[#204A60]"
             />
             <Grid
                 image="/images/ShieldIcon.svg"
-                title="High Safety & Peace of Mind"
-                description="We offer a wide range of options at the best market prices with high-quality services."
+                title={t('highSafety')}
+                description={t('highSafetyDesc')}
                 bgColor="bg-teal"
             />
         </div>
