@@ -260,6 +260,7 @@
                 "title": "Manage inventory",
                 "subtitle": "Manage your inventory and we are the only service that gives you a guaranteed price based on the size of your inventory.",
                 "searchPlaceholder": "Search for an items",
+                "continueButton":"Continue",
                 "categories": "Categories",
                 "roomsHeader": "My Rooms",
                 "cannotFind": "Couldn’t find your furniture?",
@@ -279,6 +280,15 @@
                     "diningRoom": "Dining Room",
                     "storageRoom": "Storage Room",
                     "additionalCarton": "Additional Carton"
+                },
+                "livingRooms": {
+                    "room1": "Living Room 1",
+                    "room2": "Living Room 2",
+                    "room3": "Living Room 3",
+                    "room4": "Living Room 4"
+                },
+                "selects": {
+                    "chooseOne": "Choose One"
                 },
                 "uploadVideo": {
                     "title": "Upload video",
@@ -376,7 +386,13 @@
                 "width": "Width in inches",
                 "height": "Height in inches",
                 "depth": "Depth in inches",
-                "addItemButton": "Add Item"
+                "addItemButton": "Add Item",
+                "chooseInventory": {
+                    "title": "Choose Inventory or upload videos",
+                    "description": "You can choose between setup inventory manually or just upload videos and proceed",
+                    "inventory": "Inventory",
+                    "uploadVideos": "Upload videos"
+                }
             },
             "continue": "Continue"
         }

@@ -252,39 +252,49 @@
         },
         "booking": {
             "stepper": {
-                "step1": "My Inventory",
-                "step2": "My Location",
-                "step3": "Personal Info",
-                "step4": "Compare"
+                "step1": "مخزوني",
+                "step2": "موقعي",
+                "step3": "معلوماتي الشخصية",
+                "step4": "المقارنة"
             },
             "inventory": {
-                "title": "Manage inventory",
-                "subtitle": "Manage your inventory and we are the only service that gives you a guaranteed price based on the size of your inventory.",
-                "searchPlaceholder": "Search for an items",
-                "categories": "Categories",
-                "roomsHeader": "My Rooms",
-                "cannotFind": "Couldn’t find your furniture?",
-                "addItem": "Add item +",
+                "title": "إدارة المخزون",
+                "subtitle": "أدر مخزونك ونحن الخدمة الوحيدة التي تمنحك سعراً مضموناً بناءً على حجم مخزونك.",
+                "searchPlaceholder": "ابحث عن عنصر",
+                "continueButton":"متابعة",
+                "categories": "التصنيفات",
+                "roomsHeader": "غرفي",
+                "cannotFind": "لم تتمكن من العثور على الأثاث الخاص بك؟",
+                "addItem": "أضف عنصر +",
                 "roomItems": {
-                    "sofa": "Sofa and Couches",
-                    "table": "Table and Chairs",
-                    "bed": "Bed and Mattress",
-                    "drawers": "Drawers",
-                    "wardrobes": "Wardrobes",
-                    "appliances": "Appliances",
-                    "additionalCarton": "Additional Carton"
+                    "sofa": "كنبة",
+                    "table": "طاولة",
+                    "bed": "سرير",
+                    "drawers": "أدراج",
+                    "wardrobes": "خزائن",
+                    "appliances": "أجهزة",
+                    "additionalCarton": "كرتون إضافي"
                 },
                 "categoryList": {
-                    "bedroomItems": "Bedroom Items",
-                    "bedroom": "Bed Room",
-                    "diningRoom": "Dining Room",
-                    "storageRoom": "Storage Room",
-                    "additionalCarton": "Additional Carton"
+                    "bedroomItems": "غرفة المعيشة",
+                    "bedroom": "غرفة النوم",
+                    "diningRoom": "غرفة الطعام",
+                    "storageRoom": "غرفة التخزين",
+                    "additionalCarton": "كرتون إضافي"
+                },
+                "livingRooms": {
+                    "room1": "غرفة المعيشة 1",
+                    "room2": "غرفة المعيشة 2",
+                    "room3": "غرفة المعيشة 3",
+                    "room4": "غرفة المعيشة 4"
+                },
+                "selects": {
+                    "chooseOne": "اختر واحداً"
                 },
                 "uploadVideo": {
-                    "title": "Upload video",
-                    "subtitle": "Manage your inventory and we are the only service that gives you a guaranteed price based on the size of your inventory.",
-                    "clickUpload": "Click to upload a video",
+                    "title": "رفع فيديو",
+                    "subtitle": "أدر مخزونك ونحن الخدمة الوحيدة التي تمنحك سعراً مضموناً بناءً على حجم مخزونك.",
+                    "clickUpload": "انقر للرفع",
                     "livingRoomItems": "My Living Room Items"
                 },
                 "cartons": {
@@ -334,17 +344,17 @@
                 "terms": "I have read, understand and accept the Terms and Conditions"
             },
             "companies": {
-                "title": "Movers list",
-                "subtitle": "Verify your location info below. Prices are right around the corner!",
-                "approxPrice": "Approximate price",
-                "servicesIncluded": "Services included",
-                "requestPrice": "Request Price",
-                "topRated": "Top Rated",
-                "reviews": "reviews",
-                "availableToday": "Available Today",
-                "years": "years",
-                "employees": "employees",
-                "included": "Included",
+                "title": "قائمة شركات النقل",
+                "subtitle": "تحقق من معلومات موقعك أدناه. الأسعار قاب قوسين أو أدنى!",
+                "approxPrice": "السعر التقريبي",
+                "servicesIncluded": "الخدمات المشمولة",
+                "requestPrice": "طلب السعر",
+                "topRated": "الأعلى تقييماً",
+                "reviews": "تقييمات",
+                "availableToday": "متاح اليوم",
+                "years": "سنوات",
+                "employees": "موظفين",
+                "included": "مشمول",
                 "modal": {
                     "workingDays": "Working days: Mon - Fri",
                     "workingTime": "Working time: 09 am - 06 pm",
@@ -377,9 +387,15 @@
                 "width": "Width in inches",
                 "height": "Height in inches",
                 "depth": "Depth in inches",
-                "addItemButton": "Add Item"
+                "addItemButton": "Add Item",
+                "chooseInventory": {
+                    "title": "اختر المخزون أو ارفع مقاطع الفيديو",
+                    "description": "ييمكنك الاختيار بين إعداد المخزون يدوياً أو رفع مقاطع الفيديو والمتابعة",
+                    "inventory": "المخزون",
+                    "uploadVideos": "رفع مقاطع الفيديو"
+                }
             },
-            "continue": "Continue"
+            "continue": "متابعة"
         }
     }
 }

@@ -4,9 +4,13 @@ import { Button, DateField, SelectField, TextareaField, TextField, Typography } 
 import { IoChevronForward, IoPersonOutline } from "react-icons/io5";
 import { MdOutlineEmail, MdPhone, MdOutlineDateRange } from "react-icons/md";
 import { CiLocationOn } from "react-icons/ci";
+import { useTranslations } from "next-intl";
 
 
 export const PersonalInfo = () => {
+    const t = useTranslations("common.booking.personalInfo");
+    const tLocation = useTranslations("common.booking.location");
+    const tCommon = useTranslations("common.booking");
     const [isAdditionalStop, setIsAdditionalStop] = useState(false);
     const [isAgreed, setIsAgreed] = useState(false);
 
@@ -14,19 +18,19 @@ export const PersonalInfo = () => {
         <>
              <div className="  flex flex-col md:flex-row md:justify-between md:items-center">
                 <div>
-                    <Typography variant="h3" className="!text-navy">Personal info</Typography>
+                    <Typography variant="h3" className="!text-navy">{t('title')}</Typography>
                     <div className=" flex items-center gap-1">
-                        <Typography className="!text-navy max-w-[600px] mt-2">Review and confirm your details below to ensure everything is accurate and ready to go.</Typography>
+                        <Typography className="!text-navy max-w-[600px] mt-2">{t('subtitle')}</Typography>
                     </div>
                 </div>
-                <Button title="Continue" variant="default" className="!rounded-[6px] mt-5 md:mt-0" icon={<IoChevronForward className="text-white" />}/>
+                <Button title={tCommon('continue')} variant="default" className="!rounded-[6px] mt-5 md:mt-0" icon={<IoChevronForward className="text-white" />}/>
             </div>
               <div className="space-y-4">
-                  <Typography variant="bodyLarge" className="!text-navy mt-8">Personal Info</Typography>
+                  <Typography variant="bodyLarge" className="!text-navy mt-8">{t('header')}</Typography>
                   <div className="grid md:grid-cols-2 gap-4">
-                      <TextField placeholder="Name" icon={<IoPersonOutline  size={20}/>} />
-                      <TextField placeholder="Email" icon={<MdOutlineEmail size={20} />} />
-                      <TextField placeholder="Phone" icon={<MdPhone size={20}/>} />
+                      <TextField placeholder={t('placeholderName')} icon={<IoPersonOutline  size={20}/>} />
+                      <TextField placeholder={t('placeholderEmail')} icon={<MdOutlineEmail size={20} />} />
+                      <TextField placeholder={t('placeholderPhone')} icon={<MdPhone size={20}/>} />
                   </div>
               </div>
                          <div className="flex items-center gap-3">
@@ -42,21 +46,21 @@ export const PersonalInfo = () => {
               </label>
             
               <Typography className="!text-navy mt-5">
-                Additional pick up stop
+                {tLocation('additionalStop')}
               </Typography>
             </div>
               <div className="space-y-4">
-                  <Typography variant="bodyLarge" className="!text-navy mt-12">Details</Typography>
+                  <Typography variant="bodyLarge" className="!text-navy mt-12">{t('detailsHeader')}</Typography>
                   <div className="grid md:grid-cols-2 gap-4">
                     <DateField inputClassName="!text-navy !font-light" icon={<MdOutlineDateRange size={20}/>}/>
                     <SelectField variant="location"/>
-                     <TextField placeholder="Moving from address, city, or Zip" icon={<CiLocationOn />} />
+                     <TextField placeholder={t('placeholderAddress')} icon={<CiLocationOn />} />
                   </div>
               </div>
               <div className="space-y-4">
-                  <Typography variant="bodyLarge" className="!text-navy mt-12">Any Special Requests?</Typography>
+                  <Typography variant="bodyLarge" className="!text-navy mt-12">{t('specialRequests')}</Typography>
                   <div className="">
-                    <TextareaField placeholder="Request" icon={<CiLocationOn />} />
+                    <TextareaField placeholder={t('placeholderRequest')} icon={<CiLocationOn />} />
                      <label  className="flex items-center gap-3 cursor-pointer mt-8">
       <input
         type="checkbox"
@@ -65,9 +69,9 @@ export const PersonalInfo = () => {
         className="peer hidden"
       />
       {/* Checkbox box — direct sibling of peer input */}
-      <div className={`w-5 h-5 border border-gray-400 rounded-md flex items-center justify-center transition ${isAgreed ? "bg-primary border-primary" : "bg-transparent"}`}>
+      <div className={`w-5 h-5 flex-shrink-0 border border-gray-400 rounded-md flex items-center justify-center transition ${isAgreed ? "bg-primary border-primary" : "bg-transparent"}`}>
         <svg
-          className={`w-3 h-3 text-white transition ${isAgreed ? "opacity-100 scale-100" : "opacity-0 scale-50"}`}
+          className={`w-3 h-3 flex-shrink-0 text-white transition ${isAgreed ? "opacity-100 scale-100" : "opacity-0 scale-50"}`}
           fill="none"
           stroke="currentColor"
           strokeWidth="3"
@@ -76,7 +80,7 @@ export const PersonalInfo = () => {
           <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
         </svg>
       </div>
-      <span className="text-navy text-[13px]">I have read, understand and accept the Terms and Conditions</span>
+      <span className="text-navy text-[13px]">{t('terms')}</span>
     </label>
                   </div>
               </div>

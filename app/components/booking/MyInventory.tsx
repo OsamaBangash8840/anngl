@@ -13,53 +13,42 @@ import { HiMenu, HiX } from "react-icons/hi";
 import { AdditionalCarton } from "./AdditionalCarton";
 
 
-const listItems =[
-    "Sofa and Couches",
-    "Table and Chairs",
-    "Bed and Mattress",
-    "Drawers",
-    "Wardrobes",
-    "Appliances",
-    "Additional Carton",
+const listItemsKeys =[
+    "sofa",
+    "table",
+    "bed",
+    "drawers",
+    "wardrobes",
+    "appliances",
+    "additionalCarton",
 ]
 
-const SidebarContent = ({ onSelect }: { onSelect: (category: string) => void }) => (
+const categoryListKeys = [
+    { key: "bedroomItems", label: "Bedroom Items" },
+    { key: "bedroom", label: "Bed Room" },
+    { key: "diningRoom", label: "Dining Room" },
+    { key: "storageRoom", label: "Storage Room" },
+    { key: "additionalCarton", label: "Additional Carton" }
+]
+
+const SidebarContent = ({ onSelect, t }: { onSelect: (category: string) => void, t: any }) => (
     <div className="space-y-4">
-        <CollapsibleCard onClick={() => onSelect("Bedroom Items")} defaultOpen={true} title="Bedroom Items" count={7} icon={<Image src={'/images/bookingIcon.svg'} alt="" width={24} height={24}/>}>
-            {listItems.map((item, index) => (
-                <li key={index} className="py-1 px-3 list-none">
-                    <Typography className="!text-navy">{item}</Typography>
-                </li>
-            ))}
-        </CollapsibleCard>
-        <CollapsibleCard onClick={() => onSelect("Bed Room")} title="Bed Room" count={0} icon={<Image src={'/images/bookingIcon.svg'} alt="" width={24} height={24}/>}>
-            {listItems.map((item, index) => (
-                <li key={index} className="py-1 px-3 list-none">
-                    <Typography className="!text-navy">{item}</Typography>
-                </li>
-            ))}
-        </CollapsibleCard>
-        <CollapsibleCard onClick={() => onSelect("Dining Room")} title="Dining Room" count={0} icon={<Image src={'/images/bookingIcon.svg'} alt="" width={24} height={24}/>}>
-            {listItems.map((item, index) => (
-                <li key={index} className="py-1 px-3 list-none">
-                    <Typography className="!text-navy">{item}</Typography>
-                </li>
-            ))}
-        </CollapsibleCard> 
-        <CollapsibleCard onClick={() => onSelect("Storage Room")} title="Storage Room" count={0} icon={<Image src={'/images/bookingIcon.svg'} alt="" width={24} height={24}/>}>
-            {listItems.map((item, index) => (
-                <li key={index} className="py-1 px-3 list-none">
-                    <Typography className="!text-navy">{item}</Typography>
-                </li>
-            ))}
-        </CollapsibleCard>
-        <CollapsibleCard onClick={() => onSelect("Additional Carton")} title="Additional Carton" count={0} icon={<Image src={'/images/bookingIcon.svg'} alt="" width={24} height={24}/>}>
-            {listItems.map((item, index) => (
-                <li key={index} className="py-1 px-3 list-none">
-                    <Typography className="!text-navy">{item}</Typography>
-                </li>
-            ))}
-        </CollapsibleCard>
+        {categoryListKeys.map((cat, idx) => (
+            <CollapsibleCard 
+                key={idx} 
+                onClick={() => onSelect(cat.label)} 
+                defaultOpen={idx === 0} 
+                title={t(`categoryList.${cat.key}`)} 
+                count={idx === 0 ? 7 : 0} 
+                icon={<Image src={'/images/bookingIcon.svg'} alt="" width={24} height={24}/>}
+            >
+                {listItemsKeys.map((itemKey, index) => (
+                    <li key={index} className="py-1 px-3 list-none">
+                        <Typography className="!text-navy">{t(`roomItems.${itemKey}`)}</Typography>
+                    </li>
+                ))}
+            </CollapsibleCard>
+        ))}
     </div>
 );
 
@@ -88,34 +77,35 @@ const InventoryItem = ({ title }: { title: string }) => {
   );
 };
 
-const AddCustomItem = ({ onAdd }: { onAdd: () => void }) => {
+const AddCustomItem = ({ onAdd, t }: { onAdd: () => void, t: any }) => {
     return (
         <div onClick={onAdd} className="bg-primary-light-100 border border-primary-light-200 rounded-sm p-5 flex flex-col  justify-center h-full cursor-pointer  transition-all">
-            <Typography variant="bodyMedium" className="!text-[#112A35] font-medium ">Couldn’t find your furniture?</Typography>
-            <Typography variant="h3" className="!text-primary mt-2">Add item +</Typography>
+            <Typography variant="bodyMedium" className="!text-[#112A35] font-medium ">{t('cannotFind')}</Typography>
+            <Typography variant="h3" className="!text-primary mt-2">{t('addItem')}</Typography>
         </div>
     )
 }
 
-const TabContent = ({ onAdd }: { onAdd: () => void }) => (
+const TabContent = ({ onAdd, t }: { onAdd: () => void, t: any }) => (
   <div className="mt-6">
     <div className="grid md:grid-cols-4 grid-cols-2 gap-8 mb-8">
-      <SelectField />
-      <SelectField />
-      <SelectField />
-      <SelectField />
+      <SelectField placeholder={t('selects.chooseOne')} />
+      <SelectField placeholder={t('selects.chooseOne')} />
+      <SelectField placeholder={t('selects.chooseOne')} />
+      <SelectField placeholder={t('selects.chooseOne')} />
     </div>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      {listItems.slice(0, 5).map((item, index) => (
-        <InventoryItem key={index} title={item} />
+      {listItemsKeys.slice(0, 5).map((itemKey, index) => (
+        <InventoryItem key={index} title={t(`roomItems.${itemKey}`)} />
       ))}
-      <AddCustomItem onAdd={onAdd} />
+      <AddCustomItem onAdd={onAdd} t={t} />
     </div>
   </div>
 );
 
 export const MyInventory = () => {
-  const t = useTranslations("common");
+  const t = useTranslations("common.booking.inventory");
+  const tCommon = useTranslations("common.booking");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("Bedroom Items");
@@ -124,10 +114,10 @@ export const MyInventory = () => {
         <>
         <div className=" flex flex-col md:flex-row md:justify-between md:items-center">
             <div>
-                <Typography variant="h3" className="!text-navy">Manage inventory</Typography>
-                <Typography className="!text-navy max-w-[550px]">Manage your inventory and we are the only service that gives you a guaranteed price based on the size of your inventory.</Typography>
+                <Typography variant="h3" className="!text-navy">{t('title')}</Typography>
+                <Typography className="!text-navy max-w-[550px]">{t('subtitle')}</Typography>
             </div>
-            <Button title="Continue" variant="default" className="!rounded-[6px] mt-5 md:mt-0 " icon={<IoChevronForward className="text-white" />}/>
+            <Button title={tCommon('continue')} variant="default" className="!rounded-[6px] mt-5 md:mt-0 " icon={<IoChevronForward className="text-white" />}/>
         </div>
 
         <div className="flex items-center gap-4 mt-8">
@@ -137,7 +127,7 @@ export const MyInventory = () => {
             >
                 <HiMenu size={24} />
             </button>
-            <TextField variant="search" placeholder="Search for an items" className="flex-1 py-2" icon={<CiSearch />} />
+            <TextField variant="search" placeholder={t('searchPlaceholder')} className="flex-1 py-2" icon={<CiSearch />} />
         </div>
 
         {/* Mobile Sidebar (Left Drawer) */}
@@ -167,7 +157,7 @@ export const MyInventory = () => {
                     >
                         <Dialog.Panel className="relative flex w-full max-w-xs flex-col overflow-y-auto bg-white p-6 shadow-xl">
                             <div className="flex items-center justify-between mb-8">
-                                <Typography variant="h3" className="!text-navy">Categories</Typography>
+                                <Typography variant="h3" className="!text-navy">{t('categories')}</Typography>
                                 <button
                                     onClick={() => setIsSidebarOpen(false)}
                                     className="p-2 text-navy"
@@ -175,7 +165,7 @@ export const MyInventory = () => {
                                     <HiX size={24} />
                                 </button>
                             </div>
-                            <SidebarContent onSelect={(category) => {
+                            <SidebarContent t={t} onSelect={(category) => {
                                 setSelectedCategory(category);
                                 setIsSidebarOpen(false);
                             }} />
@@ -188,7 +178,7 @@ export const MyInventory = () => {
         <div className="flex items-start gap-6">
             {/* Desktop Sidebar */}
             <div className="hidden md:block mt-8 w-1/4">
-                <SidebarContent onSelect={setSelectedCategory} />
+                <SidebarContent t={t} onSelect={setSelectedCategory} />
             </div>
 
             <div className="mt-8 w-full md:w-3/4">
@@ -196,26 +186,26 @@ export const MyInventory = () => {
                     <AdditionalCarton />
                 ) : (
                     <>
-                        <Typography variant="bodyLarge" className="!bg-[#112A35] text-center !px-2 !py-3 !rounded-sm">My Rooms</Typography>
+                        <Typography variant="bodyLarge" className="!bg-[#112A35] text-center !px-2 !py-3 !rounded-sm">{t('roomsHeader')}</Typography>
                         <Tabs
                             variant="underline"
                             className="mt-6"
                             items={[
                                 {
-                                    title: "Living Room 1",
-                                    content: <TabContent onAdd={() => setIsModalOpen(true)} />
+                                    title: t('livingRooms.room1'),
+                                    content: <TabContent t={t} onAdd={() => setIsModalOpen(true)} />
                                 },
                                 {
-                                    title: "Living Room 2",
-                                    content: <TabContent onAdd={() => setIsModalOpen(true)} />
+                                    title: t('livingRooms.room2'),
+                                    content: <TabContent t={t} onAdd={() => setIsModalOpen(true)} />
                                 },
                                 {
-                                    title: "Living Room 3",
-                                    content: <TabContent onAdd={() => setIsModalOpen(true)} />
+                                    title: t('livingRooms.room3'),
+                                    content: <TabContent t={t} onAdd={() => setIsModalOpen(true)} />
                                 },
                                 {
-                                    title: "Living Room 4",
-                                    content: <TabContent onAdd={() => setIsModalOpen(true)} />
+                                    title: t('livingRooms.room4'),
+                                    content: <TabContent t={t} onAdd={() => setIsModalOpen(true)} />
                                 }
                             ]}
                         />

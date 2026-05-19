@@ -15,7 +15,7 @@ export const MakeYourMove = () => {
       }} className="w-full py-16">
             <div className="container flex flex-col items-center gap-4 my-9">
                 <Typography variant="hDisplay" className="" >{t('makeYourMove.title')} <span className="font-homemade-apple text-primary">{t('makeYourMove.titleAccent')}</span></Typography>
-                <Button title={t('makeYourMove.button')} variant="white" className="md:!px-14 !py-3 md:!py-0 !bg-navy !text-white" icon={<IoIosArrowForward  color="white"/>}/>
+                <Button title={t('makeYourMove.buttonText')} variant="white" className="md:!px-14 !py-3 md:!py-0 !bg-navy !text-white" icon={<IoIosArrowForward  color="white"/>}/>
             </div>
         </section>
     );

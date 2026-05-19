@@ -1,6 +1,7 @@
 "use client";
 
 import React, { type ButtonHTMLAttributes } from "react";
+import { useLocale } from "next-intl";
 
 interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   title: string;
@@ -42,6 +43,8 @@ export const Button = ({
       ? "text-blue-900 group-hover:text-blue-900 group-hover:rotate-45 group-hover:scale-110"
       : "text-white group-hover:rotate-45 group-hover:scale-110";
 
+  const locale = useLocale();
+
   return (
     <button
       className={`${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`}
@@ -49,7 +52,9 @@ export const Button = ({
     >
       {!loading ? title : "Loading..."}
       {icon && (
-        <span className={`transition-all text-lg ${iconStyles}`}>{icon}</span>
+        <span className={`transition-all text-lg ${iconStyles} ${locale === 'ar' ? 'rotate-180 group-hover:rotate-[225deg]' : ''}`}>
+          {icon}
+        </span>
       )}
     </button>
   );

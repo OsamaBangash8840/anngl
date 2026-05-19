@@ -6,6 +6,7 @@ import { IoChevronForward } from "react-icons/io5";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { MyInventory } from "./MyInventory";
 import { UploadVideo } from "./UploadVideo";
 import { Location } from "./Location";
@@ -14,18 +15,19 @@ import { Companies } from "./Companies";
 
 interface Step {
   id: number;
-  title: string;
+  titleKey: string;
 }
 
 const steps: Step[] = [
-  { id: 1, title: "My Inventory" },
-  { id: 2, title: "My Location" },
-  { id: 3, title: "Personal Info" },
-  { id: 4, title: "Compare" },
+  { id: 1, titleKey: "step1" },
+  { id: 2, titleKey: "step2" },
+  { id: 3, titleKey: "step3" },
+  { id: 4, titleKey: "step4" },
 ];
 
 export const QuoteFlow = () => {
   const pathname = usePathname();
+  const t = useTranslations("common.booking.stepper");
   const isVideoRoute = pathname?.includes("upload-video");
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -55,7 +57,7 @@ export const QuoteFlow = () => {
                     isActive ? "text-navy" : "text-gray-400"
                   )}
                 >
-                  {step.title}
+                  {t(step.titleKey)}
                 </Typography>
               </div>
               
