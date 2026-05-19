@@ -56,7 +56,7 @@ export const Navbar = () => {
     // ← added sticky + translate transition; everything else unchanged
     <nav
       className={`
-        bg-navy py-4 z-50 sticky top-0
+        bg-navy py-4 z-[9999] sticky top-0
         transition-transform duration-300 ease-in-out
         ${isVisible ? "translate-y-0" : "-translate-y-full"}
       `} dir="ltr"
@@ -74,7 +74,7 @@ export const Navbar = () => {
         </Link>
 
         {/* Desktop & Mobile Toggle */}
-        <div className="flex items-center gap-5 md:gap-10">
+        <div className="flex items-center gap-2 md:gap-10">
           <LanguageSwitcher />
 
           {!isLoggedIn ? (
@@ -116,7 +116,7 @@ export const Navbar = () => {
                   leaveFrom="transform opacity-100 scale-100"
                   leaveTo="transform opacity-0 scale-95"
                 >
-                  <MenuItems className="absolute right-0 mt-4 w-48 origin-top-right bg-navy focus:outline-none py-4 z-[70] rounded-[6px] mt-6">
+                  <MenuItems className="absolute right-0 mt-4 w-48 origin-top-right bg-navy focus:outline-none py-4 z-[10000] rounded-[6px] mt-6">
                     <div className="px-4 space-y-2">
                       {navItems.map((item) => (
                         <MenuItem key={item.name}>

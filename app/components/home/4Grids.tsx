@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 export const FourGrids = () => {
     const t = useTranslations("common.home.features");
     return (
-        <div className=" bg-white grid md:grid-cols-4 grid-cols-2 my-8 md:my-32">
+        <div className=" bg-white grid md:grid-cols-4 grid-cols-1 my-8 md:my-32">
             <Grid
                 image="/images/percentIcon.svg"
                 title={t('lowerPrices')}

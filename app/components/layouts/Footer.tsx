@@ -38,7 +38,7 @@ export const Footer = () => {
   {/* Text */}
   <div className={`relative z-20 ${isAr ? 'ml-[30%] -mt-16 md:ml-[43%] 2xl:ml-[47%] px-2 max-w-[205px] md:max-w-[320px]' : 'ml-[20%] md:ml-[28%] 2xl:ml-[36%]  max-w-[275px] md:max-w-[620px]'}`}>
     <Typography variant="hDisplay" className={`leading-tight !text-[25px] md:!text-[40px] -mt-12 md:mt-0 text-white text-center md:text-start ${isAr ? 'mt-4' : ''}`}>
-      {t('globalNetwork')}<span className="font-homemade-apple !text-primary">{t('globalNetworkAccent')}</span>
+      {t('globalNetwork')}<span className="font-homemade-apple !text-primary !ml-2">{t('globalNetworkAccent')}</span>
     </Typography>
   </div>
 

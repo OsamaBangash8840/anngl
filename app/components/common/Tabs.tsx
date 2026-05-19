@@ -15,12 +15,14 @@ interface TabsProps {
   items: TabItem[];
   className?: string;
   variant?: "default" | "underline";
+  listClassName?: string;
 }
 
 export const Tabs = ({
   items,
   className,
   variant = "default",
+  listClassName,
 }: TabsProps): React.ReactElement => {
   const variantStyles = {
     default: {
@@ -50,7 +52,7 @@ export const Tabs = ({
   return (
     <div className={twMerge("w-full", className)}>
       <TabGroup>
-        <TabList className={twMerge("flex w-full", currentVariant.list)}>
+        <TabList className={twMerge("flex w-full", currentVariant.list, listClassName)}>
           {items.map(({ title, icon }) => (
             <Tab
               key={title}

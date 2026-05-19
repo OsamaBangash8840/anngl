@@ -103,6 +103,7 @@ export const Hero = () => {
                          </div>  }
                 ]}
                 className="w-full"
+                listClassName="grid grid-cols-2 gap-4 md:gap-0 md:grid-cols-4"
               />
 
             </div>
